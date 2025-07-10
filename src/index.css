@@ -2,103 +2,183 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
 @layer base {
   :root {
-    --background: 0 0% 98%; /* light gray */
-    --foreground: 240 4% 10%; /* rich charcoal */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 4% 10%;
+    --card-foreground: 0 0% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 4% 10%;
+    --popover-foreground: 0 0% 3.9%;
 
-    --primary: 240 4% 10%; /* rich charcoal */
-    --primary-foreground: 0 0% 98%; /* very light grey */
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 94%; /* light grey */
-    --secondary-foreground: 240 4% 10%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 0 0% 90%; /* pale grey */
-    --muted-foreground: 240 4% 40%; /* mid grey */
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
 
-    --accent: 0 0% 92%;
-    --accent-foreground: 240 4% 10%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
 
-    --destructive: 0 60% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 240 4% 85%;
-    --input: 240 4% 85%;
-    --ring: 240 4% 30%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
 
     --radius: 0.5rem;
 
-    /* Sidebar styling */
-    --sidebar-background: 0 0% 96%;
-    --sidebar-foreground: 240 4% 25%;
-    --sidebar-primary: 240 5% 15%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 26%;
+    --sidebar-primary: 0 0% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 90%;
-    --sidebar-accent-foreground: 240 4% 15%;
-    --sidebar-border: 240 4% 85%;
-    --sidebar-ring: 240 5% 50%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 0 0% 59%;
   }
 
   .dark {
-    --background: 240 5% 10%;
+    --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
 
-    --card: 240 5% 12%;
+    --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 5% 12%;
+    --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 240 5% 10%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 240 3% 20%;
+    --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 3% 20%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
 
-    --accent: 240 3% 20%;
+    --accent: 0 0% 14.9%;
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 50% 40%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3% 25%;
-    --input: 240 3% 25%;
-    --ring: 240 5% 60%;
-
-    --sidebar-background: 240 5% 10%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 240 5% 30%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 3% 18%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 240 3% 25%;
-    --sidebar-ring: 240 5% 60%;
-  }
-
-  * {
-    border-color: hsl(var(--border));
-  }
-
-  body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-  }
-  @media only screen and (max-width: 768px) {
-  body {
-    background-image: url('\public\photos\backgroundimage.png');
-    background-size: auto;
-    background-repeat: repeat;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 0 0% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 16%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 0 0% 59%;
   }
 }
 
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9) translateY(-20px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out;
+}
+
+/* Hover effects for interactive elements */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Cart animation */
+.cart-item-enter {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Button animations */
+.animate-button-press {
+  transition: transform 0.1s ease;
+}
+
+.animate-button-press:active {
+  transform: scale(0.95);
 }

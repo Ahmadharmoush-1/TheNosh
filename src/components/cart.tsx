@@ -1,113 +1,245 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { X, Plus, Minus, ShoppingBag } from 'lucide-react';
-import type { CartItem } from '@/pages/Index';
+import { useState } from "react";
+import { X, Plus, Minus, MessageCircle, Receipt } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { useCart } from "@/context/CartContext";
+import { CheckoutForm } from "@/components/CheckoutForm";
+import { EmptyCart } from "@/components/EmptyCart";
+import { AnimatedCartItem } from "@/components/AnimatedCartItems";
 
 interface CartProps {
   isOpen: boolean;
   onClose: () => void;
-  cartItems: CartItem[];
-  updateQuantity: (id: number, size: string, quantity: number) => void;
-  totalPrice: number;
-  onProceedToCheckout: () => void;
 }
 
-export const Cart: React.FC<CartProps> = ({
-  isOpen,
-  onClose,
-  cartItems,
-  updateQuantity,
-  totalPrice,
-  onProceedToCheckout
-}) => {
+export const Cart = ({ isOpen, onClose }: CartProps) => {
+  const { items, updateQuantity, removeItem, updateNotes, totalPrice, clearCart } = useCart();
+  const [globalNotes, setGlobalNotes] = useState("");
+  const [showCheckout, setShowCheckout] = useState(false);
+  const [animatedItem, setAnimatedItem] = useState<string | null>(null);
+
+  const formatOrderForWhatsApp = (customerInfo: {
+    name: string;
+    phone: string;
+    location: string;
+  }) => {
+    let message = "🍽️ *New Order from Saveur*\n\n";
+    
+    message += `*Customer Details:*\n`;
+    message += `👤 Name: ${customerInfo.name}\n`;
+    message += `📞 Phone: ${customerInfo.phone}\n`;
+    message += `📍 Location: ${customerInfo.location}\n\n`;
+    
+    message += `*Order Items:*\n`;
+    items.forEach((item, index) => {
+      const emoji = getItemEmoji(item.name);
+      message += `${index + 1}. ${emoji} *${item.name}*\n`;
+      message += `   Quantity: ${item.quantity}x\n`;
+      message += `   Price: $${(item.price * item.quantity).toFixed(2)}\n`;
+      if (item.notes) {
+        message += `   Notes: ${item.notes}\n`;
+      }
+      message += "\n";
+    });
+    
+    const deliveryFee = 3;
+    const totalWithDelivery = totalPrice + deliveryFee;
+    
+    message += `📋 *Order Summary:*\n`;
+    message += `💰 Subtotal: $${totalPrice.toFixed(2)}\n`;
+    message += `🚚 Delivery Fee: $${deliveryFee.toFixed(2)}\n`;
+    message += `💵 *Total: $${totalWithDelivery.toFixed(2)}*\n\n`;
+    
+    if (globalNotes) {
+      message += `📝 *Special Instructions:*\n${globalNotes}\n\n`;
+    }
+    
+    message += "Thank you for your order! 🙏";
+    
+    return encodeURIComponent(message);
+  };
+
+  const getItemEmoji = (itemName: string): string => {
+    if (itemName.toLowerCase().includes('burger')) return '🍔';
+    if (itemName.toLowerCase().includes('pizza')) return '🍕';
+    if (itemName.toLowerCase().includes('fries')) return '🍟';
+    if (itemName.toLowerCase().includes('drink') || itemName.toLowerCase().includes('cola')) return '🥤';
+    return '🍽️';
+  };
+
+  const handleCheckoutSubmit = (customerInfo: {
+    name: string;
+    phone: string;
+    location: string;
+  }) => {
+    const phoneNumber = "96176534652";
+    const message = formatOrderForWhatsApp(customerInfo);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+    clearCart();
+    onClose();
+    setShowCheckout(false);
+  };
+
   if (!isOpen) return null;
 
+  if (showCheckout) {
+    return (
+      <div className="fixed inset-0 z-50 bg-background">
+        <CheckoutForm
+          total={totalPrice}
+          onSubmit={handleCheckoutSubmit}
+          onBack={() => setShowCheckout(false)}
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden">
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
-      
-      <div className="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl">
-        <Card className="h-full flex flex-col border-0 rounded-none">
-          <CardHeader className="flex flex-row items-center justify-between border-b bg-gray-100">
-            <CardTitle className="flex items-center space-x-2">
-              <ShoppingBag className="h-5 w-5 text-gray-600" />
-              <span>Your Cart</span>
-            </CardTitle>
-            <Button variant="ghost" size="sm" onClick={onClose}>
-              <X className="h-4 w-4" />
+    <>
+      <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">
+        <div className="fixed right-0 top-0 h-full w-full max-w-md bg-background shadow-xl border-l border-border">
+          {/* Header */}
+          <div className="flex items-center justify-between p-6 border-b border-border bg-card">
+            <div className="flex items-center space-x-2">
+              <Receipt className="h-6 w-6 text-foreground" />
+              <h2 className="text-2xl font-bold text-foreground">Your Cart</h2>
+            </div>
+            <Button
+              onClick={onClose}
+              variant="ghost"
+              size="sm"
+              className="text-muted-foreground hover:text-foreground hover:bg-accent"
+            >
+              <X className="h-5 w-5" />
             </Button>
-          </CardHeader>
-          
-          <CardContent className="flex-1 overflow-y-auto p-0">
-            {cartItems.length === 0 ? (
-              <div className="flex flex-col items-center justify-center h-full text-center p-8">
-                <ShoppingBag className="h-16 w-16 text-gray-300 mb-4" />
-                <h3 className="text-lg font-semibold text-gray-600 mb-2">Your cart is empty</h3>
-                <p className="text-gray-500">Add some beautiful fragrances to get started!</p>
-              </div>
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 overflow-y-auto p-6 max-h-[calc(100vh-200px)]">
+            {items.length === 0 ? (
+              <EmptyCart />
             ) : (
-              <div className="p-4 space-y-4">
-                {cartItems.map((item) => (
-                  <div key={`${item.id}-${item.size}`} className="flex items-center space-x-4 bg-gray-50 rounded-lg p-4">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-16 h-16 object-cover rounded-lg"
-                    />
-                    
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-gray-800">{item.name}</h4>
-                      <p className="text-sm text-gray-600">{item.size}</p>
-                      <p className="text-sm font-semibold text-gray-600">${item.price}</p>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => updateQuantity(item.id, item.size, item.quantity - 1)}
-                        className="h-8 w-8 p-0"
-                      >
-                        <Minus className="h-3 w-3" />
-                      </Button>
-                      
-                      <span className="w-8 text-center font-semibold">{item.quantity}</span>
-                      
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => updateQuantity(item.id, item.size, item.quantity + 1)}
-                        className="h-8 w-8 p-0"
-                      >
-                        <Plus className="h-3 w-3" />
-                      </Button>
-                    </div>
-                  </div>
+              <div className="space-y-4">
+                {items.map((item) => (
+                  <Card key={item.id} className="bg-card border-border hover:shadow-md transition-shadow">
+                    <CardContent className="p-4">
+                      <div className="flex items-start gap-4">
+                        <div className="relative group">
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="w-16 h-16 object-cover rounded-lg transition-transform group-hover:scale-105"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-black/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-start justify-between">
+                            <h3 className="font-semibold text-card-foreground mb-1 flex items-center">
+                              {getItemEmoji(item.name)} {item.name}
+                            </h3>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => removeItem(item.id)}
+                              className="text-destructive hover:text-destructive/80 hover:bg-destructive/10 -mt-1"
+                            >
+                              <X className="h-4 w-4" />
+                            </Button>
+                          </div>
+                          <p className="text-foreground font-bold mb-3">${(item.price * item.quantity).toFixed(2)}</p>
+                          
+                          {/* Quantity Controls */}
+                          <div className="flex items-center gap-3 mb-3">
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              className="h-8 w-8 p-0 border-border hover:bg-accent"
+                            >
+                              <Minus className="h-3 w-3" />
+                            </Button>
+                            <span className="mx-2 font-semibold min-w-[20px] text-center">{item.quantity}</span>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                              className="h-8 w-8 p-0 border-border hover:bg-accent"
+                            >
+                              <Plus className="h-3 w-3" />
+                            </Button>
+                          </div>
+
+                          {/* Notes */}
+                          <Textarea
+                            placeholder="Special notes (e.g., no onions, sauce on side)"
+                            value={item.notes || ""}
+                            onChange={(e) => updateNotes(item.id, e.target.value)}
+                            className="bg-background border-border text-sm resize-none"
+                            rows={2}
+                          />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 ))}
+
+                {/* Global Notes */}
+                <Card className="bg-card border-border">
+                  <CardContent className="p-4">
+                    <label className="block text-sm font-medium text-card-foreground mb-2 flex items-center">
+                      📝 Order Notes
+                    </label>
+                    <Textarea
+                      placeholder="Any special instructions for your entire order..."
+                      value={globalNotes}
+                      onChange={(e) => setGlobalNotes(e.target.value)}
+                      className="bg-background border-border"
+                      rows={3}
+                    />
+                  </CardContent>
+                </Card>
               </div>
             )}
-          </CardContent>
-          
-          {cartItems.length > 0 && (
-            <div className="border-t bg-white p-4 space-y-4">
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-semibold">Total:</span>
-                <span className="text-2xl font-bold text-gray-800">
-                  ${totalPrice.toFixed(2)}
-                </span>
+          </div>
+
+          {/* Footer */}
+          {items.length > 0 && (
+            <div className="border-t border-border p-6 bg-card">
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center justify-between text-muted-foreground">
+                  <span>💰 Subtotal:</span>
+                  <span>${totalPrice.toFixed(2)}</span>
+                </div>
+                <div className="flex items-center justify-between text-muted-foreground">
+                  <span>🚚 Delivery Fee:</span>
+                  <span>$3.00</span>
+                </div>
+                <div className="flex items-center justify-between text-xl font-bold text-foreground pt-2 border-t border-border">
+                  <span>💵 Total:</span>
+                  <span>${(totalPrice + 3).toFixed(2)}</span>
+                </div>
               </div>
-              
               <Button
-                onClick={onProceedToCheckout}
-                className="w-full bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 transition-all duration-300"
+                onClick={() => setShowCheckout(true)}
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 transition-all duration-300 hover:scale-[1.02]"
               >
+                <MessageCircle className="h-4 w-4 mr-2" />
                 Proceed to Checkout
               </Button>
             </div>
           )}
-        </Card>
+        </div>
       </div>
-    </div>
+
+      {/* Animation Component */}
+      <AnimatedCartItem
+        isVisible={!!animatedItem}
+        itemName={animatedItem || ""}
+        onAnimationComplete={() => setAnimatedItem(null)}
+      />
+    </>
   );
 };
