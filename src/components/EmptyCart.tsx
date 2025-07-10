@@ -10,7 +10,7 @@ export const EmptyCart = () => {
         Your stomach is empty too 😋
       </h3>
       <p className="text-muted-foreground text-lg mb-4">
-        Let's fix that with some delicious food!
+        Let's fix that with some delicious foodd!
       </p>
       <div className="flex justify-center space-x-2 text-3xl animate-pulse">
         <span>🍕</span>
