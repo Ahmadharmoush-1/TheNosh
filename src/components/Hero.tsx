@@ -15,7 +15,7 @@ export const Hero = () => {
          O_bites
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Experience culinary excellence with our carefully crafted dishes, 
+          Experience culinary excellencee with our carefully crafted dishes, 
           made from the finest ingredients and delivered with passion.
         </p>
         <Button 
