@@ -2,6 +2,7 @@ import { useState } from "react";
 import { VideoHero } from "@/components/VideoHero";
 import { Header } from "@/components/Header";
 import { CategoryButtons } from "@/components/CategoryButtons";
+import { FeaturesSection } from "@/components/FeatureSection";
 import { Menu } from "@/components/Menu";
 import { Cart } from "@/components/Cart";
 import { Footer } from "@/components/Footer";
@@ -29,7 +30,7 @@ const Index = () => {
 
   return (
     <CartProvider>
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-white text-black">
         <Header 
           onCartClick={handleCartClick} 
           onBackClick={selectedCategory ? handleBackToHome : undefined} 
@@ -40,9 +41,12 @@ const Index = () => {
         {selectedCategory ? (
           <Menu selectedCategory={selectedCategory} />
         ) : (
-          <div id="categories">
-            <CategoryButtons onCategoryClick={handleCategoryClick} />
-          </div>
+          <>
+            <div id="categories">
+              <CategoryButtons onCategoryClick={handleCategoryClick} />
+            </div>
+            <FeaturesSection />
+          </>
         )}
         
         <Footer />

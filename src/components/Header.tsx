@@ -27,7 +27,7 @@ export const Header = ({ onCartClick, onBackClick }: HeaderProps) => {
           <div className="flex items-center space-x-2">
             <MenuIcon className="h-6 w-6 text-foreground" />
             <h1 className="text-2xl font-bold text-foreground">
-                O_bites
+                The Dogfather
             </h1>
           </div>
         </div>
