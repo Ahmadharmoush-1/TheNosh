@@ -6,6 +6,7 @@ import { Plus, ArrowLeft } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { LazyImage } from "@/components/LazyImage";
 
 interface MenuItem {
   id: string;
@@ -329,11 +330,10 @@ const Store = () => {
           {filteredItems.map((item) => (
             <Card key={item.id} className="bg-white border-2 border-black hover:shadow-xl transition-all duration-300 group hover:scale-105">
               <div className="relative overflow-hidden rounded-t-lg">
-                <img
+                <LazyImage
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
+                  className="w-full h-48 group-hover:scale-105 transition-transform duration-300"
                 />
                 {item.popular && (
                   <Badge className="absolute top-4 left-4 bg-black text-white">

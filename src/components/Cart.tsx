@@ -7,6 +7,7 @@ import { useCart } from "@/context/CartContext";
 import { CheckoutForm } from "@/components/CheckoutForm";
 import { EmptyCart } from "@/components/EmptyCart";
 import { AnimatedCartItem } from "@/components/AnimatedCartItems";
+import { LazyImage } from "@/components/LazyImage";
 
 interface CartProps {
   isOpen: boolean;
@@ -127,11 +128,10 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                     <CardContent className="p-3 sm:p-4">
                       <div className="flex items-start gap-3 sm:gap-4">
                         <div className="relative group flex-shrink-0">
-                          <img
+                          <LazyImage
                             src={item.image}
                             alt={item.name}
-                            className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg transition-transform group-hover:scale-105"
-                            loading="lazy"
+                            className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg transition-transform group-hover:scale-105"
                           />
                           <div className="absolute inset-0 bg-black/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
                         </div>
