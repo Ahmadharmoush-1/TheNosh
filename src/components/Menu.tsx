@@ -22,16 +22,16 @@ const menuItems: MenuItem[] = [
     description: "Juicy beef patty with fresh vegetables",
     ingredients: ["Beef patty", "Lettuce", "Tomato", "Onion", "Special sauce", "Brioche bun"],
     price: 18,
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
+    image: "/photos/beefburger.png",
     category: "burgers"
   },
   {
     id: "b2",
-    name: "Chicken Deluxe Burger",
+    name: "Chicken Burger",
     description: "Grilled chicken breast with premium toppings",
     ingredients: ["Grilled chicken", "Avocado", "Bacon", "Ranch dressing", "Lettuce", "Tomato"],
     price: 16,
-    image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=500&q=80",
+    image: "/photos/Chicken Burger.png",
     category: "burgers"
   },
   {

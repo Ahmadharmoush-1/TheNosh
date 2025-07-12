@@ -32,7 +32,7 @@ export const VideoHero = () => {
           isVideoLoaded && !isMobile ? 'opacity-0' : 'opacity-100'
         }`}
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=1920&q=80')"
+          backgroundImage: "url('/photos/freshandhot.jpg')"
         }}
       ></div>
 
@@ -50,8 +50,8 @@ export const VideoHero = () => {
           onLoadedData={handleVideoLoad}
           onCanPlay={handleVideoLoad}
         >
-          <source src="https://videos.pexels.com/video-files/3298640/3298640-hd_1920_1080_25fps.mp4" type="video/mp4" />
-          <source src="https://videos.pexels.com/video-files/2620043/2620043-hd_1920_1080_30fps.mp4" type="video/mp4" />
+          <source src="\videos\welcomingvideo.mp4" type="video/mp4" />
+          <source src="\videos\welcomingvideo.mp4" type="video/mp4" />
         </video>
       )}
       
