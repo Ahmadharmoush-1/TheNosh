@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useCart } from "@/context/CartContext";
 import { CheckoutForm } from "@/components/CheckoutForm";
 import { EmptyCart } from "@/components/EmptyCart";
-import { AnimatedCartItem } from "@/components/AnimatedCartItem";
+import { AnimatedCartItem } from "@/components/AnimatedCartItems";
 
 interface CartProps {
   isOpen: boolean;
