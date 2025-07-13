@@ -25,8 +25,8 @@ export const CategoryButtons = ({ onCategoryClick }: CategoryButtonsProps) => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground animate-fade-in">
-            The Dogfather
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-primary animate-fade-in">
+            The Nosh
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in">
             Choose your favorite category and start ordering
@@ -38,7 +38,7 @@ export const CategoryButtons = ({ onCategoryClick }: CategoryButtonsProps) => {
             <Button
               key={category.id}
               onClick={() => onCategoryClick(category.id)}
-              className="h-28 flex flex-col items-center justify-center gap-2 bg-white hover:bg-gray-100 border-2 border-black text-black hover:text-black transition-all duration-300 hover:scale-105 hover:shadow-lg animate-scale-in"
+              className="h-28 flex flex-col items-center justify-center gap-2 bg-background hover:bg-accent border-2 border-accent text-primary hover:text-accent-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg animate-scale-in"
               variant="outline"
               style={{ animationDelay: `${index * 0.1}s` }}
             >

@@ -25,9 +25,9 @@ export const Header = ({ onCartClick, onBackClick }: HeaderProps) => {
             </Button>
           )}
           <div className="flex items-center space-x-2">
-            <MenuIcon className="h-6 w-6 text-foreground" />
-            <h1 className="text-2xl font-bold text-foreground">
-                The Dogfather
+            <MenuIcon className="h-6 w-6 text-primary" />
+            <h1 className="text-2xl font-bold text-primary">
+              The Nosh
             </h1>
           </div>
         </div>
@@ -36,11 +36,11 @@ export const Header = ({ onCartClick, onBackClick }: HeaderProps) => {
           onClick={onCartClick}
           variant="outline"
           size="sm"
-          className="relative border-border text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-200 hover:scale-105"
+          className="relative border-accent text-primary hover:bg-accent hover:text-accent-foreground transition-all duration-200 hover:scale-105"
         >
           <ShoppingCart className="h-4 w-4" />
           {itemCount > 0 && (
-            <span className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
+            <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
               {itemCount}
             </span>
           )}

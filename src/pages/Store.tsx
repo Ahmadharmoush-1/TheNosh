@@ -295,17 +295,17 @@ const Store = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black pt-20">
+    <div className="min-h-screen bg-background text-foreground pt-20">
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center gap-4 mb-8">
           <Link to="/">
-            <Button variant="outline" size="sm" className="border-black text-black hover:bg-black hover:text-white">
+            <Button variant="outline" size="sm" className="border-accent text-primary hover:bg-accent hover:text-accent-foreground">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
             </Button>
           </Link>
-          <h1 className="text-4xl font-bold text-black">
-            The Dogfather Store
+          <h1 className="text-4xl font-bold text-primary">
+            The Nosh Store
           </h1>
         </div>
 
@@ -317,8 +317,8 @@ const Store = () => {
               onClick={() => setSelectedCategory(category)}
               className={`${
                 selectedCategory === category
-                  ? "bg-black hover:bg-gray-800 text-white"
-                  : "border-black text-black hover:bg-black hover:text-white"
+                  ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                  : "border-accent text-primary hover:bg-accent hover:text-accent-foreground"
               }`}
             >
               {category}
@@ -328,7 +328,7 @@ const Store = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
-            <Card key={item.id} className="bg-white border-2 border-black hover:shadow-xl transition-all duration-300 group hover:scale-105">
+            <Card key={item.id} className="bg-card border-2 border-accent hover:shadow-xl transition-all duration-300 group hover:scale-105">
               <div className="relative overflow-hidden rounded-t-lg">
                 <LazyImage
                   src={item.image}
@@ -336,23 +336,23 @@ const Store = () => {
                   className="w-full h-48 group-hover:scale-105 transition-transform duration-300"
                 />
                 {item.popular && (
-                  <Badge className="absolute top-4 left-4 bg-black text-white">
+                  <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
                     Popular
                   </Badge>
                 )}
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-black">{item.name}</h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">{item.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-card-foreground">{item.name}</h3>
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{item.description}</p>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-black">
+                  <span className="text-2xl font-bold text-card-foreground">
                     ${item.price}
                   </span>
                   <Button
                     onClick={() => handleAddToCart(item)}
                     size="sm"
-                    className="bg-black hover:bg-gray-800 text-white"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground"
                   >
                     <Plus className="h-4 w-4 mr-1" />
                     Add
