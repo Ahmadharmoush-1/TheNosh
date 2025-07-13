@@ -38,7 +38,7 @@ export const CategoryButtons = ({ onCategoryClick }: CategoryButtonsProps) => {
             <Button
               key={category.id}
               onClick={() => onCategoryClick(category.id)}
-              className="h-28 flex flex-col items-center justify-center gap-2 bg-background hover:bg-accent border-2 border-accent text-primary hover:text-accent-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg animate-scale-in"
+              className="h-28 flex flex-col items-center justify-center gap-2 bg-background hover:bg-secondary border-2 border-secondary text-primary hover:text-primary transition-all duration-300 hover:scale-105 hover:shadow-lg animate-scale-in"
               variant="outline"
               style={{ animationDelay: `${index * 0.1}s` }}
             >

@@ -22,16 +22,16 @@ const menuItems: MenuItem[] = [
     description: "Juicy beef patty with fresh vegetables",
     ingredients: ["Beef patty", "Lettuce", "Tomato", "Onion", "Special sauce", "Brioche bun"],
     price: 18,
-    image: "/photos/beefburger.png",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
     category: "burgers"
   },
   {
     id: "b2",
-    name: "Chicken Burger",
+    name: "Chicken Deluxe Burger",
     description: "Grilled chicken breast with premium toppings",
     ingredients: ["Grilled chicken", "Avocado", "Bacon", "Ranch dressing", "Lettuce", "Tomato"],
     price: 16,
-    image: "/photos/Chicken Burger.png",
+    image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=500&q=80",
     category: "burgers"
   },
   {
@@ -339,20 +339,20 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-black">
+          <h2 className="text-4xl font-bold mb-4 text-primary">
             {categoryName}
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-muted-foreground text-lg">
             Choose from our delicious {categoryName.toLowerCase()}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
-            <Card key={item.id} className="bg-white border-2 border-black hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Card key={item.id} className="bg-card border-2 border-secondary hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
                   src={item.image}
@@ -362,16 +362,16 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-black">{item.name}</h3>
-                <p className="text-gray-600 mb-3 text-sm">{item.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-card-foreground">{item.name}</h3>
+                <p className="text-muted-foreground mb-3 text-sm">{item.description}</p>
                 
                 <div className="mb-4">
-                  <h4 className="font-semibold text-black mb-2 text-sm">Ingredients:</h4>
+                  <h4 className="font-semibold text-card-foreground mb-2 text-sm">Ingredients:</h4>
                   <div className="flex flex-wrap gap-1">
                     {item.ingredients.map((ingredient, index) => (
                       <span
                         key={index}
-                        className="bg-gray-100 text-black text-xs px-2 py-1 rounded-full border border-gray-300"
+                        className="bg-muted text-primary text-xs px-2 py-1 rounded-full border border-secondary"
                       >
                         {ingredient}
                       </span>
@@ -380,13 +380,13 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-black">
+                  <span className="text-2xl font-bold text-card-foreground">
                     ${item.price}
                   </span>
                   <Button
                     onClick={() => handleAddToCart(item)}
                     size="sm"
-                    className="bg-black text-white hover:bg-gray-800 transition-colors duration-200"
+                    className="bg-secondary hover:bg-secondary/90 text-primary border border-secondary transition-colors duration-200"
                   >
                     <Plus className="h-4 w-4 mr-1" />
                     Add to Cart
