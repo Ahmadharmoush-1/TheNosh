@@ -10,10 +10,11 @@ export const CategoryButtons = ({ onCategoryClick }: CategoryButtonsProps) => {
     { name: "Sandwiches", emoji: "🌯", id: "wraps" },
     { name: "Breakfast", emoji: "🍳", id: "breakfast" },
     { name: "Salads", emoji: "🥗", id: "salads" },
+    { name: "Appetizers", emoji: "🥨", id: "appetizers" },
     { name: "Burgers", emoji: "🍔", id: "burgers" },
     // { name: "Pizza", emoji: "🍕", id: "pizza" },
     
-    { name: "Appetizers", emoji: "🥨", id: "appetizers" },
+    
     { name: "Fries", emoji: "🍟", id: "fries" },
     // { name: "Hotdogs", emoji: "🌭", id: "hotdogs" },
     

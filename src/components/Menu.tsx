@@ -15,6 +15,132 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
+  // Plates
+ {
+  id: "sw1",
+  name: "The Chicken Plate",
+  description: "Tender grilled chicken served with seasoned rice and veggies.",
+  ingredients: ["Grilled chicken", "Seasoned rice", "Vegetables", "Herb sauce"],
+  price: 8,
+  image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
+  category: "plates"
+},
+{
+  id: "sw2",
+  name: "The Duck Plate",
+  description: "Crispy roasted duck breast with a tangy orange glaze.",
+  ingredients: ["Roasted duck", "Orange glaze", "Mashed potatoes", "Greens"],
+  price: 9,
+  image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=500&q=80",
+  category: "plates"
+},
+{
+  id: "sw3",
+  name: "The Salmon Plate",
+  description: "Pan-seared salmon fillet served with lemon butter and asparagus.",
+  ingredients: ["Salmon fillet", "Lemon butter", "Asparagus", "Herbs"],
+  price: 8,
+  image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
+  category: "plates"
+},
+{
+  id: "sw4",
+  name: "The Steak Plate",
+  description: "Juicy grilled steak with garlic butter and roasted potatoes.",
+  ingredients: ["Grilled steak", "Garlic butter", "Roasted potatoes", "Gravy"],
+  price: 9,
+  image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=500&q=80",
+  category: "plates"
+},
+// Wraps
+  {
+    id: "w1",
+    name: "Chicken Caesar Wrap",
+    description: "Grilled chicken with Caesar dressing in a tortilla",
+    ingredients: ["Grilled chicken", "Romaine lettuce", "Caesar dressing", "Parmesan", "Tortilla wrap"],
+    price: 14,
+    image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=500&q=80",
+    category: "wraps"
+  },
+  {
+    id: "w2",
+    name: "Buffalo Chicken Wrap",
+    description: "Spicy buffalo chicken with ranch and vegetables",
+    ingredients: ["Buffalo chicken", "Ranch dressing", "Lettuce", "Tomato", "Celery", "Tortilla wrap"],
+    price: 15,
+    image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
+    category: "wraps"
+  },
+  // Breakfast
+  {
+    id: "h1",
+    name: "Classic Hotdog",
+    description: "All-beef hotdog with traditional toppings",
+    ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
+    price: 12,
+    image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+    category: "hotdogs"
+  },
+  // Salads
+  {
+    id: "s1",
+    name: "TheNosh Salad",
+    description: "Fresh romaine lettuce with classic Caesar dressing",
+    ingredients: ["Mix Greens", "BlueBerry", "Strawberry", "Mango , Mushrooms", "Berries , Avocado","Tapped Parmesan"],
+    price: 12,
+    image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=500&q=80",
+    category: "salads"
+  },
+  {
+    id: "s2",
+    name: "Watermellon Holloumi Salad",
+    description: "Fresh vegetables with feta cheese and olives",
+    ingredients: ["Avocado", "Berries", "Mix Greens", "Mushrooms", "Watermellon", "Halloumi Cheese"],
+    price: 13,
+    image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=500&q=80",
+    category: "salads"
+  },
+   // Appetizers
+  {
+    id: "a1",
+    name: "Shrimp on a Sricl",
+    description: "Crispy breaded mozzarella with marinara sauce",
+    ingredients: ["Mozzarella cheese", "Breadcrumbs", "Marinara sauce", "Italian herbs"],
+    price: 8,
+    image: "https://images.unsplash.com/photo-1548340748-6d2b7d7da280?auto=format&fit=crop&w=500&q=80",
+    category: "appetizers"
+  },
+  {
+    id: "a2",
+    name: "The Mysterious Nosh",
+    description: "Spicy chicken wings with blue cheese dip",
+    ingredients: ["Chicken wings", "Buffalo sauce", "Celery", "Blue cheese dressing"],
+    price: 20,
+    image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
+    category: "appetizers"
+  }, {
+    id: "a3",
+    name: "Baby Potato",
+    description: "Spicy chicken wings with blue cheese dip",
+    ingredients: ["Chicken wings", "Buffalo sauce", "Celery", "Blue cheese dressing"],
+    price: 6,
+    image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
+    category: "appetizers"
+  },
+  
+  {
+    id: "a4",
+    name: "Sashimi Plate",
+    description: "Spicy chicken wings with blue cheese dip",
+    ingredients: ["Chicken wings", "Buffalo sauce", "Celery", "Blue cheese dressing"],
+    price: 15,
+    image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
+    category: "appetizers"
+  },
+
+
+  
+
   // Burgers
   {
     id: "b1",
@@ -44,34 +170,34 @@ const menuItems: MenuItem[] = [
     category: "burgers"
   },
 
-  // Pizza
-  {
-    id: "p1",
-    name: "Margherita Pizza",
-    description: "Classic Italian pizza with fresh ingredients",
-    ingredients: ["Fresh mozzarella", "Tomato sauce", "Fresh basil", "Olive oil", "Thin crust"],
-    price: 22,
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=500&q=80",
-    category: "pizza"
-  },
-  {
-    id: "p2",
-    name: "Pepperoni Supreme",
-    description: "Classic pepperoni with extra cheese",
-    ingredients: ["Pepperoni", "Mozzarella", "Tomato sauce", "Italian herbs", "Parmesan"],
-    price: 25,
-    image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80",
-    category: "pizza"
-  },
-  {
-    id: "p3",
-    name: "Quattro Stagioni",
-    description: "Four seasons pizza with diverse toppings",
-    ingredients: ["Mushrooms", "Artichokes", "Ham", "Olives", "Mozzarella", "Tomato base"],
-    price: 28,
-    image: "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=500&q=80",
-    category: "pizza"
-  },
+  // // Pizza
+  // {
+  //   id: "p1",
+  //   name: "Margherita Pizza",
+  //   description: "Classic Italian pizza with fresh ingredients",
+  //   ingredients: ["Fresh mozzarella", "Tomato sauce", "Fresh basil", "Olive oil", "Thin crust"],
+  //   price: 22,
+  //   image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=500&q=80",
+  //   category: "pizza"
+  // },
+  // {
+  //   id: "p2",
+  //   name: "Pepperoni Supreme",
+  //   description: "Classic pepperoni with extra cheese",
+  //   ingredients: ["Pepperoni", "Mozzarella", "Tomato sauce", "Italian herbs", "Parmesan"],
+  //   price: 25,
+  //   image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80",
+  //   category: "pizza"
+  // },
+  // {
+  //   id: "p3",
+  //   name: "Quattro Stagioni",
+  //   description: "Four seasons pizza with diverse toppings",
+  //   ingredients: ["Mushrooms", "Artichokes", "Ham", "Olives", "Mozzarella", "Tomato base"],
+  //   price: 28,
+  //   image: "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=500&q=80",
+  //   category: "pizza"
+  // },
 
   // Fries
   {
@@ -131,185 +257,95 @@ const menuItems: MenuItem[] = [
     category: "drinks"
   },
 
-  // Hotdogs
-  {
-    id: "h1",
-    name: "Classic Hotdog",
-    description: "All-beef hotdog with traditional toppings",
-    ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
-    price: 12,
-    image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
-    category: "hotdogs"
-  },
-  {
-    id: "h2",
-    name: "Chili Cheese Dog",
-    description: "Hotdog topped with chili and melted cheese",
-    ingredients: ["Beef hotdog", "Chili con carne", "Cheddar cheese", "Sour cream", "Chives"],
-    price: 15,
-    image: "https://images.unsplash.com/photo-1612392062422-ef19b42f3c24?auto=format&fit=crop&w=500&q=80",
-    category: "hotdogs"
-  },
+  
 
-  // Wraps
-  {
-    id: "w1",
-    name: "Chicken Caesar Wrap",
-    description: "Grilled chicken with Caesar dressing in a tortilla",
-    ingredients: ["Grilled chicken", "Romaine lettuce", "Caesar dressing", "Parmesan", "Tortilla wrap"],
-    price: 14,
-    image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=500&q=80",
-    category: "wraps"
-  },
-  {
-    id: "w2",
-    name: "Buffalo Chicken Wrap",
-    description: "Spicy buffalo chicken with ranch and vegetables",
-    ingredients: ["Buffalo chicken", "Ranch dressing", "Lettuce", "Tomato", "Celery", "Tortilla wrap"],
-    price: 15,
-    image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
-    category: "wraps"
-  },
+  
 
-  // Baked Potato
-  {
-    id: "bp1",
-    name: "Loaded Baked Potato",
-    description: "Fluffy baked potato with all the fixings",
-    ingredients: ["Large potato", "Butter", "Sour cream", "Cheddar cheese", "Bacon bits", "Chives"],
-    price: 11,
-    image: "https://images.unsplash.com/photo-1518013431117-eb1465fa5752?auto=format&fit=crop&w=500&q=80",
-    category: "baked-potato"
-  },
-  {
-    id: "bp2",
-    name: "Chili Cheese Potato",
-    description: "Baked potato topped with chili and cheese",
-    ingredients: ["Large potato", "Chili con carne", "Cheddar cheese", "Sour cream", "Green onions"],
-    price: 13,
-    image: "https://images.unsplash.com/photo-1553978297-833d09932d89?auto=format&fit=crop&w=500&q=80",
-    category: "baked-potato"
-  },
+  // // Baked Potato
+  // {
+  //   id: "bp1",
+  //   name: "Loaded Baked Potato",
+  //   description: "Fluffy baked potato with all the fixings",
+  //   ingredients: ["Large potato", "Butter", "Sour cream", "Cheddar cheese", "Bacon bits", "Chives"],
+  //   price: 11,
+  //   image: "https://images.unsplash.com/photo-1518013431117-eb1465fa5752?auto=format&fit=crop&w=500&q=80",
+  //   category: "baked-potato"
+  // },
+  // {
+  //   id: "bp2",
+  //   name: "Chili Cheese Potato",
+  //   description: "Baked potato topped with chili and cheese",
+  //   ingredients: ["Large potato", "Chili con carne", "Cheddar cheese", "Sour cream", "Green onions"],
+  //   price: 13,
+  //   image: "https://images.unsplash.com/photo-1553978297-833d09932d89?auto=format&fit=crop&w=500&q=80",
+  //   category: "baked-potato"
+  // },
 
-  // Salads
-  {
-    id: "s1",
-    name: "Caesar Salad",
-    description: "Fresh romaine lettuce with classic Caesar dressing",
-    ingredients: ["Romaine lettuce", "Caesar dressing", "Parmesan cheese", "Croutons", "Anchovies"],
-    price: 12,
-    image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=500&q=80",
-    category: "salads"
-  },
-  {
-    id: "s2",
-    name: "Greek Salad",
-    description: "Fresh vegetables with feta cheese and olives",
-    ingredients: ["Mixed greens", "Feta cheese", "Olives", "Tomatoes", "Cucumbers", "Red onion"],
-    price: 13,
-    image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=500&q=80",
-    category: "salads"
-  },
+  
+ 
+ 
+ 
+  
 
-  // Appetizers
-  {
-    id: "a1",
-    name: "Mozzarella Sticks",
-    description: "Crispy breaded mozzarella with marinara sauce",
-    ingredients: ["Mozzarella cheese", "Breadcrumbs", "Marinara sauce", "Italian herbs"],
-    price: 9,
-    image: "https://images.unsplash.com/photo-1548340748-6d2b7d7da280?auto=format&fit=crop&w=500&q=80",
-    category: "appetizers"
-  },
-  {
-    id: "a2",
-    name: "Buffalo Wings",
-    description: "Spicy chicken wings with blue cheese dip",
-    ingredients: ["Chicken wings", "Buffalo sauce", "Celery", "Blue cheese dressing"],
-    price: 11,
-    image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
-    category: "appetizers"
-  },
+  // // Soft Drinks
+  // {
+  //   id: "sd1",
+  //   name: "Classic Coca Cola",
+  //   description: "Ice-cold Coca Cola served in a glass",
+  //   ingredients: ["Coca Cola", "Ice", "Lemon slice"],
+  //   price: 4,
+  //   image: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=500&q=80",
+  //   category: "soft-drinks"
+  // },
+  // {
+  //   id: "sd2",
+  //   name: "Fresh Orange Juice",
+  //   description: "Freshly squeezed orange juice",
+  //   ingredients: ["Fresh oranges", "Ice", "Mint garnish"],
+  //   price: 5,
+  //   image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80",
+  //   category: "soft-drinks"
+  // },
 
-  // Sweets
-  {
-    id: "sw1",
-    name: "Chocolate Brownie",
-    description: "Rich chocolate brownie with vanilla ice cream",
-    ingredients: ["Chocolate brownie", "Vanilla ice cream", "Chocolate sauce", "Whipped cream"],
-    price: 8,
-    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
-    category: "sweets"
-  },
-  {
-    id: "sw2",
-    name: "Cheesecake Slice",
-    description: "Creamy New York style cheesecake",
-    ingredients: ["Cream cheese", "Graham cracker crust", "Berry compote", "Whipped cream"],
-    price: 9,
-    image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=500&q=80",
-    category: "sweets"
-  },
+  // // Alcohol
+  // {
+  //   id: "al1",
+  //   name: "Craft Beer",
+  //   description: "Local craft beer selection",
+  //   ingredients: ["Premium hops", "Malt", "Yeast", "Served chilled"],
+  //   price: 8,
+  //   image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=500&q=80",
+  //   category: "alcohol"
+  // },
+  // {
+  //   id: "al2",
+  //   name: "House Wine",
+  //   description: "Selected red or white wine",
+  //   ingredients: ["Premium grapes", "Aged to perfection", "Served in wine glass"],
+  //   price: 12,
+  //   image: "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=500&q=80",
+  //   category: "alcohol"
+  // },
 
-  // Soft Drinks
-  {
-    id: "sd1",
-    name: "Classic Coca Cola",
-    description: "Ice-cold Coca Cola served in a glass",
-    ingredients: ["Coca Cola", "Ice", "Lemon slice"],
-    price: 4,
-    image: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=500&q=80",
-    category: "soft-drinks"
-  },
-  {
-    id: "sd2",
-    name: "Fresh Orange Juice",
-    description: "Freshly squeezed orange juice",
-    ingredients: ["Fresh oranges", "Ice", "Mint garnish"],
-    price: 5,
-    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80",
-    category: "soft-drinks"
-  },
-
-  // Alcohol
-  {
-    id: "al1",
-    name: "Craft Beer",
-    description: "Local craft beer selection",
-    ingredients: ["Premium hops", "Malt", "Yeast", "Served chilled"],
-    price: 8,
-    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=500&q=80",
-    category: "alcohol"
-  },
-  {
-    id: "al2",
-    name: "House Wine",
-    description: "Selected red or white wine",
-    ingredients: ["Premium grapes", "Aged to perfection", "Served in wine glass"],
-    price: 12,
-    image: "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=500&q=80",
-    category: "alcohol"
-  },
-
-  // Hookah
-  {
-    id: "hk1",
-    name: "Apple Mint Hookah",
-    description: "Refreshing apple mint flavor hookah session",
-    ingredients: ["Apple mint tobacco", "Natural charcoal", "Fresh fruits", "Ice base"],
-    price: 25,
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=500&q=80",
-    category: "hookah"
-  },
-  {
-    id: "hk2",
-    name: "Mixed Berry Hookah",
-    description: "Sweet mixed berry flavor for relaxation",
-    ingredients: ["Mixed berry tobacco", "Premium charcoal", "Berry garnish", "Filtered water"],
-    price: 28,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80",
-    category: "hookah"
-  },
+  // // Hookah
+  // {
+  //   id: "hk1",
+  //   name: "Apple Mint Hookah",
+  //   description: "Refreshing apple mint flavor hookah session",
+  //   ingredients: ["Apple mint tobacco", "Natural charcoal", "Fresh fruits", "Ice base"],
+  //   price: 25,
+  //   image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=500&q=80",
+  //   category: "hookah"
+  // },
+  // {
+  //   id: "hk2",
+  //   name: "Mixed Berry Hookah",
+  //   description: "Sweet mixed berry flavor for relaxation",
+  //   ingredients: ["Mixed berry tobacco", "Premium charcoal", "Berry garnish", "Filtered water"],
+  //   price: 28,
+  //   image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80",
+  //   category: "hookah"
+  // },
   
 ];
 
