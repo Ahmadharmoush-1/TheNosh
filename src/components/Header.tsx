@@ -2,6 +2,9 @@ import { ShoppingCart, Menu as MenuIcon, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 
+// Make sure the logo is imported or served correctly
+import logo from "@/assets/logo.png"; // adjust path if needed
+
 interface HeaderProps {
   onCartClick: () => void;
   onBackClick?: () => void;
@@ -26,9 +29,13 @@ export const Header = ({ onCartClick, onBackClick }: HeaderProps) => {
           )}
           <div className="flex items-center space-x-2">
             <MenuIcon className="h-6 w-6 text-primary" />
-            <h1 className="text-2xl font-bold text-primary">
-              The Nosh
-            </h1>
+            <img
+              src="\photos\logo.png"
+              alt="The Nosh Logo"
+              className="h-14 w-14 rounded-full object-cover"
+            />
+            <h1 className="text-sm font-bold text-primary">Eat real, be real!
+</h1>
           </div>
         </div>
 
