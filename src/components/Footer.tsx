@@ -29,15 +29,15 @@ export const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Instagram 
-                className="h-5 w-5 text-accent hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
+                className="h-5 w-5 text-[#1E1A4B] hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
                 onClick={handleInstagramClick}
               />
               <Facebook 
-                className="h-5 w-5 text-accent hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
+                className="h-5 w-5 text-[#1E1A4B] hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
                 onClick={handleFacebookClick}
               />
               <Twitter 
-                className="h-5 w-5 text-accent hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
+                className="h-5 w-5 text-[#1E1A4B] hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
                 onClick={handleTwitterClick}
               />
             </div>
@@ -47,15 +47,15 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold text-primary-foreground mb-4">Contact Info</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-primary-foreground/80">
-                <MapPin className="h-4 w-4 text-accent" />
+                <MapPin className="h-4 w-4 text-[#1E1A4B]" />
                 <span>Center ville , street 1, Baïssoûr, Mont-Liban, Lebanon</span>
               </div>
               <div className="flex items-center gap-3 text-primary-foreground/80">
-                <Phone className="h-4 w-4 text-accent" />
+                <Phone className="h-4 w-4 text-[#1E1A4B]" />
                 <span>+961 76 054 688</span>
               </div>
               <div className="flex items-center gap-3 text-primary-foreground/80">
-                <Clock className="h-4 w-4 text-accent" />
+                <Clock className="h-4 w-4 text-[#1E1A4B]" />
                 <span>Daily: 2:00 PM - 11:30 PM</span>
               </div>
             </div>

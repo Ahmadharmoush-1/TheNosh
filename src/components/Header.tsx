@@ -28,14 +28,14 @@ export const Header = ({ onCartClick, onBackClick }: HeaderProps) => {
             </Button>
           )}
           <div className="flex items-center space-x-2">
-            <MenuIcon className="h-6 w-6 text-primary" />
+            {/* <MenuIcon className="h-6 w-6 text-primary" /> */}
             <img
               src="\photos\logo.png"
               alt="The Nosh Logo"
               className="h-14 w-14 rounded-full object-cover"
             />
-            <h1 className="text-sm font-bold text-primary">Eat real, be real!
-</h1>
+      <h1 className="text-sm font-bold italic text-primary">Eat real, be real!</h1>
+
           </div>
         </div>
 
