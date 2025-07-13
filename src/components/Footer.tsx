@@ -29,15 +29,15 @@ export const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <Instagram 
-                className="h-5 w-5 text-[#1E1A4B] hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
-                onClick={handleInstagramClick}
+               className="h-5 w-5 text-white hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
+              onClick={handleInstagramClick}
               />
               <Facebook 
-                className="h-5 w-5 text-[#1E1A4B] hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
+                className="h-5 w-5 text-white hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
                 onClick={handleFacebookClick}
               />
               <Twitter 
-                className="h-5 w-5 text-[#1E1A4B] hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
+                className="h-5 w-5 text-white hover:text-primary-foreground cursor-pointer transition-colors hover:scale-110" 
                 onClick={handleTwitterClick}
               />
             </div>
