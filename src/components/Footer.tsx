@@ -48,15 +48,15 @@ export const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-primary-foreground/80">
                 <MapPin className="h-4 w-4 text-accent" />
-                <span>123 Culinary Street, Food District</span>
+                <span>Center ville , street 1, Baïssoûr, Mont-Liban, Lebanon</span>
               </div>
               <div className="flex items-center gap-3 text-primary-foreground/80">
                 <Phone className="h-4 w-4 text-accent" />
-                <span>+961 76 534 652</span>
+                <span>+961 76 054 688</span>
               </div>
               <div className="flex items-center gap-3 text-primary-foreground/80">
                 <Clock className="h-4 w-4 text-accent" />
-                <span>Daily: 6:00 PM - 11:00 PM</span>
+                <span>Daily: 2:00 PM - 11:30 PM</span>
               </div>
             </div>
           </div>

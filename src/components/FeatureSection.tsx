@@ -7,7 +7,7 @@ const features = [{
 }, {
   icon: Clock,
   title: "Fast Delivery",
-  description: "Hot food delivered to your door in 30 minutes or less"
+  description: "Hot food delivered to your door in 20 minutes or less"
 }, {
   icon: Star,
   title: "Premium Quality",
