@@ -60,7 +60,7 @@ export const FeaturesSection = () => {
               <div className="text-sm font-semibold text-center leading-tight mb-4">
                 <feature.icon className="h-8 w-8 text-[#1E1A4B]" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-black">{feature.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-[#1E1A4B]">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
