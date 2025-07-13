@@ -1,4 +1,4 @@
-import { Clock, Heart, Star, Truck } from "lucide-react";
+import { Clock, Heart, Leaf, Star, Truck } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const features = [
@@ -18,10 +18,11 @@ const features = [
     description: "We never compromise on quality and freshness",
   },
   {
-    icon: Truck,
-    title: "Free Delivery",
-    description: "Free delivery on orders over $25 in our delivery area",
-  },
+  icon: Leaf, 
+  title: "Fresh Ingredients",
+  description: "Hand-picked, farm-fresh ingredients delivered to your door",
+}
+,
 ];
 
 export const FeaturesSection = () => {
