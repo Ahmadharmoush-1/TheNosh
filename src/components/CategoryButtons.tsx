@@ -6,21 +6,26 @@ interface CategoryButtonsProps {
 
 export const CategoryButtons = ({ onCategoryClick }: CategoryButtonsProps) => {
   const categories = [
+    { name: "Plates", emoji: "🍽️", id: "plates" },
+    { name: "Sandwiches", emoji: "🌯", id: "wraps" },
+    { name: "Breakfast", emoji: "🍳", id: "breakfast" },
+    { name: "Salads", emoji: "🥗", id: "salads" },
     { name: "Burgers", emoji: "🍔", id: "burgers" },
     // { name: "Pizza", emoji: "🍕", id: "pizza" },
     
     { name: "Appetizers", emoji: "🥨", id: "appetizers" },
     { name: "Fries", emoji: "🍟", id: "fries" },
     // { name: "Hotdogs", emoji: "🌭", id: "hotdogs" },
-    { name: "Sandwiches", emoji: "🌯", id: "wraps" },
+    
     // { name: "Baked Potato", emoji: "🥔", id: "baked-potato" },
-    { name: "Salads", emoji: "🥗", id: "salads" },
+   
   
     { name: "Drinks", emoji: "🥤", id: "drinks" },
     // { name: "Sweets", emoji: "🍰", id: "sweets" },
-    { name: "Soft Drinks", emoji: "🥤", id: "soft-drinks" },
-    { name: "Alcohol", emoji: "🍺", id: "alcohol" },
-    // { name: "Hookah", emoji: "💨", id: "hookah" }
+    
+
+   { name: "Catering", emoji: "💨", id: "catering" }
+     
   ];
 
   return (

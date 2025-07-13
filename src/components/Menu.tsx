@@ -309,7 +309,8 @@ const menuItems: MenuItem[] = [
     price: 28,
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80",
     category: "hookah"
-  }
+  },
+  
 ];
 
 interface MenuProps {

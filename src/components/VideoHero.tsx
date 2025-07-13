@@ -19,10 +19,10 @@ export const VideoHero = () => {
         className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-500 ${
           isVideoLoaded ? "opacity-0" : "opacity-100"
         }`}
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=1920&q=80')",
-        }}
+        // style={{
+        //   backgroundImage:
+        //     "url('https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=1920&q=80')",
+        // }}
       ></div>
 
       {/* Video loads on all devices */}
@@ -55,14 +55,25 @@ export const VideoHero = () => {
           Experience culinary excellence with our carefully crafted dishes,
           made from the finest ingredients and delivered with passion.
         </p>
-        <Button
-          onClick={scrollToCategories}
-          size="lg"
-          className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-3 text-lg transition-all duration-300 hover:scale-105 animate-slide-up hover-lift"
-          style={{ animationDelay: "0.4s" }}
-        >
-          Explore Our Menu
-        </Button>
+       <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button 
+            onClick={scrollToCategories}
+            size="lg" 
+            className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-3 text-lg transition-all duration-300 hover:scale-105 animate-slide-up hover-lift"
+            style={{ animationDelay: '0.4s' }}
+          >
+            Explore Our Menu
+          </Button>
+          <Button 
+            onClick={() => window.location.href = '/catering'}
+            size="lg" 
+            variant="outline"
+            className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-3 text-lg transition-all duration-300 hover:scale-105 animate-slide-up hover-lift"
+            style={{ animationDelay: '0.4s' }}
+          >
+            Catering Services
+          </Button>
+        </div>
       </div>
     </section>
   );

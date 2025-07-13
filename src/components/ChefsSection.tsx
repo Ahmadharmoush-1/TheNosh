@@ -1,0 +1,167 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Star, Calendar, Users } from "lucide-react";
+import { useCart } from "@/context/CartContext";
+import { useToast } from "@/hooks/use-toast";
+
+interface Chef {
+  id: string;
+  name: string;
+  experience: string;
+  description: string;
+  price: number;
+  image: string;
+  rating: number;
+  eventsServed: number;
+  specialties: string[];
+}
+
+const chefs: Chef[] = [
+  {
+    id: "chef1",
+    name: "Chef Marco Italiano",
+    experience: "15 Years Experience",
+    description: "Master of Italian cuisine and pasta making. Specializes in authentic regional dishes.",
+    price: 250,
+    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=400&q=80",
+    rating: 4.9,
+    eventsServed: 150,
+    specialties: ["Italian Cuisine", "Pasta Making", "Wine Pairing"]
+  },
+  {
+    id: "chef2",
+    name: "Chef Sofia Gourmet",
+    experience: "12 Years Experience",
+    description: "French culinary expert with a modern twist. Creates elegant and sophisticated dishes.",
+    price: 220,
+    image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=400&q=80",
+    rating: 4.8,
+    eventsServed: 125,
+    specialties: ["French Cuisine", "Pastry", "Fine Dining"]
+  },
+  {
+    id: "chef3",
+    name: "Chef Ahmad Spice",
+    experience: "18 Years Experience",
+    description: "Middle Eastern and Mediterranean cuisine specialist. Expert in aromatic spices and grilling.",
+    price: 200,
+    image: "https://images.unsplash.com/photo-1501286353178-1ec881214838?auto=format&fit=crop&w=400&q=80",
+    rating: 4.7,
+    eventsServed: 200,
+    specialties: ["Middle Eastern", "BBQ & Grilling", "Spice Blending"]
+  },
+  {
+    id: "chef4",
+    name: "Chef Isabella Fusion",
+    experience: "10 Years Experience",
+    description: "Creative fusion chef combining Asian and Western flavors for unique culinary experiences.",
+    price: 180,
+    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=400&q=80",
+    rating: 4.6,
+    eventsServed: 90,
+    specialties: ["Asian Fusion", "Creative Cooking", "Presentation"]
+  }
+];
+
+export const ChefsSection = () => {
+  const { addChef } = useCart();
+  const { toast } = useToast();
+
+  const handleBookChef = (chef: Chef) => {
+    addChef({
+      id: chef.id,
+      name: chef.name,
+      price: chef.price,
+      image: chef.image,
+      experience: chef.experience,
+      description: chef.description
+    });
+    
+    toast({
+      title: "Chef booked!",
+      description: `${chef.name} has been added to your cart for a private session.`,
+    });
+  };
+
+  return (
+    <section className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4 text-primary">
+            👨‍🍳 Meet The Chefs
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Book your favorite chef for a private catering experience or one-on-one cooking session.
+            Our chefs aren't just cooks – they're artists ready to make your event unforgettable.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+          {chefs.map((chef) => (
+            <Card key={chef.id} className="bg-card border-2 border-secondary hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img
+                  src={chef.image}
+                  alt={chef.name}
+                  className="w-full h-48 object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center space-x-1">
+                  <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                  <span className="text-xs font-semibold">{chef.rating}</span>
+                </div>
+              </div>
+              
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-1 text-card-foreground">{chef.name}</h3>
+                <p className="text-accent text-sm font-medium mb-3">{chef.experience}</p>
+                
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                  {chef.description}
+                </p>
+                
+                <div className="mb-4">
+                  <h4 className="font-semibold text-card-foreground mb-2 text-sm">Specialties:</h4>
+                  <div className="flex flex-wrap gap-1">
+                    {chef.specialties.map((specialty, index) => (
+                      <span
+                        key={index}
+                        className="bg-muted text-primary text-xs px-2 py-1 rounded-full border border-secondary"
+                      >
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between mb-4 text-xs text-muted-foreground">
+                  <div className="flex items-center space-x-1">
+                    <Calendar className="h-3 w-3" />
+                    <span>{chef.eventsServed} events</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <Users className="h-3 w-3" />
+                    <span>Private sessions</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold text-card-foreground">
+                    ${chef.price}/session
+                  </span>
+                  <Button
+                    onClick={() => handleBookChef(chef)}
+                    size="sm"
+                    className="bg-secondary hover:bg-secondary/90 text-primary border border-secondary transition-colors duration-200"
+                  >
+                    Book Now
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};

@@ -12,7 +12,9 @@ interface MenuItem {
   id: string;
   name: string;
   description: string;
-  price: number;
+  price?: number;
+  pricePerPiece?: number;
+  minOrder?: number;
   image: string;
   category: string;
   popular?: boolean;
@@ -267,6 +269,60 @@ const menuItems: MenuItem[] = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80",
     category: "Hookah",
     popular: true
+  },
+  {
+    id: "c1",
+    name: "Gourmet Sandwich Platter",
+    description: "Assorted premium sandwiches perfect for business meetings",
+    pricePerPiece: 12,
+    image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=500&q=80",
+    category: "platters",
+    minOrder: 10
+  },
+  {
+    id: "c2",
+    name: "Mini Burger Sliders",
+    description: "Bite-sized burgers with premium toppings",
+    pricePerPiece: 8,
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
+    category: "appetizers",
+    minOrder: 20
+  },
+  {
+    id: "c3",
+    name: "Artisan Pizza Slices",
+    description: "Freshly baked pizza slices with gourmet toppings",
+    pricePerPiece: 6,
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=500&q=80",
+    category: "mains",
+    minOrder: 15
+  },
+  {
+    id: "c4",
+    name: "Gourmet Salad Bowls",
+    description: "Fresh salad bowls with premium ingredients",
+    pricePerPiece: 10,
+    image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=500&q=80",
+    category: "healthy",
+    minOrder: 10
+  },
+  {
+    id: "c5",
+    name: "Stuffed Mushroom Caps",
+    description: "Elegant appetizers filled with herbs and cheese",
+    pricePerPiece: 5,
+    image: "https://images.unsplash.com/photo-1548340748-6d2b7d7da280?auto=format&fit=crop&w=500&q=80",
+    category: "appetizers",
+    minOrder: 25
+  },
+  {
+    id: "c6",
+    name: "Chocolate Dessert Cups",
+    description: "Individual chocolate desserts for sweet endings",
+    pricePerPiece: 7,
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
+    category: "desserts",
+    minOrder: 12
   }
 ];
 
