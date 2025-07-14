@@ -1,32 +1,32 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { useRef, useEffect, useState } from "react";
+
 
 export const VideoHero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay failed; handle if needed
+      });
+    }
+  }, []);
 
   const scrollToCategories = () => {
     document.getElementById("categories")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleVideoLoad = () => {
-    setIsVideoLoaded(true);
-  };
-
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Fallback background image while video loads */}
       <div
         className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-500 ${
           isVideoLoaded ? "opacity-0" : "opacity-100"
         }`}
-        // style={{
-        //   backgroundImage:
-        //     "url('https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=1920&q=80')",
-        // }}
       ></div>
 
-      {/* Video loads on all devices */}
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
@@ -35,10 +35,9 @@ export const VideoHero = () => {
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
           isVideoLoaded ? "opacity-100" : "opacity-0"
         }`}
-        onLoadedData={handleVideoLoad}
-        onCanPlay={handleVideoLoad}
+        onLoadedData={() => setIsVideoLoaded(true)}
+        onCanPlay={() => setIsVideoLoaded(true)}
       >
-        <source src="/videos/thenosh.mp4" type="video/mp4" />
         <source src="/videos/thenosh.mp4" type="video/mp4" />
       </video>
 
@@ -55,21 +54,21 @@ export const VideoHero = () => {
           Experience culinary excellence with our carefully crafted dishes,
           made from the finest ingredients and delivered with passion.
         </p>
-       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
             onClick={scrollToCategories}
-            size="lg" 
+            size="lg"
             className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-3 text-lg transition-all duration-300 hover:scale-105 animate-slide-up hover-lift"
-            style={{ animationDelay: '0.4s' }}
+            style={{ animationDelay: "0.4s" }}
           >
             Explore Our Menu
           </Button>
-          <Button 
-            onClick={() => window.location.href = '/catering'}
-            size="lg" 
+          <Button
+            onClick={() => (window.location.href = "/catering")}
+            size="lg"
             variant="outline"
             className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-3 text-lg transition-all duration-300 hover:scale-105 animate-slide-up hover-lift"
-            style={{ animationDelay: '0.4s' }}
+            style={{ animationDelay: "0.4s" }}
           >
             Catering Services
           </Button>
@@ -78,3 +77,4 @@ export const VideoHero = () => {
     </section>
   );
 };
+import { Button } from "@/components/ui/button";
