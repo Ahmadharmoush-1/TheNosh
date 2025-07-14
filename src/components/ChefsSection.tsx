@@ -19,44 +19,44 @@ interface Chef {
 const chefs: Chef[] = [
   {
     id: "chef1",
-    name: "Chef Marco Italiano",
+    name: "",
     experience: "15 Years Experience",
     description: "Master of Italian cuisine and pasta making. Specializes in authentic regional dishes.",
     price: 250,
-    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=400&q=80",
+    image: "",
     rating: 4.9,
     eventsServed: 150,
     specialties: ["Italian Cuisine", "Pasta Making", "Wine Pairing"]
   },
   {
     id: "chef2",
-    name: "Chef Sofia Gourmet",
+    name: "",
     experience: "12 Years Experience",
     description: "French culinary expert with a modern twist. Creates elegant and sophisticated dishes.",
     price: 220,
-    image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=400&q=80",
+    image: "",
     rating: 4.8,
     eventsServed: 125,
     specialties: ["French Cuisine", "Pastry", "Fine Dining"]
   },
   {
     id: "chef3",
-    name: "Chef Ahmad Spice",
+    name: "",
     experience: "18 Years Experience",
     description: "Middle Eastern and Mediterranean cuisine specialist. Expert in aromatic spices and grilling.",
     price: 200,
-    image: "https://images.unsplash.com/photo-1501286353178-1ec881214838?auto=format&fit=crop&w=400&q=80",
+    image: "",
     rating: 4.7,
     eventsServed: 200,
     specialties: ["Middle Eastern", "BBQ & Grilling", "Spice Blending"]
   },
   {
     id: "chef4",
-    name: "Chef Isabella Fusion",
+    name: "",
     experience: "10 Years Experience",
     description: "Creative fusion chef combining Asian and Western flavors for unique culinary experiences.",
     price: 180,
-    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=400&q=80",
+    image: "",
     rating: 4.6,
     eventsServed: 90,
     specialties: ["Asian Fusion", "Creative Cooking", "Presentation"]
