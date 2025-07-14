@@ -25,10 +25,17 @@ export const CategoryButtons = ({ onCategoryClick }: CategoryButtonsProps) => {
     // { name: "Sweets", emoji: "🍰", id: "sweets" },
     
 
-   { name: "Catering", emoji: "💨", id: "catering" }
+   { name: "Catering Services", emoji: "🍽️", id: "catering", isSpecial: true }
      
   ];
 
+  const handleCategoryClick = (category: { id: string; isSpecial?: boolean }) => {
+    if (category.id === "catering") {
+      window.location.href = '/catering';
+    } else {
+      onCategoryClick(category.id);
+    }
+  };
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -45,8 +52,12 @@ export const CategoryButtons = ({ onCategoryClick }: CategoryButtonsProps) => {
           {categories.map((category, index) => (
             <Button
               key={category.id}
-              onClick={() => onCategoryClick(category.id)}
-              className="h-28 flex flex-col items-center justify-center gap-2 bg-background hover:bg-secondary border-2 border-secondary text-primary hover:text-primary transition-all duration-300 hover:scale-105 hover:shadow-lg animate-scale-in"
+              onClick={() => handleCategoryClick(category)}
+              className={`h-28 flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-scale-in ${
+                category.isSpecial 
+                  ? "bg-secondary text-primary hover:bg-secondary/90 border-2 border-secondary" 
+                  : "bg-background hover:bg-secondary border-2 border-secondary text-primary hover:text-primary"
+              }`}
               variant="outline"
               style={{ animationDelay: `${index * 0.1}s` }}
             >

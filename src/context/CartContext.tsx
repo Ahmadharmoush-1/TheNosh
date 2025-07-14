@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
 export interface CartItem {
   id: string;
@@ -61,9 +61,34 @@ export const useCart = () => {
 };
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [items, setItems] = useState<CartItem[]>([]);
-  const [cateringItems, setCateringItems] = useState<CateringItem[]>([]);
-  const [chefBookings, setChefBookings] = useState<ChefBooking[]>([]);
+  // Initialize from localStorage
+  const [items, setItems] = useState<CartItem[]>(() => {
+    const stored = localStorage.getItem("cart-items");
+    return stored ? JSON.parse(stored) : [];
+  });
+
+  const [cateringItems, setCateringItems] = useState<CateringItem[]>(() => {
+    const stored = localStorage.getItem("catering-items");
+    return stored ? JSON.parse(stored) : [];
+  });
+
+  const [chefBookings, setChefBookings] = useState<ChefBooking[]>(() => {
+    const stored = localStorage.getItem("chef-bookings");
+    return stored ? JSON.parse(stored) : [];
+  });
+
+  // Sync to localStorage
+  useEffect(() => {
+    localStorage.setItem("cart-items", JSON.stringify(items));
+  }, [items]);
+
+  useEffect(() => {
+    localStorage.setItem("catering-items", JSON.stringify(cateringItems));
+  }, [cateringItems]);
+
+  useEffect(() => {
+    localStorage.setItem("chef-bookings", JSON.stringify(chefBookings));
+  }, [chefBookings]);
 
   const addItem = (newItem: Omit<CartItem, 'quantity'>) => {
     setItems(prev => {
@@ -86,8 +111,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         const newQuantity = existingItem.quantity + newItem.quantity;
         return prev.map(item =>
           item.id === newItem.id
-            ? { 
-                ...item, 
+            ? {
+                ...item,
                 quantity: newQuantity,
                 totalPrice: item.pricePerPiece * newQuantity
               }
@@ -139,12 +164,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }
     setCateringItems(prev =>
       prev.map(item =>
-        item.id === id 
-          ? { 
-              ...item, 
+        item.id === id
+          ? {
+              ...item,
               quantity,
               totalPrice: item.pricePerPiece * quantity
-            } 
+            }
           : item
       )
     );
@@ -178,38 +203,43 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setItems([]);
     setCateringItems([]);
     setChefBookings([]);
+    localStorage.removeItem("cart-items");
+    localStorage.removeItem("catering-items");
+    localStorage.removeItem("chef-bookings");
   };
 
-  const totalPrice = 
-    items.reduce((sum, item) => sum + (item.price * item.quantity), 0) +
+  const totalPrice =
+    items.reduce((sum, item) => sum + item.price * item.quantity, 0) +
     cateringItems.reduce((sum, item) => sum + item.totalPrice, 0) +
     chefBookings.reduce((sum, chef) => sum + chef.price, 0);
-    
-  const itemCount = 
+
+  const itemCount =
     items.reduce((sum, item) => sum + item.quantity, 0) +
     cateringItems.reduce((sum, item) => sum + item.quantity, 0) +
     chefBookings.length;
 
   return (
-    <CartContext.Provider value={{
-      items,
-      cateringItems,
-      chefBookings,
-      addItem,
-      addCateringItem,
-      addChef,
-      removeItem,
-      removeCateringItem,
-      removeChefBooking,
-      updateQuantity,
-      updateCateringQuantity,
-      updateNotes,
-      updateCateringNotes,
-      updateChefNotes,
-      clearCart,
-      totalPrice,
-      itemCount
-    }}>
+    <CartContext.Provider
+      value={{
+        items,
+        cateringItems,
+        chefBookings,
+        addItem,
+        addCateringItem,
+        addChef,
+        removeItem,
+        removeCateringItem,
+        removeChefBooking,
+        updateQuantity,
+        updateCateringQuantity,
+        updateNotes,
+        updateCateringNotes,
+        updateChefNotes,
+        clearCart,
+        totalPrice,
+        itemCount
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

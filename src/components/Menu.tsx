@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Plus } from "lucide-react";
@@ -13,7 +14,9 @@ interface MenuItem {
   image: string;
   category: string;
 }
-
+interface MenuProps {
+  selectedCategory: string;
+}
 const menuItems: MenuItem[] = [
   // Plates
  {
@@ -349,18 +352,9 @@ const menuItems: MenuItem[] = [
   
 ];
 
-interface MenuProps {
-  selectedCategory: string;
-}
-
 export const Menu = ({ selectedCategory }: MenuProps) => {
   const { addItem } = useCart();
   const { toast } = useToast();
-
-  const filteredItems = menuItems.filter(item => item.category === selectedCategory);
-  const categoryName = selectedCategory.split('-').map(word => 
-    word.charAt(0).toUpperCase() + word.slice(1)
-  ).join(' ');
 
   const handleAddToCart = (item: MenuItem) => {
     addItem({
@@ -369,70 +363,71 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
       price: item.price,
       image: item.image
     });
+    
     toast({
       title: "Added to cart",
       description: `${item.name} has been added to your cart.`,
     });
   };
 
+  const filteredItems = menuItems.filter(item => item.category === selectedCategory);
+  const categoryTitle = selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1).replace('-', ' ');
+
+  // Scroll to top when component mounts or category changes
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [selectedCategory]);
+
   return (
-    <section className="py-20 bg-background">
+    <section id="menu" className="py-20 bg-background min-h-screen">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-primary">
-            {categoryName}
+            {categoryTitle}
           </h2>
           <p className="text-muted-foreground text-lg">
-            Choose from our delicious {categoryName.toLowerCase()}
+            Choose from our delicious {categoryTitle.toLowerCase()} selection
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item) => (
-            <Card key={item.id} className="bg-card border-2 border-secondary hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-48 object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-card-foreground">{item.name}</h3>
-                <p className="text-muted-foreground mb-3 text-sm">{item.description}</p>
-                
-                <div className="mb-4">
-                  <h4 className="font-semibold text-card-foreground mb-2 text-sm">Ingredients:</h4>
-                  <div className="flex flex-wrap gap-1">
-                    {item.ingredients.map((ingredient, index) => (
-                      <span
-                        key={index}
-                        className="bg-muted text-primary text-xs px-2 py-1 rounded-full border border-secondary"
-                      >
-                        {ingredient}
-                      </span>
-                    ))}
+        {filteredItems.length === 0 ? (
+          <div className="text-center py-20">
+            <h3 className="text-2xl font-semibold text-primary mb-4">Coming Soon!</h3>
+            <p className="text-muted-foreground">
+              We're working on adding {categoryTitle.toLowerCase()} to our menu. Check back soon!
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredItems.map((item) => (
+              <Card key={item.id} className="bg-card border-2 border-secondary hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="relative overflow-hidden rounded-t-lg">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-48 object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-2 text-primary">{item.name}</h3>
+                  <p className="text-muted-foreground mb-4 text-sm">{item.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-primary">
+                      ${item.price}
+                    </span>
+                    <Button
+                      onClick={() => handleAddToCart(item)}
+                      className="bg-secondary hover:bg-secondary/90 text-primary border border-secondary transition-colors duration-200"
+                    >
+                      Add to Cart
+                    </Button>
                   </div>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-card-foreground">
-                    ${item.price}
-                  </span>
-                  <Button
-                    onClick={() => handleAddToCart(item)}
-                    size="sm"
-                    className="bg-secondary hover:bg-secondary/90 text-primary border border-secondary transition-colors duration-200"
-                  >
-                    <Plus className="h-4 w-4 mr-1" />
-                    Add to Cart
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
