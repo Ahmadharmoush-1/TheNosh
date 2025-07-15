@@ -466,22 +466,23 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
                   </p>
 
                   {item.ingredients && item.ingredients.length > 0 && (
-                    <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-card-foreground mb-1">
-                        Ingredients:
-                      </h4>
-                      <div className="flex flex-wrap gap-2 text-xs">
-                        {item.ingredients.map((ingredient, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 bg-[#1E1A4B] text-white rounded-full"
-                          >
-                            {ingredient}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+  <div className="mb-4">
+    <h4 className="font-semibold text-card-foreground mb-2 text-sm">
+      Ingredients:
+    </h4>
+    <div className="flex flex-wrap gap-1">
+      {item.ingredients.map((ingredient, index) => (
+        <span
+          key={index}
+          className="bg-muted text-primary text-xs px-2 py-1 rounded-full border border-secondary"
+        >
+          {ingredient}
+        </span>
+      ))}
+    </div>
+  </div>
+)}
+
 
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold" style={{ color: "#1E1A4B" }}>
