@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Plus } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useToast } from "@/hooks/use-toast";
 
@@ -14,10 +13,31 @@ interface MenuItem {
   image: string;
   category: string;
 }
+
 interface MenuProps {
   selectedCategory: string;
 }
-const menuItems: MenuItem[] = [
+
+export const Menu = ({ selectedCategory }: MenuProps) => {
+  const { addItem } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = (item: MenuItem) => {
+    addItem({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      image: item.image,
+    });
+
+    toast({
+      title: "Added to cart",
+      description: `${item.name} has been added to your cart.`,
+    });
+  };
+
+  // TODO: Replace this with your actual menu items data or import from your data source
+  const menuItems: MenuItem[] = [
   // Plates
  {
   id: "sw1",
@@ -57,32 +77,69 @@ const menuItems: MenuItem[] = [
 },
 // Wraps
   {
-    id: "w1",
-    name: "Chicken Caesar Wrap",
-    description: "Grilled chicken with Caesar dressing in a tortilla",
-    ingredients: ["Grilled chicken", "Romaine lettuce", "Caesar dressing", "Parmesan", "Tortilla wrap"],
-    price: 14,
-    image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=500&q=80",
-    category: "wraps"
-  },
-  {
-    id: "w2",
-    name: "Buffalo Chicken Wrap",
-    description: "Spicy buffalo chicken with ranch and vegetables",
-    ingredients: ["Buffalo chicken", "Ranch dressing", "Lettuce", "Tomato", "Celery", "Tortilla wrap"],
-    price: 15,
-    image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
-    category: "wraps"
-  },
+  id: "w1",
+  name: "Buro Beef",
+  description: "Juicy beef wrap with smoked cheese sauce, tartar, and sautéed veggies in a soft tortilla.",
+  ingredients: ["Mix Greens", "Tartar", "Panea", "Onions", "Mushrooms", "Pickles", "Smocked Cheese Sauce"],
+  price: 14,
+  image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=500&q=80",
+  category: "wraps"
+},
+{
+  id: "w2",
+  name: "Special Burro Beef",
+  description: "Loaded beef wrap with smoked pollo, pickles, mushrooms, and a tangy cheese sauce blend.",
+  ingredients: ["Mix Greens", "Tartar", "Panea", "Onions", "Mushrooms", "Pickles", "Smocked Cheese Sauce", "Smocked Pollo"],
+  price: 15,
+  image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
+  category: "wraps"
+},
+{
+  id: "w3",
+  name: "Gambaretto",
+  description: "A gourmet seafood wrap featuring shrimp, avocado, and your choice of salmon or duck with an Asian twist.",
+  ingredients: ["Shrimps", "Avocado", "Salmon or Duck", "Asian Mix"],
+  price: 15,
+  image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
+  category: "wraps"
+},
+{
+  id: "w4",
+  name: "Verdura Filling",
+  description: "A vegetarian delight with fresh greens, avocado, mushrooms, and creamy smoked cheese.",
+  ingredients: ["Mix Greens", "Tartar", "Avocado", "Smocked Cheese", "Panea", "Mushrooms", "Onions"],
+  price: 15,
+  image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
+  category: "wraps"
+},
+
   // Breakfast
   {
-    id: "h1",
-    name: "Classic Hotdog",
+    id: "b1",
+    name: "Eggsotic Plate",
     description: "All-beef hotdog with traditional toppings",
     ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
     price: 12,
     image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
-    category: "hotdogs"
+    category: "breakfast"
+  },
+   {
+    id: "b2",
+    name: "Egg Sandwich",
+    description: "All-beef hotdog with traditional toppings",
+    ingredients: ["Asain Sauce", "Mix Greens", "Panea", "Bacon"],
+    price: 12,
+    image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+    category: "breakfast"
+  },
+   {
+    id: "b4",
+    name: "Baquette Chefs Choice ",
+    description: "All-beef hotdog with traditional toppings",
+    ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
+    price: 12,
+    image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+    category: "breakfast"
   },
   // Salads
   {
@@ -351,38 +408,23 @@ const menuItems: MenuItem[] = [
   // },
   
 ];
+  
+  const filteredItems = menuItems.filter(
+    (item) => item.category === selectedCategory
+  );
+  const categoryTitle =
+    selectedCategory.charAt(0).toUpperCase() +
+    selectedCategory.slice(1).replace("-", " ");
 
-export const Menu = ({ selectedCategory }: MenuProps) => {
-  const { addItem } = useCart();
-  const { toast } = useToast();
-
-  const handleAddToCart = (item: MenuItem) => {
-    addItem({
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      image: item.image
-    });
-    
-    toast({
-      title: "Added to cart",
-      description: `${item.name} has been added to your cart.`,
-    });
-  };
-
-  const filteredItems = menuItems.filter(item => item.category === selectedCategory);
-  const categoryTitle = selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1).replace('-', ' ');
-
-  // Scroll to top when component mounts or category changes
   React.useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [selectedCategory]);
 
   return (
     <section id="menu" className="py-20 bg-background min-h-screen">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-primary">
+          <h2 className="text-4xl font-bold mb-4" style={{ color: "#1E1A4B" }}>
             {categoryTitle}
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -392,15 +434,21 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 
         {filteredItems.length === 0 ? (
           <div className="text-center py-20">
-            <h3 className="text-2xl font-semibold text-primary mb-4">Coming Soon!</h3>
+            <h3
+              className="text-2xl font-semibold mb-4"
+              style={{ color: "#1E1A4B" }}
+            >
+              Coming Soon!
+            </h3>
             <p className="text-muted-foreground">
-              We're working on adding {categoryTitle.toLowerCase()} to our menu. Check back soon!
+              We're working on adding {categoryTitle.toLowerCase()} to our menu.
+              Check back soon!
             </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item) => (
-              <Card key={item.id} className="bg-card border-2 border-secondary hover:shadow-xl transition-all duration-300 hover:scale-105">
+             <Card key={item.id} className="bg-card border-2 border-secondary hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img
                     src={item.image}
@@ -410,15 +458,38 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
                   />
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-primary">{item.name}</h3>
-                  <p className="text-muted-foreground mb-4 text-sm">{item.description}</p>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: "#1E1A4B" }}>
+                    {item.name}
+                  </h3>
+                  <p className="text-muted-foreground mb-2 text-sm">
+                    {item.description}
+                  </p>
+
+                  {item.ingredients && item.ingredients.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-card-foreground mb-1">
+                        Ingredients:
+                      </h4>
+                      <div className="flex flex-wrap gap-2 text-xs">
+                        {item.ingredients.map((ingredient, index) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 bg-[#1E1A4B] text-white rounded-full"
+                          >
+                            {ingredient}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-primary">
+                    <span className="text-2xl font-bold" style={{ color: "#1E1A4B" }}>
                       ${item.price}
                     </span>
                     <Button
                       onClick={() => handleAddToCart(item)}
-                      className="bg-secondary hover:bg-secondary/90 text-primary border border-secondary transition-colors duration-200"
+                      className="bg-[#1E1A4B] hover:bg-[#1E1A4B]/90 text-white border border-[#1E1A4B] transition-colors duration-200"
                     >
                       Add to Cart
                     </Button>
