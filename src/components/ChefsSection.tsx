@@ -19,7 +19,7 @@ interface Chef {
 const chefs: Chef[] = [
   {
     id: "chef1",
-    name: "",
+    name: "Name",
     experience: "15 Years Experience",
     description: "Master of Italian cuisine and pasta making. Specializes in authentic regional dishes.",
     price: 250,
@@ -30,7 +30,7 @@ const chefs: Chef[] = [
   },
   {
     id: "chef2",
-    name: "",
+    name: "Name",
     experience: "12 Years Experience",
     description: "French culinary expert with a modern twist. Creates elegant and sophisticated dishes.",
     price: 220,
@@ -41,7 +41,7 @@ const chefs: Chef[] = [
   },
   {
     id: "chef3",
-    name: "",
+    name: "Name",
     experience: "18 Years Experience",
     description: "Middle Eastern and Mediterranean cuisine specialist. Expert in aromatic spices and grilling.",
     price: 200,
@@ -52,7 +52,7 @@ const chefs: Chef[] = [
   },
   {
     id: "chef4",
-    name: "",
+    name: "Name",
     experience: "10 Years Experience",
     description: "Creative fusion chef combining Asian and Western flavors for unique culinary experiences.",
     price: 180,
