@@ -117,7 +117,7 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
     phone: string;
     location: string;
   }) => {
-    const phoneNumber = "96176534652";
+    const phoneNumber = "96176054688";
     const message = formatOrderForWhatsApp(customerInfo);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');

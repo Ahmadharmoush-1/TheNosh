@@ -15,7 +15,7 @@ export const Header = ({ onCartClick, onBackClick }: HeaderProps) => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/96176534652?text=Hello!%20I%20have%20a%20question%20about%20your%20menu.", "_blank");
+    window.open("https://wa.me/96176054688?text=Hello!%20I%20have%20a%20question%20about%20your%20menu.", "_blank");
   };
 
   const handleLocationClick = () => {
