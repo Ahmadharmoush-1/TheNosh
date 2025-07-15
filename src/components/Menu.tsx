@@ -115,32 +115,42 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 
   // Breakfast
   {
-    id: "b1",
-    name: "Eggsotic Plate",
-    description: "All-beef hotdog with traditional toppings",
-    ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
-    price: 12,
-    image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
-    category: "breakfast"
-  },
-   {
-    id: "b2",
-    name: "Egg Sandwich",
-    description: "All-beef hotdog with traditional toppings",
-    ingredients: ["Asain Sauce", "Mix Greens", "Panea", "Bacon"],
-    price: 12,
-    image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
-    category: "breakfast"
-  },
-   {
-    id: "b4",
-    name: "Baquette Chefs Choice ",
-    description: "All-beef hotdog with traditional toppings",
-    ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
-    price: 12,
-    image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
-    category: "breakfast"
-  },
+  id: "b1",
+  name: "Eggsotic Plate",
+  description: "A savory combination of beef hotdog served on a brioche bun, topped with mustard, ketchup, onions, and relish — a hearty breakfast twist.",
+  ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
+  price: 12,
+  image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+  category: "breakfast"
+},
+{
+  id: "b2",
+  name: "Japanese Egg Sando",
+  description: "A fluffy Japanese-style egg sandwich featuring Asian sauce, mixed greens, panea, and crispy bacon, all layered perfectly.",
+  ingredients: ["Asain Sauce", "Mix Greens", "Panea", "Bacon"],
+  price: 12,
+  image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+  category: "breakfast"
+},
+{
+  id: "b3",
+  name: "The Breakfast Board for Four",
+  description: "A generous breakfast board designed for sharing — includes Asian sauce, fresh greens, panea, and strips of bacon.",
+  ingredients: ["Asain Sauce", "Mix Greens", "Panea", "Bacon"],
+  price: 12,
+  image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+  category: "breakfast"
+},
+{
+  id: "b4",
+  name: "Baguette Chef’s Choice",
+  description: "Chef’s favorite: a French baguette filled with a beef hotdog, mustard, ketchup, onions, and relish for a gourmet breakfast bite.",
+  ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
+  price: 12,
+  image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+  category: "breakfast"
+}
+,
   // Salads
   {
     id: "s1",

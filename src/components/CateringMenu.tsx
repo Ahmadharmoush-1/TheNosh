@@ -1,109 +1,31 @@
-
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Plus, Minus } from "lucide-react";
-import { useCart } from "@/context/CartContext";
-import { useToast } from "@/hooks/use-toast";
-
-interface CateringItem {
-  id: string;
-  name: string;
-  description: string;
-  pricePerPiece: number;
-  image: string;
-  category: string;
-  minOrder?: number;
-}
-
-const cateringItems: CateringItem[] = [
-  {
-    id: "c1",
-    name: "Gourmet Sandwich Platter",
-    description: "Assorted premium sandwiches perfect for business meetings",
-    pricePerPiece: 11,
-    image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=500&q=80",
-    category: "platters",
-    minOrder: 10
-  },
-  {
-    id: "c2",
-    name: "Mini Burger Sliders",
-    description: "Bite-sized burgers with premium toppings",
-    pricePerPiece: 1,
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
-    category: "appetizers",
-    minOrder: 20
-  },
-  {
-    id: "c3",
-    name: "Artisan Pizza Slices",
-    description: "Freshly baked pizza slices with gourmet toppings",
-    pricePerPiece: 1,
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=500&q=80",
-    category: "mains",
-    minOrder: 15
-  },
-  {
-    id: "c4",
-    name: "Gourmet Salad Bowls",
-    description: "Fresh salad bowls with premium ingredients",
-    pricePerPiece: 1,
-    image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=500&q=80",
-    category: "healthy",
-    minOrder: 10
-  },
-  {
-    id: "c5",
-    name: "Stuffed Mushroom Caps",
-    description: "Elegant appetizers filled with herbs and cheese",
-    pricePerPiece: 1,
-    image: "https://images.unsplash.com/photo-1548340748-6d2b7d7da280?auto=format&fit=crop&w=500&q=80",
-    category: "appetizers",
-    minOrder: 25
-  },
-  {
-    id: "c6",
-    name: "Chocolate Dessert Cups",
-    description: "Individual chocolate desserts for sweet endings",
-    pricePerPiece: 1,
-    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
-    category: "desserts",
-    minOrder: 12
-  }
-];
+import { Download, MessageCircle } from "lucide-react";
 
 export const CateringMenu = () => {
-  const { addCateringItem } = useCart();
-  const { toast } = useToast();
-  const [quantities, setQuantities] = useState<Record<string, number>>({});
+  const cateringItems = [
+    { name: "Eggsotic Plate", price: 1, unit: "piece" },
+    { name: "Japanese Egg Sando", price: 1, unit: "piece" },
+    { name: "Breakfast Board for Four", price: 1, unit: "board" },
+    { name: "Baguette Chef's Choice", price: 1, unit: "piece" },
+    { name: "Gourmet Sandwich Platter", price: 1, unit: "piece" },
+    { name: "Mini Burger Sliders", price: 1, unit: "piece" },
+    { name: "Artisan Pizza Slices", price: 1, unit: "piece" },
+    { name: "Gourmet Salad Bowls", price: 1, unit: "piece" },
+    { name: "Stuffed Mushroom Caps", price: 1, unit: "piece" },
+    { name: "Chocolate Dessert Cups", price: 1, unit: "piece" }
+  ];
 
-  const handleQuantityChange = (itemId: string, change: number) => {
-    const item = cateringItems.find(item => item.id === itemId);
-    const currentQty = quantities[itemId] || item?.minOrder || 1;
-    const newQty = Math.max((item?.minOrder || 1), currentQty + change);
-    
-    setQuantities(prev => ({
-      ...prev,
-      [itemId]: newQty
-    }));
+  const handleWhatsAppContact = () => {
+    const message = encodeURIComponent("Hi! I'm interested in your catering services. Could you please provide more information?");
+    const phoneNumber = "96176054688"; // Replace with actual WhatsApp number
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
-  const handleAddToCart = (item: CateringItem) => {
-    const quantity = quantities[item.id] || item.minOrder || 1;
-    addCateringItem({
-      id: item.id,
-      name: item.name,
-      pricePerPiece: item.pricePerPiece,
-      image: item.image,
-      quantity,
-      totalPrice: item.pricePerPiece * quantity
-    });
-    
-    toast({
-      title: "Added to cart",
-      description: `${quantity} pieces of ${item.name} added to your cart.`,
-    });
+  const handleDownloadMenu = () => {
+    // This would link to the actual PDF menu
+    console.log("Download PDF menu");
+    window.open('/public/catering-menu.pdf', '_blank');
   };
 
   return (
@@ -111,98 +33,91 @@ export const CateringMenu = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-primary">
-            Catering Menu
+            Catering Services
           </h2>
           <p className="text-muted-foreground text-lg">
-            Premium catering items priced per piece for your events
+            Professional catering for your events and gatherings
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {cateringItems.map((item) => {
-            const quantity = quantities[item.id] || item.minOrder || 1;
-            const totalPrice = item.pricePerPiece * quantity;
+        <div className="max-w-4xl mx-auto">
+          <Card className="bg-card border-2 border-secondary hover:shadow-lg transition-all duration-300 overflow-hidden">
+            {/* Hero Image Section */}
+            <div className="relative w-full h-64 md:h-80">
+              <img
+                src="\photos\catering.png"
+                alt="Catering Services"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/20"></div>
+            </div>
             
-            return (
-              <Card key={item.id} className="bg-card border-2 border-secondary hover:shadow-lg transition-all duration-300 overflow-hidden">
-                <div className="flex flex-col md:flex-row h-full">
-                  {/* Image Section */}
-                  <div className="relative w-full md:w-48 flex-shrink-0">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-48 md:h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  
-                  {/* Content Section */}
-                  <CardContent className="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-lg font-bold mb-2 text-card-foreground line-clamp-2">{item.name}</h3>
-                      <p className="text-muted-foreground mb-3 text-sm line-clamp-2">{item.description}</p>
+            <CardContent className="p-6 md:p-8">
+              {/* Description */}
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-card-foreground">
+                  Breakfast Catering Menu
+                </h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Our breakfast catering menu is crafted for groups, featuring chef-curated sandwiches, 
+                  breakfast boards, and more — including our signature Japanese egg sando and baguette 
+                  chef specials. Perfect for offices, events, and gatherings.
+                </p>
+              </div>
+
+              {/* Pricing List */}
+              <div className="mb-8">
+                <h4 className="text-xl font-semibold mb-4 text-card-foreground">
+                  Menu & Pricing
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {cateringItems.map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex justify-between items-center py-2 px-3 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors"
+                    >
+                      <span className="text-card-foreground font-medium">
+                        {item.name}
+                      </span>
+                      <span className="text-primary font-semibold">
+                        ${item.price} / {item.unit}
+                      </span>
                     </div>
-                    
-                    <div className="space-y-3">
-                      {/* Price and Min Order */}
-                      <div className="flex items-center justify-between">
-                        <span className="text-lg font-semibold text-card-foreground">
-                          ${item.pricePerPiece}/pc
-                        </span>
-                        {item.minOrder && (
-                          <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
-                            Min: {item.minOrder}
-                          </span>
-                        )}
-                      </div>
-                      
-                      {/* Quantity Controls */}
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-muted-foreground">Qty:</span>
-                        <div className="flex items-center space-x-2">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => handleQuantityChange(item.id, -1)}
-                            className="h-8 w-8 p-0 border-secondary"
-                          >
-                            <Minus className="h-3 w-3" />
-                          </Button>
-                          <span className="text-base font-semibold text-card-foreground min-w-[2.5rem] text-center">
-                            {quantity}
-                          </span>
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => handleQuantityChange(item.id, 1)}
-                            className="h-8 w-8 p-0 border-secondary"
-                          >
-                            <Plus className="h-3 w-3" />
-                          </Button>
-                        </div>
-                      </div>
-                      
-                      {/* Total Price */}
-                      <div className="text-center py-2">
-                        <span className="text-xl font-bold text-primary">
-                          Total: ${totalPrice}
-                        </span>
-                      </div>
-                      
-                      {/* Add to Cart Button */}
-                      <Button
-                        onClick={() => handleAddToCart(item)}
-                        className="w-full bg-secondary hover:bg-secondary/90 text-primary border border-secondary transition-colors duration-200 font-semibold"
-                        size="sm"
-                      >
-                        Add to Cart
-                      </Button>
-                    </div>
-                  </CardContent>
+                  ))}
                 </div>
-              </Card>
-            );
-          })}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  onClick={handleWhatsAppContact}
+                  className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 text-lg transition-colors duration-200"
+                  size="lg"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Contact to Order
+                </Button>
+                
+                <Button
+                  onClick={handleDownloadMenu}
+                  variant="outline"
+                  className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-6 py-3 text-lg transition-colors duration-200"
+                  size="lg"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download PDF Menu
+                </Button>
+              </div>
+
+              {/* Additional Info */}
+              <div className="mt-6 text-center">
+                <p className="text-sm text-muted-foreground">
+                  Minimum order quantities may apply. Contact us for custom catering options and group discounts.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
