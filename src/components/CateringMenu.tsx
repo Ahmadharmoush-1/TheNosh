@@ -56,15 +56,16 @@ export const CateringMenu = () => {
             <CardContent className="p-6 md:p-8">
               {/* Description */}
               <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-card-foreground">
-                  Breakfast Catering Menu
-                </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Our breakfast catering menu is crafted for groups, featuring chef-curated sandwiches, 
-                  breakfast boards, and more — including our signature Japanese egg sando and baguette 
-                  chef specials. Perfect for offices, events, and gatherings.
-                </p>
-              </div>
+                  <h3 className="text-2xl font-bold mb-4 text-card-foreground">
+                    Catering Selections
+                  </h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Our catering menu is thoughtfully designed to serve groups of all sizes — ideal for corporate events,
+                    private gatherings, and special occasions. From chef-crafted platters to gourmet sandwiches and signature creations, 
+                    we deliver high-quality dishes with a focus on presentation, flavor, and convenience.
+                  </p>
+                </div>
+
 
               {/* Pricing List */}
               <div className="mb-8">
