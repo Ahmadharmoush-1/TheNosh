@@ -114,7 +114,8 @@ export const CateringMenu = () => {
               {/* Additional Info */}
               <div className="mt-6 text-center">
                 <p className="text-sm text-muted-foreground">
-                  Minimum order quantities may apply. Contact us for custom catering options and group discounts.
+                  {/* {/* Minimum order quantities may apply. */}
+                   Contact us for custom catering options. 
                 </p>
               </div>
             </CardContent>
