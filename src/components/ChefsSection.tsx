@@ -86,7 +86,7 @@ export const ChefsSection = () => {
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-primary">
             👨‍🍳 Meet The Chefs
           </h2>
@@ -94,7 +94,7 @@ export const ChefsSection = () => {
             Book your favorite chef for a private catering experience or one-on-one cooking session.
             Our chefs aren't just cooks – they're artists ready to make your event unforgettable.
           </p>
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
           {chefs.map((chef) => (
