@@ -27,7 +27,7 @@ export const LazyImage = ({
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     if (imgRef.current) {
@@ -41,16 +41,17 @@ export const LazyImage = ({
     setIsLoaded(true);
   };
 
-  // Convert regular URLs to optimized WebP format where possible
   const getOptimizedSrc = (originalSrc: string) => {
     if (originalSrc.includes('unsplash.com')) {
-      return `${originalSrc}&fm=webp&q=80`;
+      const isMobile = window.innerWidth <= 768;
+      const width = isMobile ? 400 : 800;
+      return `${originalSrc}&fm=webp&q=75&w=${width}&fit=crop`;
     }
     return originalSrc;
   };
 
   return (
-    <div className={`relative overflow-hidden ${className}`} ref={imgRef}>
+    <div className={`relative overflow-hidden bg-muted ${className}`} ref={imgRef}>
       {!isLoaded && (
         <img
           src={placeholder}
@@ -70,7 +71,8 @@ export const LazyImage = ({
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           onLoad={handleLoad}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 400px, 800px"
+          decoding="async"
         />
       )}
     </div>

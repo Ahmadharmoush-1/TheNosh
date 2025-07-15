@@ -15,21 +15,25 @@ export const CategoryButtons = ({ onCategoryClick }: CategoryButtonsProps) => {
     { name: "Fries", emoji: "🍟", id: "fries" },
     { name: "Drinks", emoji: "🥤", id: "drinks" },
     { name: "Catering Services", emoji: "🍽️", id: "catering", isSpecial: true },
+    { name: "Private Chefs", emoji: "🧑‍🍳", id: "chefs", isSpecial: true },
   ];
 
   const handleCategoryClick = (category: { id: string; isSpecial?: boolean }) => {
     if (category.id === "catering") {
-      window.location.href = "/catering";
+      window.location.href = '/catering';
+    } else if (category.id === "chefs") {
+      window.location.href = '/chefs';
     } else {
       onCategoryClick(category.id);
     }
   };
+  
 
   return (
     <>
       <style>{`
-        @keyframes pulse-glow {
-          0%,
+        @keyframes pulse-glow { 
+          0%, 
           100% {
             box-shadow: 0 0 10px 2px rgba(30, 26, 75, 0.7); /* #1E1A4B at 70% opacity */
           }
