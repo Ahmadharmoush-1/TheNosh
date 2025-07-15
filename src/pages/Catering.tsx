@@ -32,7 +32,7 @@ const Catering = () => {
         
         <CateringHero />
         <CateringMenu />
-        <ChefsSection />
+        
         
         <Footer />
         <Cart isOpen={showCart} onClose={handleCloseCart} />
