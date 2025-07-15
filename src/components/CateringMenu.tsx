@@ -25,7 +25,7 @@ export const CateringMenu = () => {
   const handleDownloadMenu = () => {
     // This would link to the actual PDF menu
     console.log("Download PDF menu");
-    window.open('/public/catering-menu.pdf', '_blank');
+    window.open('/catering-menu.pdf', '_blank');
   };
 
   return (
