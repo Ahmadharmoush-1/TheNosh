@@ -45,7 +45,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "Tender grilled chicken served with seasoned rice and veggies.",
   ingredients: ["Grilled chicken", "Seasoned rice", "Vegetables", "Herb sauce"],
   price: 8,
-  image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
+  image: "/public/photos/3.jpg",
   category: "plates"
 },
 {
@@ -109,7 +109,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A vegetarian delight with fresh greens, avocado, mushrooms, and creamy smoked cheese.",
   ingredients: ["Mix Greens", "Tartar", "Avocado", "Smocked Cheese", "Panea", "Mushrooms", "Onions"],
   price: 15,
-  image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
+  image: "/public/photos/2.jpg",
   category: "wraps"
 },
 
@@ -120,7 +120,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A savory combination of beef hotdog served on a brioche bun, topped with mustard, ketchup, onions, and relish — a hearty breakfast twist.",
   ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
   price: 12,
-  image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+  image: "/photos/breakfasteggs.jpg",
   category: "breakfast"
 },
 {
@@ -138,7 +138,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A generous breakfast board designed for sharing — includes Asian sauce, fresh greens, panea, and strips of bacon.",
   ingredients: ["Asain Sauce", "Mix Greens", "Panea", "Bacon"],
   price: 12,
-  image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+  image: "/public/photos/1.jpg",
   category: "breakfast"
 },
 {
@@ -418,7 +418,6 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   // },
   
 ];
-  
   const filteredItems = menuItems.filter(
     (item) => item.category === selectedCategory
   );
@@ -459,14 +458,14 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item) => (
              <Card key={item.id} className="bg-card border-2 border-secondary hover:shadow-lg transition-all duration-300 overflow-hidden">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-48 object-cover"
-                    loading="lazy"
-                  />
-                </div>
+     <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-lg bg-gray-100 flex items-center justify-center">
+  <img
+    src={item.image}
+    alt={item.name}
+    className="w-full h-full object-contain"
+    loading="lazy"
+  />
+</div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-2" style={{ color: "#1E1A4B" }}>
                     {item.name}
