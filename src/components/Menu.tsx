@@ -45,7 +45,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "Tender grilled chicken served with seasoned rice and veggies.",
   ingredients: ["Grilled chicken", "Seasoned rice", "Vegetables", "Herb sauce"],
   price: 8,
-  image: "/public/photos/3.jpg",
+  image: "https://i.imgur.com/vM25MN0.jpeg",
   category: "plates"
 },
 {
@@ -109,7 +109,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A vegetarian delight with fresh greens, avocado, mushrooms, and creamy smoked cheese.",
   ingredients: ["Mix Greens", "Tartar", "Avocado", "Smocked Cheese", "Panea", "Mushrooms", "Onions"],
   price: 15,
-  image: "/public/photos/2.jpg",
+  image: "https://i.imgur.com/mnVcVSO.jpeg",
   category: "wraps"
 },
 
@@ -120,7 +120,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A savory combination of beef hotdog served on a brioche bun, topped with mustard, ketchup, onions, and relish — a hearty breakfast twist.",
   ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
   price: 12,
-  image: "/photos/breakfasteggs.jpg",
+  image: "https://i.imgur.com/AXV3CVB.jpeg",
   category: "breakfast"
 },
 {
@@ -138,7 +138,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A generous breakfast board designed for sharing — includes Asian sauce, fresh greens, panea, and strips of bacon.",
   ingredients: ["Asain Sauce", "Mix Greens", "Panea", "Bacon"],
   price: 12,
-  image: "/public/photos/1.jpg",
+  image: "https://i.imgur.com/KcVprCT.jpeg",
   category: "breakfast"
 },
 {
