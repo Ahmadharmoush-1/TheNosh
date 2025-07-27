@@ -212,33 +212,33 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   
 
   // Burgers
-  {
-    id: "b1",
-    name: "Classic Beef Burger",
-    description: "Juicy beef patty with fresh vegetables",
-    ingredients: ["Beef patty", "Lettuce", "Tomato", "Onion", "Special sauce", "Brioche bun"],
-    price: 18,
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
-    category: "burgers"
-  },
-  {
-    id: "b2",
-    name: "Chicken Deluxe Burger",
-    description: "Grilled chicken breast with premium toppings",
-    ingredients: ["Grilled chicken", "Avocado", "Bacon", "Ranch dressing", "Lettuce", "Tomato"],
-    price: 16,
-    image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=500&q=80",
-    category: "burgers"
-  },
-  {
-    id: "b3",
-    name: "Mushroom Swiss Burger",
-    description: "Beef patty with sautéed mushrooms and Swiss cheese",
-    ingredients: ["Beef patty", "Sautéed mushrooms", "Swiss cheese", "Caramelized onions", "Truffle mayo"],
-    price: 19,
-    image: "https://images.unsplash.com/photo-1553979459-d2229ba7433a?auto=format&fit=crop&w=500&q=80",
-    category: "burgers"
-  },
+  // {
+  //   id: "b1",
+  //   name: "Classic Beef Burger",
+  //   description: "Juicy beef patty with fresh vegetables",
+  //   ingredients: ["Beef patty", "Lettuce", "Tomato", "Onion", "Special sauce", "Brioche bun"],
+  //   price: 18,
+  //   image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
+  //   category: "burgers"
+  // },
+  // {
+  //   id: "b2",
+  //   name: "Chicken Deluxe Burger",
+  //   description: "Grilled chicken breast with premium toppings",
+  //   ingredients: ["Grilled chicken", "Avocado", "Bacon", "Ranch dressing", "Lettuce", "Tomato"],
+  //   price: 16,
+  //   image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=500&q=80",
+  //   category: "burgers"
+  // },
+  // {
+  //   id: "b3",
+  //   name: "Mushroom Swiss Burger",
+  //   description: "Beef patty with sautéed mushrooms and Swiss cheese",
+  //   ingredients: ["Beef patty", "Sautéed mushrooms", "Swiss cheese", "Caramelized onions", "Truffle mayo"],
+  //   price: 19,
+  //   image: "https://images.unsplash.com/photo-1553979459-d2229ba7433a?auto=format&fit=crop&w=500&q=80",
+  //   category: "burgers"
+  // },
 
   // // Pizza
   // {
@@ -269,63 +269,98 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   //   category: "pizza"
   // },
 
-  // Fries
-  {
-    id: "f1",
-    name: "Classic French Fries",
-    description: "Crispy golden fries with sea salt",
-    ingredients: ["Fresh potatoes", "Sea salt", "Vegetable oil"],
-    price: 8,
-    image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=500&q=80",
-    category: "fries"
-  },
-  {
-    id: "f2",
-    name: "Truffle Parmesan Fries",
-    description: "Hand-cut fries with truffle oil and parmesan",
-    ingredients: ["Hand-cut potatoes", "Truffle oil", "Fresh parmesan", "Fresh herbs"],
-    price: 14,
-    image: "https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=500&q=80",
-    category: "fries"
-  },
-  {
-    id: "f3",
-    name: "Sweet Potato Fries",
-    description: "Crispy sweet potato fries with cinnamon sugar",
-    ingredients: ["Sweet potatoes", "Cinnamon", "Brown sugar", "Sea salt"],
-    price: 10,
-    image: "https://images.unsplash.com/photo-1553787444-0d12624df50f?auto=format&fit=crop&w=500&q=80",
-    category: "fries"
-  },
+  // // Fries
+  // {
+  //   id: "f1",
+  //   name: "Classic French Fries",
+  //   description: "Crispy golden fries with sea salt",
+  //   ingredients: ["Fresh potatoes", "Sea salt", "Vegetable oil"],
+  //   price: 8,
+  //   image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=500&q=80",
+  //   category: "fries"
+  // },
+  // {
+  //   id: "f2",
+  //   name: "Truffle Parmesan Fries",
+  //   description: "Hand-cut fries with truffle oil and parmesan",
+  //   ingredients: ["Hand-cut potatoes", "Truffle oil", "Fresh parmesan", "Fresh herbs"],
+  //   price: 14,
+  //   image: "https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=500&q=80",
+  //   category: "fries"
+  // },
+  // {
+  //   id: "f3",
+  //   name: "Sweet Potato Fries",
+  //   description: "Crispy sweet potato fries with cinnamon sugar",
+  //   ingredients: ["Sweet potatoes", "Cinnamon", "Brown sugar", "Sea salt"],
+  //   price: 10,
+  //   image: "https://images.unsplash.com/photo-1553787444-0d12624df50f?auto=format&fit=crop&w=500&q=80",
+  //   category: "fries"
+  // },
 
   // Drinks
   {
     id: "d1",
-    name: "Fresh Lemonade",
-    description: "House-made lemonade with fresh mint",
-    ingredients: ["Fresh lemons", "Mint leaves", "Sugar", "Sparkling water", "Ice"],
-    price: 6,
-    image: "https://images.unsplash.com/photo-1523371054106-bbf80586c38c?auto=format&fit=crop&w=500&q=80",
+    name: "Cola",
+    description: "",
+    ingredients: [],
+    price: 2,
+    image: "/photos/cola.png",
     category: "drinks"
   },
   {
     id: "d2",
-    name: "Craft Cola",
-    description: "Premium craft cola with natural ingredients",
-    ingredients: ["Natural cola syrup", "Sparkling water", "Vanilla extract", "Caramel", "Spices"],
-    price: 7,
-    image: "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?auto=format&fit=crop&w=500&q=80",
+    name: "Pepsi",
+    description: "",
+    ingredients: [],
+    price: 1,
+    image: "/photos/pepsi.jpg",
     category: "drinks"
   },
   {
     id: "d3",
-    name: "Iced Coffee",
-    description: "Cold brew coffee with vanilla cream",
-    ingredients: ["Cold brew coffee", "Vanilla cream", "Sugar syrup", "Ice", "Whipped cream"],
-    price: 8,
-    image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80",
+    name: "Pepsi-Diet",
+    description: "",
+    ingredients: [],
+    price: 1,
+    image: "/photos/pepsidiet.png",
     category: "drinks"
   },
+  {
+    id: "d4",
+    name: "Seven Up",
+    description: "",
+    ingredients: [""],
+    price: 1,
+    image: "/photos/7Up.jpg",
+    category: "drinks"
+  },
+  {
+    id: "d5",
+    name: "Seven Up-Diet",
+    description: "",
+    ingredients: [],
+    price: 1,
+    image: "/photos/sevenupdiet.webp",
+    category: "drinks"
+  },
+  {
+    id: "d6",
+    name: "Ice Tea Peach",
+    description: "",
+    ingredients: [],
+    price: 1.5,
+    image: "/photos/icetea.webp",
+    category: "drinks"
+  }, {
+    id: "d7",
+    name: "StrawBerry Punch",
+    description: "",
+    ingredients: [],
+    price: 2,
+    image: "/photos/strawberry.webp",
+    category: "drinks"
+  }
 
   
 
