@@ -9,58 +9,66 @@ interface Chef {
   name: string;
   experience: string;
   description: string;
-  price: number;
+  priceRange: [number, number];
   image: string;
   rating: number;
   eventsServed: number;
   specialties: string[];
+  minGuests: number;
+  pricePerPersonRange: [number, number]; 
+
 }
 
 const chefs: Chef[] = [
   {
     id: "chef1",
-    name: "Name",
-    experience: "15 Years Experience",
-    description: "Master of Italian cuisine and pasta making. Specializes in authentic regional dishes.",
-    price: 250,
-    image: "",
-    rating: 4.9,
-    eventsServed: 150,
-    specialties: ["Italian Cuisine", "Pasta Making", "Wine Pairing"]
-  },
-  {
-    id: "chef2",
-    name: "Name",
-    experience: "12 Years Experience",
-    description: "French culinary expert with a modern twist. Creates elegant and sophisticated dishes.",
-    price: 220,
-    image: "",
-    rating: 4.8,
-    eventsServed: 125,
-    specialties: ["French Cuisine", "Pastry", "Fine Dining"]
-  },
-  {
-    id: "chef3",
-    name: "Name",
-    experience: "18 Years Experience",
-    description: "Middle Eastern and Mediterranean cuisine specialist. Expert in aromatic spices and grilling.",
-    price: 200,
-    image: "",
-    rating: 4.7,
-    eventsServed: 200,
-    specialties: ["Middle Eastern", "BBQ & Grilling", "Spice Blending"]
-  },
-  {
-    id: "chef4",
-    name: "Name",
-    experience: "10 Years Experience",
-    description: "Creative fusion chef combining Asian and Western flavors for unique culinary experiences.",
-    price: 180,
+    name: "Lama Malaeb",
+    experience: "4 Years Experience",
+    description: "Expert in Japanese cuisine with a focus on sushi artistry and fresh ingredients. Also skilled in modern gourmet presentations.",
+    priceRange:  [250, 300],
     image: "",
     rating: 4.6,
-    eventsServed: 90,
-    specialties: ["Asian Fusion", "Creative Cooking", "Presentation"]
-  }
+    eventsServed: 60,
+    specialties: ["Sushi", "Gourmet Dining", "Tapauese", "Salads"],
+    minGuests: 10,
+    pricePerPersonRange: [25, 30]
+  },{
+  id: "chef2",
+  name: "Karim Malaeb",
+  experience: "6 Years Experience",
+  description: "Specializes in authentic Lebanese dishes and creative fast food with local flavors. Combines tradition with modern convenience.",
+  priceRange:  [250, 300],
+  image: "",
+  rating: 4.8,
+  eventsServed: 75,
+  specialties: ["Lebanese Cuisine", "Fast Food"],
+  minGuests: 10,
+  pricePerPersonRange: [25, 30]
+},{
+  id: "chef3",
+  name: "Rawad Malaeb",
+  experience: "6 Years Experience",
+  description: "Expert in international cuisine and gourmet casual concepts. Delivers refined flavors through creative fine dining experiences.",
+  priceRange:  [350, 400],
+  image: "",
+  rating: 4.9,
+  eventsServed: 90,
+  specialties: ["Fine Dining", "International Cuisine", "Gourmet Casual Food"],
+  minGuests: 10,
+  pricePerPersonRange: [35, 40]  
+}
+
+  // {
+  //   id: "chef4",
+  //   name: "Name",
+  //   experience: "10 Years Experience",
+  //   description: "Creative fusion chef combining Asian and Western flavors for unique culinary experiences.",
+  //   price: 180,
+  //   image: "",
+  //   rating: 4.6,
+  //   eventsServed: 90,
+  //   specialties: ["Asian Fusion", "Creative Cooking", "Presentation"]
+  // }
 ];
 
 export const ChefsSection = () => {
@@ -71,7 +79,7 @@ export const ChefsSection = () => {
     addChef({
       id: chef.id,
       name: chef.name,
-      price: chef.price,
+      price: chef.priceRange[0],
       image: chef.image,
       experience: chef.experience,
       description: chef.description
@@ -134,21 +142,36 @@ export const ChefsSection = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mb-4 text-xs text-muted-foreground">
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="h-3 w-3" />
-                    <span>{chef.eventsServed} events</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Users className="h-3 w-3" />
-                    <span>Private sessions</span>
-                  </div>
-                </div>
+                <div className="grid grid-cols-2 gap-2 mb-4 text-xs text-muted-foreground">
+  <div className="flex items-center space-x-1">
+    <Calendar className="h-3 w-3" />
+    <span>{chef.eventsServed} events</span>
+  </div>
+  <div className="flex items-center space-x-1">
+    <Users className="h-3 w-3" />
+    <span>Private sessions</span>
+  </div>
+  {chef.minGuests > 0 && (
+    <div className="flex items-center space-x-1">
+      <Users className="h-3 w-3" />
+      <span>Min {chef.minGuests} guests</span>
+    </div>
+  )}
+  {chef.pricePerPersonRange && (
+    <div className="flex items-center space-x-1">
+      <span>💲</span>
+      <span>
+        ${chef.pricePerPersonRange[0]} - ${chef.pricePerPersonRange[1]}/person
+      </span>
+    </div>
+  )}
+</div>
+
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-card-foreground">
-                    ${chef.price}/session
-                  </span>
+                  <span>
+        ${chef.priceRange[0]} - ${chef.priceRange[1]}/session
+      </span>
                   <Button
                     onClick={() => handleBookChef(chef)}
                     size="sm"

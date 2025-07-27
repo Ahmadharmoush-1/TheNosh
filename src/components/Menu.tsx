@@ -44,8 +44,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   name: "The Chicken Plate",
   description: "Tender grilled chicken served with seasoned rice and veggies.",
   ingredients: ["Grilled chicken", "Seasoned rice", "Vegetables", "Herb sauce"],
-  price: 8,
-  image: "https://i.imgur.com/vM25MN0.jpeg",
+  price: 12,
+  image: "/photos/thechickenplate.jpg",
   category: "plates"
 },
 {
@@ -53,7 +53,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   name: "The Duck Plate",
   description: "Crispy roasted duck breast with a tangy orange glaze.",
   ingredients: ["Roasted duck", "Orange glaze", "Mashed potatoes", "Greens"],
-  price: 9,
+  price: 20,
   image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=500&q=80",
   category: "plates"
 },
@@ -62,8 +62,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   name: "The Salmon Plate",
   description: "Pan-seared salmon fillet served with lemon butter and asparagus.",
   ingredients: ["Salmon fillet", "Lemon butter", "Asparagus", "Herbs"],
-  price: 8,
-  image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
+  price: 25,
+  image: "/photos/thesalmonplate.jpg",
   category: "plates"
 },
 {
@@ -71,8 +71,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   name: "The Steak Plate",
   description: "Juicy grilled steak with garlic butter and roasted potatoes.",
   ingredients: ["Grilled steak", "Garlic butter", "Roasted potatoes", "Gravy"],
-  price: 9,
-  image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=500&q=80",
+  price: 20,
+  image: "/photos/thesteakplate.jpg",
   category: "plates"
 },
 // Wraps
@@ -82,7 +82,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "Juicy beef wrap with smoked cheese sauce, tartar, and sautéed veggies in a soft tortilla.",
   ingredients: ["Mix Greens", "Tartar", "Panea", "Onions", "Mushrooms", "Pickles", "Smocked Cheese Sauce"],
   price: 14,
-  image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=500&q=80",
+  image: "/photos/burrobeef.jpg",
   category: "wraps"
 },
 {
@@ -100,7 +100,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A gourmet seafood wrap featuring shrimp, avocado, and your choice of salmon or duck with an Asian twist.",
   ingredients: ["Shrimps", "Avocado", "Salmon or Duck", "Asian Mix"],
   price: 15,
-  image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
+  image: "/photos/Gambaretto.jpg",
   category: "wraps"
 },
 {
@@ -120,7 +120,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A savory combination of beef hotdog served on a brioche bun, topped with mustard, ketchup, onions, and relish — a hearty breakfast twist.",
   ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
   price: 12,
-  image: "https://i.imgur.com/AXV3CVB.jpeg",
+  image: "/photos/eggsoticplate.jpg",
   category: "breakfast"
 },
 {
@@ -129,7 +129,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A fluffy Japanese-style egg sandwich featuring Asian sauce, mixed greens, panea, and crispy bacon, all layered perfectly.",
   ingredients: ["Asain Sauce", "Mix Greens", "Panea", "Bacon"],
   price: 12,
-  image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+  image: "/photos/japaneseeggsando.jpg",
   category: "breakfast"
 },
 {
@@ -138,16 +138,16 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A generous breakfast board designed for sharing — includes Asian sauce, fresh greens, panea, and strips of bacon.",
   ingredients: ["Asain Sauce", "Mix Greens", "Panea", "Bacon"],
   price: 12,
-  image: "https://i.imgur.com/KcVprCT.jpeg",
+  image: "/photos/thebreakfastboard.jpg",
   category: "breakfast"
 },
 {
   id: "b4",
-  name: "Baguette Chef’s Choice",
+  name: "Bagel Chef’s Choice",
   description: "Chef’s favorite: a French baguette filled with a beef hotdog, mustard, ketchup, onions, and relish for a gourmet breakfast bite.",
   ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
   price: 12,
-  image: "https://images.unsplash.com/photo-1612392061787-2d078b3e573e?auto=format&fit=crop&w=500&q=80",
+  image: "/photos/questionmark.webp",
   category: "breakfast"
 }
 ,
@@ -173,7 +173,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
    // Appetizers
   {
     id: "a1",
-    name: "Shrimp on a Sricl",
+    name: "Shrimp on a Stick",
     description: "Crispy breaded mozzarella with marinara sauce",
     ingredients: ["Mozzarella cheese", "Breadcrumbs", "Marinara sauce", "Italian herbs"],
     price: 8,
@@ -194,7 +194,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     description: "Spicy chicken wings with blue cheese dip",
     ingredients: ["Chicken wings", "Buffalo sauce", "Celery", "Blue cheese dressing"],
     price: 6,
-    image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
+    image: "/photos/babypotatoes.jpg",
     category: "appetizers"
   },
   
