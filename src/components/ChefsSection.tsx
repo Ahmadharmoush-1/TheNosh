@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Calendar, Users } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Star, Calendar, Users, Play } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useToast } from "@/hooks/use-toast";
+import { LazyImage } from "@/components/LazyImage";
 
 interface Chef {
   id: string;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useCart } from "@/context/CartContext";
 import { useToast } from "@/hooks/use-toast";
 
@@ -42,8 +43,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
  {
   id: "sw1",
   name: "The Chicken Plate",
-  description: "Tender grilled chicken served with seasoned rice and veggies.",
-  ingredients: ["Grilled chicken", "Seasoned rice", "Vegetables", "Herb sauce"],
+  description: "Tender grilled chicken served with  , veggies and  potatoes ",
+  ingredients: ["Grilled chicken", "Vegetables", "Herb sauce", "Potatoes"],
   price: 12,
   image: "/photos/thechickenplate.jpg",
   category: "plates"
@@ -51,10 +52,10 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "sw2",
   name: "The Duck Plate",
-  description: "Crispy roasted duck breast with a tangy orange glaze.",
-  ingredients: ["Roasted duck", "Orange glaze", "Mashed potatoes", "Greens"],
+  description: "Crispy roasted duck breast served with Potatoes and white sauce.",
+  ingredients: ["Roasted duck", "Mashed potatoes", "Greens","white sauce"],
   price: 20,
-  image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=500&q=80",
+  image: "/photos/duckplate.jpg",
   category: "plates"
 },
 {
@@ -79,26 +80,26 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   {
   id: "w1",
   name: "Buro Beef",
-  description: "Juicy beef wrap with smoked cheese sauce, tartar, and sautéed veggies in a soft tortilla.",
-  ingredients: ["Mix Greens", "Tartar", "Panea", "Onions", "Mushrooms", "Pickles", "Smocked Cheese Sauce"],
-  price: 14,
+  description: "Filet Mignon Beef Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
+  ingredients: ["Mignon Beef", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
+  price: 10,
   image: "/photos/burrobeef.jpg",
   category: "wraps"
-},
-{
-  id: "w2",
-  name: "Special Burro Beef",
-  description: "Loaded beef wrap with smoked pollo, pickles, mushrooms, and a tangy cheese sauce blend.",
-  ingredients: ["Mix Greens", "Tartar", "Panea", "Onions", "Mushrooms", "Pickles", "Smocked Cheese Sauce", "Smocked Pollo"],
-  price: 15,
-  image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
-  category: "wraps"
-},
+ },
+// {
+//   id: "w2",
+//   name: "Special Burro Beef",
+//   description: "Loaded beef wrap with smoked pollo, pickles, mushrooms, and a tangy cheese sauce blend.",
+//   ingredients: ["Mix Greens", "Tartar", "Panea", "Onions", "Mushrooms", "Pickles", "Smocked Cheese Sauce", "Smocked Pollo"],
+//   price: 15,
+//   image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
+//   category: "wraps"
+// },
 {
   id: "w3",
   name: "Gambaretto",
-  description: "A gourmet seafood wrap featuring shrimp, avocado, and your choice of salmon or duck with an Asian twist.",
-  ingredients: ["Shrimps", "Avocado", "Salmon or Duck", "Asian Mix"],
+  description: "Tiger Shrimps Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
+  ingredients: ["Tiger Shrimps", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
   price: 15,
   image: "/photos/Gambaretto.jpg",
   category: "wraps"
@@ -106,8 +107,35 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "w4",
   name: "Verdura Filling",
-  description: "A vegetarian delight with fresh greens, avocado, mushrooms, and creamy smoked cheese.",
-  ingredients: ["Mix Greens", "Tartar", "Avocado", "Smocked Cheese", "Panea", "Mushrooms", "Onions"],
+  description: "Asian Mix Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
+  ingredients: ["Asian Mix", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
+  price: 6.5,
+  image: "https://i.imgur.com/mnVcVSO.jpeg",
+  category: "wraps"
+},
+{
+  id: "w5",
+  name: "Smocked Pollo",
+  description: "Filet Mignon Beef Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
+  ingredients: ["Mignon Beef", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
+  price: 8,
+  image: "/photos/smockedpollo.jpg",
+  category: "wraps"
+},
+{
+  id: "w6",
+  name: "Salmon Sumo",
+  description: "A fresh Salmon Steak Resting on a Hot Foccacia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , Carmelized Onions , Pickles and Tapped With Smokey Cheese.",
+  ingredients: ["Salmon", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Carmalized Onions", "Pickles", "Smokey Cheese"],
+  price: 15,
+  image: "/photos/salmonsumo.png",
+  category: "wraps"
+},
+{
+  id: "w7",
+  name: "Quack au Pain",
+  description: "A fresh Salmon Steak Resting on a Hot Foccacia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , Carmelized Onions , Pickles and Tapped With Smokey Cheese.",
+  ingredients: ["Salmon", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Carmalized Onions", "Pickles", "Smokey Cheese"],
   price: 15,
   image: "https://i.imgur.com/mnVcVSO.jpeg",
   category: "wraps"
@@ -117,8 +145,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   {
   id: "b1",
   name: "Eggsotic Plate",
-  description: "A savory combination of beef hotdog served on a brioche bun, topped with mustard, ketchup, onions, and relish — a hearty breakfast twist.",
-  ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
+  description: "A vibrant combo of creamy avocados, soft eggs, crispy bacon, juicy baby tomatoes, and toasted bread — simple, fresh, and full of flavor.",
+  ingredients: ["Eggs","Avocados", "Bacon", "Baby Tomatoes", "Bread"],
   price: 12,
   image: "/photos/eggsoticplate.jpg",
   category: "breakfast"
@@ -126,8 +154,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "b2",
   name: "Japanese Egg Sando",
-  description: "A fluffy Japanese-style egg sandwich featuring Asian sauce, mixed greens, panea, and crispy bacon, all layered perfectly.",
-  ingredients: ["Asain Sauce", "Mix Greens", "Panea", "Bacon"],
+  description: "Fluffy, creamy egg salad made with jammy boiled eggs, Japanese mayo, and a touch of seasoning — all tucked between two slices of soft, crustless milk bread.",
+  ingredients: ["Soft-boiled eggs", "Japanese mayonnaise", "Salt & pepper", "Bacon"],
   price: 12,
   image: "/photos/japaneseeggsando.jpg",
   category: "breakfast"
@@ -135,8 +163,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "b3",
   name: "The Breakfast Board for Four",
-  description: "A generous breakfast board designed for sharing — includes Asian sauce, fresh greens, panea, and strips of bacon.",
-  ingredients: ["Asain Sauce", "Mix Greens", "Panea", "Bacon"],
+  description: "A hearty morning spread featuring farm-fresh eggs, creamy cheese, savory panea, crispy bacon, flaky croissants, golden potatoes, and a medley of fresh veggies — perfect for a satisfying start to your day.",
+  ingredients: ["Eggs", "Cheese", "Panea", "Bacon","Croisssant","Potatoes","Veggies"],
   price: 12,
   image: "/photos/thebreakfastboard.jpg",
   category: "breakfast"
@@ -144,8 +172,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "b4",
   name: "Bagel Chef’s Choice",
-  description: "Chef’s favorite: a French baguette filled with a beef hotdog, mustard, ketchup, onions, and relish for a gourmet breakfast bite.",
-  ingredients: ["Beef hotdog", "Mustard", "Ketchup", "Onions", "Relish", "Brioche bun"],
+  description: "?",
+  ingredients: [ "?", "?", "?", "?", "?"],
   price: 12,
   image: "/photos/questionmark.webp",
   category: "breakfast"
@@ -174,8 +202,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   {
     id: "a1",
     name: "Shrimp on a Stick",
-    description: "Crispy breaded mozzarella with marinara sauce",
-    ingredients: ["Mozzarella cheese", "Breadcrumbs", "Marinara sauce", "Italian herbs"],
+    description: "Pan Fried Shrimps , Sided with Avocados and Chefs Twist , Tapped with Smokey Cheese Sauce",
+    ingredients: ["Shrimps", "Avocados", "Smokey Cheese"],
     price: 8,
     image: "https://images.unsplash.com/photo-1548340748-6d2b7d7da280?auto=format&fit=crop&w=500&q=80",
     category: "appetizers"
@@ -183,16 +211,16 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   {
     id: "a2",
     name: "The Mysterious Nosh",
-    description: "Spicy chicken wings with blue cheese dip",
-    ingredients: ["Chicken wings", "Buffalo sauce", "Celery", "Blue cheese dressing"],
+    description: "An Appetizer for 2 or more , An Exclusive Chef Choice , You choose the mood , fish , heat or poultry",
+    ingredients: [],
     price: 20,
     image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
     category: "appetizers"
   }, {
     id: "a3",
     name: "Baby Potato",
-    description: "Spicy chicken wings with blue cheese dip",
-    ingredients: ["Chicken wings", "Buffalo sauce", "Celery", "Blue cheese dressing"],
+    description: "Mini  Potatos Sauted with Butter or Duck Fat , Topped wityh Parmesan and Butter",
+    ingredients: ["Mini Potatos", "Butter - Duck Fat", "Parmesan", "Butter"],
     price: 6,
     image: "/photos/babypotatoes.jpg",
     category: "appetizers"
@@ -201,8 +229,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   {
     id: "a4",
     name: "Sashimi Plate",
-    description: "Spicy chicken wings with blue cheese dip",
-    ingredients: ["Chicken wings", "Buffalo sauce", "Celery", "Blue cheese dressing"],
+    description: "The Freshest in Town a Perfectly Cut Salmon Steak with Sweet Savory Asian Sauce Sided With Wasabi and Tartar",
+    ingredients: ["Salmon", "Asian Sauce", "Wasabi", "Tartar"],
     price: 15,
     image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
     category: "appetizers"
@@ -468,7 +496,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     <section id="menu" className="py-20 bg-background min-h-screen">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: "#1E1A4B" }}>
+          <h2 className="text-4xl font-bold mb-4 text-primary">
             {categoryTitle}
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -478,63 +506,35 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 
         {filteredItems.length === 0 ? (
           <div className="text-center py-20">
-            <h3
-              className="text-2xl font-semibold mb-4"
-              style={{ color: "#1E1A4B" }}
-            >
-              Coming Soon!
-            </h3>
+            <h3 className="text-2xl font-semibold text-primary mb-4">Coming Soon!</h3>
             <p className="text-muted-foreground">
-              We're working on adding {categoryTitle.toLowerCase()} to our menu.
-              Check back soon!
+              We're working on adding {categoryTitle.toLowerCase()} to our menu. Check back soon!
             </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item) => (
-             <Card key={item.id} className="bg-card border-2 border-secondary hover:shadow-lg transition-all duration-300 overflow-hidden">
-     <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-lg bg-gray-100 flex items-center justify-center">
-  <img
-    src={item.image}
-    alt={item.name}
-    className="w-full h-full object-contain"
-    loading="lazy"
-  />
-</div>
+              <Card key={item.id} className="bg-card border-2 border-secondary hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="overflow-hidden rounded-t-lg">
+                  <AspectRatio ratio={4/3}>
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </AspectRatio>
+                </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-2" style={{ color: "#1E1A4B" }}>
-                    {item.name}
-                  </h3>
-                  <p className="text-muted-foreground mb-2 text-sm">
-                    {item.description}
-                  </p>
-
-                  {item.ingredients && item.ingredients.length > 0 && (
-  <div className="mb-4">
-    <h4 className="font-semibold text-card-foreground mb-2 text-sm">
-      Ingredients:
-    </h4>
-    <div className="flex flex-wrap gap-1">
-      {item.ingredients.map((ingredient, index) => (
-        <span
-          key={index}
-          className="bg-muted text-primary text-xs px-2 py-1 rounded-full border border-secondary"
-        >
-          {ingredient}
-        </span>
-      ))}
-    </div>
-  </div>
-)}
-
-
+                  <h3 className="text-xl font-bold mb-2 text-primary">{item.name}</h3>
+                  <p className="text-muted-foreground mb-4 text-sm">{item.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold" style={{ color: "#1E1A4B" }}>
+                    <span className="text-2xl font-bold text-primary">
                       ${item.price}
                     </span>
                     <Button
                       onClick={() => handleAddToCart(item)}
-                      className="bg-[#1E1A4B] hover:bg-[#1E1A4B]/90 text-white border border-[#1E1A4B] transition-colors duration-200"
+                      className="bg-secondary hover:bg-secondary/90 text-primary border border-secondary transition-colors duration-200"
                     >
                       Add to Cart
                     </Button>
