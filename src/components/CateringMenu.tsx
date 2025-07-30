@@ -6,26 +6,37 @@ export const CateringMenu = () => {
   const specialItems = [
     { name: "Smocked Halloumi", price: 0.6, unit: "piece" },
     { name: "Feta + Mango", price: 0.55, unit: "piece" },
-    { name: "Prociouto", price: 0.8, unit: "piece" },
-    { name: "Bresaula + Brie", price: 0.8, unit: "piece" },
+    { name: "Prosciutto", price: 0.8, unit: "piece" },
+    { name: "Bresaola & Brie.", price: 0.8, unit: "piece" },
     { name: "Brie - walnuts", price: 0.6, unit: "piece" },
     { name: "Vegie Asain Mix", price: 0.6, unit: "piece" },
     { name: "Mushroom Mix", price: 0.7, unit: "piece" },
+    { name: "Spicy Canape (Optional", price: 0, unit: "piece" },
+    
   ];
 
   const sandwichItems = [
-    { name: "Cheese-Sandwich", price: 1.5, unit: "piece" },
-    { name: "Smocked Salmon Sandwich", price: 2, unit: "piece" },
-    { name: "Smocked Crab Sandwich", price: 2, unit: "piece" },
-    { name: "Turkey And Cheese", price: 0.75, unit: "piece" },
+    {name: "Selection of Cheese Sandwich",price: 1.5,unit: "piece",},
+    { name: "Smoked Salmon ", price: 2, unit: "piece" },
+    { name: "Smoked Crab ", price: 2, unit: "piece" },
+    { name: "Turkey And Cheese", price: 2, unit: "piece" },
   ];
 
-  const sushiItems = [
-    { name: "Salmon", price: 1.2, unit: "piece" },
-    { name: "Caviar", price: 1, unit: "piece" },
-    { name: "Shrimps", price: 1.2, unit: "piece" },
-    { name: "Crab", price: 0.8, unit: "piece" },
-  ];
+ const sushiItems = [
+  { name: "Salmon", price: 1.2, unit: "piece" },
+  { name: "Caviar", price: 1.0, unit: "piece" },
+  { name: "Shrimp", price: 1.2, unit: "piece" }, // "Shrimp" is the standard plural
+  { name: "Crab", price: 0.8, unit: "piece" },
+  // {
+  //   name: "Salmon, Caviar & Shrimp with Berries & Capers",
+  //   price: 1.2,               // ← set the correct price if different
+  //   unit: "piece",
+  //   type: "combo",
+  //   includes: ["Salmon", "Caviar", "Shrimp"],
+  //   accompaniments: ["Berries", "Capers"]
+  // }
+];
+
 
   const handleWhatsAppContact = () => {
     const message = encodeURIComponent("Hi! I'm interested in your catering services. Could you please provide more information?");
@@ -108,7 +119,7 @@ export const CateringMenu = () => {
                   icon="/photos/chefhaticon.png"
                 />
                 <MenuSection
-                  title="Sandwiches"
+                  title="Sandos"
                   items={sandwichItems}
                   icon="/photos/Sandwichicon.png"
                 />

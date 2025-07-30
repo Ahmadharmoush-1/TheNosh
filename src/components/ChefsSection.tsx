@@ -31,7 +31,7 @@ const chefs: Chef[] = [
     image: "",
     rating: 4.6,
     eventsServed: 60,
-    specialties: ["Sushi", "Gourmet Dining", "Tapauese", "Salads"],
+    specialties: ["Sushi", "Gourmet Dining", "Japanese", "Salads"],
     minGuests: 10,
     pricePerPersonRange: [25, 30]
   },{

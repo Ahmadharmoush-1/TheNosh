@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useCart } from "@/context/CartContext";
 import { useToast } from "@/hooks/use-toast";
+import { Badge } from "@/components/ui/badge";
+
 
 interface MenuItem {
   id: string;
@@ -43,8 +45,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
  {
   id: "sw1",
   name: "The Chicken Plate",
-  description: "Tender grilled chicken served with  , veggies and  potatoes ",
-  ingredients: ["Grilled chicken", "Vegetables", "Herb sauce", "Potatoes"],
+  description: "Tender Grilled Chicken Sided with Baby Potatoes , Topped with Parmesan and Garlic ",
+  ingredients: ["Grilled chicken", "Baby Potatoes", "Parmesan", "Garlic","Protein","Smoeky Cheese Sauce"],
   price: 12,
   image: "/photos/thechickenplate.jpg",
   category: "plates"
@@ -52,8 +54,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "sw2",
   name: "The Duck Plate",
-  description: "Crispy roasted duck breast served with Potatoes and white sauce.",
-  ingredients: ["Roasted duck", "Mashed potatoes", "Greens","white sauce"],
+  description: "Tender Roasted Duck Sided with Golden Baby Potatoes, Drizzled in a Rich Smokey Cheese Sauce, Finished with Shaved Parmesan and a Hint of Garlic For a Bold, Savory finish.",
+  ingredients: ["Roasted duck", "Baby potatoes","Smokey Cheese Sauce","Parmesan","Garlic"],
   price: 20,
   image: "/photos/duckplate.jpg",
   category: "plates"
@@ -61,8 +63,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "sw3",
   name: "The Salmon Plate",
-  description: "Pan-seared salmon fillet served with lemon butter and asparagus.",
-  ingredients: ["Salmon fillet", "Lemon butter", "Asparagus", "Herbs"],
+  description: "Salmon Fillet Sided with Baby Potatoes, Topped with a Blend of Smokey Cheese and Parmesan, Finished with a Drizzle of Garlic Sauce  a Flavorful, Protein-rich Meal",
+  ingredients: ["Salmon fillet", "Baby Potatoes", "Smokey Cheese", "Parmesan","Protein","Garlic Sauce"],
   price: 25,
   image: "/photos/thesalmonplate.jpg",
   category: "plates"
@@ -70,8 +72,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "sw4",
   name: "The Steak Plate",
-  description: "Juicy grilled steak with garlic butter and roasted potatoes.",
-  ingredients: ["Grilled steak", "Garlic butter", "Roasted potatoes", "Gravy"],
+  description: "Juicy Grilled Steak Sided with Baby Potatoes, Topped with Smokey Cheese Sauce and Parmesan, Finished with a Rich Garlic Sauce — a bold, Protein-packed classic.",
+  ingredients: ["Grilled steak", "Garlic Sauce" , "Smokey Cheese Sauce", "Protein","Parmesan"],
   price: 20,
   image: "/photos/thesteakplate.jpg",
   category: "plates"
@@ -101,7 +103,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "Tiger Shrimps Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
   ingredients: ["Tiger Shrimps", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
   price: 15,
-  image: "/photos/Gambaretto.jpg",
+  image: "",
   category: "wraps"
 },
 {
@@ -115,7 +117,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 },
 {
   id: "w5",
-  name: "Smocked Pollo",
+  name: "Smoked Pollo",
   description: "Filet Mignon Beef Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
   ingredients: ["Mignon Beef", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
   price: 8,
@@ -125,7 +127,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "w6",
   name: "Salmon Sumo",
-  description: "A fresh Salmon Steak Resting on a Hot Foccacia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , Carmelized Onions , Pickles and Tapped With Smokey Cheese.",
+  description: "A Fresh Salmon Steak Resting on a Hot Foccacia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , Carmelized Onions , Pickles and Tapped With Smokey Cheese.",
   ingredients: ["Salmon", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Carmalized Onions", "Pickles", "Smokey Cheese"],
   price: 15,
   image: "/photos/salmonsumo.png",
@@ -134,10 +136,10 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "w7",
   name: "Quack au Pain",
-  description: "A fresh Salmon Steak Resting on a Hot Foccacia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , Carmelized Onions , Pickles and Tapped With Smokey Cheese.",
-  ingredients: ["Salmon", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Carmalized Onions", "Pickles", "Smokey Cheese"],
+  description: "A  Fresh Duck  Breast Resting on a Hot Foccacia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , Carmelized Onions , Pickles and Tapped With Smokey Cheese.",
+  ingredients: ["Duck", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Carmalized Onions", "Pickles", "Smokey Cheese"],
   price: 15,
-  image: "https://i.imgur.com/mnVcVSO.jpeg",
+  image: "/photos/Gambaretto.jpg",
   category: "wraps"
 },
 
@@ -145,7 +147,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   {
   id: "b1",
   name: "Eggsotic Plate",
-  description: "A vibrant combo of creamy avocados, soft eggs, crispy bacon, juicy baby tomatoes, and toasted bread — simple, fresh, and full of flavor.",
+  description: "A Vibrant Combo of Creamy Avocados, Soft Eggs, Crispy Bacon, Juicy Baby Tomatoes, and Toasted Bread — Simple, Fresh, and Full of Flavor.",
   ingredients: ["Eggs","Avocados", "Bacon", "Baby Tomatoes", "Bread"],
   price: 12,
   image: "/photos/eggsoticplate.jpg",
@@ -172,7 +174,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "b4",
   name: "Bagel Chef’s Choice",
-  description: "?",
+  description: "The Mysterious Nosh",
   ingredients: [ "?", "?", "?", "?", "?"],
   price: 12,
   image: "/photos/questionmark.webp",
@@ -183,19 +185,19 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   {
     id: "s1",
     name: "TheNosh Salad",
-    description: "Fresh romaine lettuce with classic Caesar dressing",
-    ingredients: ["Mix Greens", "BlueBerry", "Strawberry", "Mango , Mushrooms", "Berries , Avocado","Tapped Parmesan"],
+    description: "",
+    ingredients: [],
     price: 12,
-    image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=500&q=80",
+    image: "",
     category: "salads"
   },
   {
     id: "s2",
     name: "Watermellon Holloumi Salad",
-    description: "Fresh vegetables with feta cheese and olives",
-    ingredients: ["Avocado", "Berries", "Mix Greens", "Mushrooms", "Watermellon", "Halloumi Cheese"],
+    description: "",
+    ingredients: [],
     price: 13,
-    image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=500&q=80",
+    image: "",
     category: "salads"
   },
    // Appetizers
@@ -205,7 +207,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     description: "Pan Fried Shrimps , Sided with Avocados and Chefs Twist , Tapped with Smokey Cheese Sauce",
     ingredients: ["Shrimps", "Avocados", "Smokey Cheese"],
     price: 8,
-    image: "https://images.unsplash.com/photo-1548340748-6d2b7d7da280?auto=format&fit=crop&w=500&q=80",
+    image: "",
     category: "appetizers"
   },
   {
@@ -214,12 +216,12 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     description: "An Appetizer for 2 or more , An Exclusive Chef Choice , You choose the mood , fish , heat or poultry",
     ingredients: [],
     price: 20,
-    image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
+    image: "",
     category: "appetizers"
   }, {
     id: "a3",
     name: "Baby Potato",
-    description: "Mini  Potatos Sauted with Butter or Duck Fat , Topped wityh Parmesan and Butter",
+    description: "Mini  Potatos Sauted with Butter or Duck Fat , Topped with Parmesan and Butter",
     ingredients: ["Mini Potatos", "Butter - Duck Fat", "Parmesan", "Butter"],
     price: 6,
     image: "/photos/babypotatoes.jpg",
@@ -232,7 +234,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     description: "The Freshest in Town a Perfectly Cut Salmon Steak with Sweet Savory Asian Sauce Sided With Wasabi and Tartar",
     ingredients: ["Salmon", "Asian Sauce", "Wasabi", "Tartar"],
     price: 15,
-    image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
+    image: "",
     category: "appetizers"
   },
 
@@ -527,7 +529,19 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-primary">{item.name}</h3>
-                  <p className="text-muted-foreground mb-4 text-sm">{item.description}</p>
+                  <p className="text-muted-foreground mb-3 text-sm">{item.description}</p>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-muted-foreground mb-2">Ingredients:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {item.ingredients.map((ingredient, index) => (
+                        <Badge key={index} variant="secondary" className="text-xs">
+                          {ingredient}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-primary">
                       ${item.price}
