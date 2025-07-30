@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 21,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1753874959633,
@@ -92,6 +92,10 @@
                 {
                     "date": 1753876888005,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,16 +26,16 @@\n   { name: \"Salmon\", price: 1.2, unit: \"piece\" },\r\n   { name: \"Caviar\", price: 1.0, unit: \"piece\" },\r\n   { name: \"Shrimp\", price: 1.2, unit: \"piece\" }, // \"Shrimp\" is the standard plural\r\n   { name: \"Crab\", price: 0.8, unit: \"piece\" },\r\n-  {\r\n-    name: \"Salmon, Caviar & Shrimp with Berries & Capers\",\r\n-    price: 1.2,               // ← set the correct price if different\r\n-    unit: \"piece\",\r\n-    type: \"combo\",\r\n-    includes: [\"Salmon\", \"Caviar\", \"Shrimp\"],\r\n-    accompaniments: [\"Berries\", \"Capers\"]\r\n-  }\r\n+  // {\r\n+  //   name: \"Salmon, Caviar & Shrimp with Berries & Capers\",\r\n+  //   price: 1.2,               // ← set the correct price if different\r\n+  //   unit: \"piece\",\r\n+  //   type: \"combo\",\r\n+  //   includes: [\"Salmon\", \"Caviar\", \"Shrimp\"],\r\n+  //   accompaniments: [\"Berries\", \"Capers\"]\r\n+  // }\r\n ];\r\n \r\n \r\n   const handleWhatsAppContact = () => {\r\n"
+                },
+                {
+                    "date": 1753877161512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { Download, MessageCircle } from \"lucide-react\";\r\n \r\n export const CateringMenu = () => {\r\n   const specialItems = [\r\n-    { name: \"Smocked Halloumi\", price: 0.6, unit: \"piece\" },\r\n+    { name: \"Smoked Halloumi\", price: 0.6, unit: \"piece\" },\r\n     { name: \"Feta + Mango\", price: 0.55, unit: \"piece\" },\r\n     { name: \"Prosciutto\", price: 0.8, unit: \"piece\" },\r\n     { name: \"Bresaola & Brie.\", price: 0.8, unit: \"piece\" },\r\n     { name: \"Brie - walnuts\", price: 0.6, unit: \"piece\" },\r\n"
                 }
             ],
             "date": 1753874959633,

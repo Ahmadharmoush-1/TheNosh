@@ -112,7 +112,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "Asian Mix Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
   ingredients: ["Asian Mix", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
   price: 6.5,
-  image: "https://i.imgur.com/mnVcVSO.jpeg",
+  image: "",
   category: "wraps"
 },
 {
