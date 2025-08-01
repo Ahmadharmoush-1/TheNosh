@@ -40,6 +40,8 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
     phone: string;
     location: string;
   }) => {
+    const isChefOnlyOrder = chefBookings.length > 0 && items.length === 0 && cateringItems.length === 0;
+    
     let message = "🍽️ *New Order from The Nosh*\n\n";
     
     message += `*Customer Details:*\n`;
@@ -79,7 +81,9 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
       chefBookings.forEach((chef, index) => {
         message += `${index + 1}. 👨‍🍳 *${chef.name}*\n`;
         message += `   Experience: ${chef.experience}\n`;
-        message += `   Price: $${chef.price.toFixed(2)}\n`;
+        if (!isChefOnlyOrder) {
+          message += `   Price: $${chef.price.toFixed(2)}\n`;
+        }
         if (chef.notes) {
           message += `   Notes: ${chef.notes}\n`;
         }
@@ -87,13 +91,15 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
       });
     }
     
-    const deliveryFee = 3;
-    const totalWithDelivery = totalPrice + deliveryFee;
-    
-    message += `📋 *Order Summary:*\n`;
-    message += `💰 Subtotal: $${totalPrice.toFixed(2)}\n`;
-    message += `🚚 Delivery Fee: $${deliveryFee.toFixed(2)}\n`;
-    message += `💵 *Total: $${totalWithDelivery.toFixed(2)}*\n\n`;
+    if (!isChefOnlyOrder) {
+      const deliveryFee = 3;
+      const totalWithDelivery = totalPrice + deliveryFee;
+      
+      message += `📋 *Order Summary:*\n`;
+      message += `💰 Subtotal: $${totalPrice.toFixed(2)}\n`;
+      message += `🚚 Delivery Fee: $${deliveryFee.toFixed(2)}\n`;
+      message += `💵 *Total: $${totalWithDelivery.toFixed(2)}*\n\n`;
+    }
     
     if (globalNotes) {
       message += `📝 *Special Instructions:*\n${globalNotes}\n\n`;
@@ -117,7 +123,7 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
     phone: string;
     location: string;
   }) => {
-    const phoneNumber = "96176054688";
+    const phoneNumber = "96176534652";
     const message = formatOrderForWhatsApp(customerInfo);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
@@ -128,19 +134,21 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
 
   if (!isOpen) return null;
 
+  const hasItems = items.length > 0 || cateringItems.length > 0 || chefBookings.length > 0;
+  const isChefOnlyOrder = chefBookings.length > 0 && items.length === 0 && cateringItems.length === 0;
+
   if (showCheckout) {
     return (
       <div className="fixed inset-0 z-50 bg-background">
         <CheckoutForm
           total={totalPrice}
+          isChefOnlyOrder={isChefOnlyOrder}
           onSubmit={handleCheckoutSubmit}
           onBack={() => setShowCheckout(false)}
         />
       </div>
     );
   }
-
-  const hasItems = items.length > 0 || cateringItems.length > 0 || chefBookings.length > 0;
 
   return (
     <>
@@ -316,8 +324,10 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                               <X className="h-3 w-3 sm:h-4 sm:w-4" />
                             </Button>
                           </div>
-                          <p className="text-muted-foreground text-xs mb-1">{chef.experience}</p>
-                          <p className="text-foreground font-bold mb-2 sm:mb-3 text-sm sm:text-base">${chef.price.toFixed(2)}/session</p>
+                           <p className="text-muted-foreground text-xs mb-1">{chef.experience}</p>
+                           {!isChefOnlyOrder && (
+                             <p className="text-foreground font-bold mb-2 sm:mb-3 text-sm sm:text-base">${chef.price.toFixed(2)}/session</p>
+                           )}
 
                           <Textarea
                             placeholder="Special requests for the chef"
@@ -352,31 +362,33 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
           </div>
 
           {/* Footer - Fixed at bottom */}
-          {hasItems && (
-            <div className="border-t border-border p-4 sm:p-6 bg-card flex-shrink-0">
-              <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
-                <div className="flex items-center justify-between text-muted-foreground text-sm sm:text-base">
-                  <span>💰 Subtotal:</span>
-                  <span>${totalPrice.toFixed(2)}</span>
-                </div>
-                <div className="flex items-center justify-between text-muted-foreground text-sm sm:text-base">
-                  <span>🚚 Delivery Fee:</span>
-                  <span>$3.00</span>
-                </div>
-                <div className="flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border">
-                  <span>💵 Total:</span>
-                  <span>${(totalPrice + 3).toFixed(2)}</span>
-                </div>
-              </div>
-              <Button
-                onClick={() => setShowCheckout(true)}
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-2 sm:py-3 text-sm sm:text-base transition-all duration-300 hover:scale-[1.02]"
-              >
-                <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
-                Proceed to Checkout
-              </Button>
-            </div>
-          )}
+           {hasItems && (
+             <div className="border-t border-border p-4 sm:p-6 bg-card flex-shrink-0">
+               {!isChefOnlyOrder && (
+                 <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
+                   <div className="flex items-center justify-between text-muted-foreground text-sm sm:text-base">
+                     <span>💰 Subtotal:</span>
+                     <span>${totalPrice.toFixed(2)}</span>
+                   </div>
+                   <div className="flex items-center justify-between text-muted-foreground text-sm sm:text-base">
+                     <span>🚚 Delivery Fee:</span>
+                     <span>$3.00</span>
+                   </div>
+                   <div className="flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border">
+                     <span>💵 Total:</span>
+                     <span>${(totalPrice + 3).toFixed(2)}</span>
+                   </div>
+                 </div>
+               )}
+               <Button
+                 onClick={() => setShowCheckout(true)}
+                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-2 sm:py-3 text-sm sm:text-base transition-all duration-300 hover:scale-[1.02]"
+               >
+                 <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
+                 {isChefOnlyOrder ? 'Book Chef' : 'Proceed to Checkout'}
+               </Button>
+             </div>
+           )}
         </div>
       </div>
 
