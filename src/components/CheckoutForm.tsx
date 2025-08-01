@@ -37,7 +37,7 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/10 py-8 animate-fade-in overflow-y-auto">
+    <div className="h-screen overflow-y-auto bg-gradient-to-br from-background via-background to-accent/10 py-8 animate-fade-in">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8 animate-scale-in">
