@@ -54,7 +54,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "sw2",
   name: "The Duck Plate",
-  description: "Tender Roasted Duck Sided with Golden Baby Potatoes, Drizzled in a Rich Smokey Cheese Sauce, Finished with Shaved Parmesan and a Hint of Garlic For a Bold, Savory finish.",
+  description: "Tender Roasted Duck Sided with Golden Baby Potatoes, Drizzled in a Rich Smokey Cheese Sauce, Topped with Parmesan and Garlic, Savory finish.",
   ingredients: ["Roasted duck", "Baby potatoes","Smokey Cheese Sauce","Parmesan","Garlic"],
   price: 20,
   image: "/photos/duckplate.jpg",
@@ -63,7 +63,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "sw3",
   name: "The Salmon Plate",
-  description: "Salmon Fillet Sided with Baby Potatoes, Topped with a Blend of Smokey Cheese and Parmesan, Finished with a Drizzle of Garlic Sauce  a Flavorful, Protein-rich Meal",
+  description: "Salmon Fillet Sided with Baby Potatoes, Topped with Parmesan and Garlic",
   ingredients: ["Salmon fillet", "Baby Potatoes", "Smokey Cheese", "Parmesan","Protein","Garlic Sauce"],
   price: 25,
   image: "/photos/thesalmonplate.jpg",
