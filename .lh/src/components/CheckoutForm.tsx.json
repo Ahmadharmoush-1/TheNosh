@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1754046393966,
@@ -36,6 +36,10 @@
                 {
                     "date": 1754049551893,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     }\r\n   };\r\n \r\n   return (\r\n-    <div className=\"min-h-screen bg-gradient-to-br from-background via-background to-accent/10 py-8 animate-fade-in overflow-y-auto\">\r\n+    <div className=\"h-screen overflow-y-auto bg-gradient-to-br from-background via-background to-accent/10 py-8 animate-fade-in\">\r\n       <div className=\"container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl\">\r\n         {/* Header */}\r\n         <div className=\"text-center mb-8 animate-scale-in\">\r\n           <div className=\"flex items-center justify-center mb-4\">\r\n"
+                },
+                {
+                    "date": 1754049722410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n               </CardContent>\r\n             </Card>\r\n \r\n             {/* Security Badges */}\r\n-            {/* <Card className=\"bg-card/60 backdrop-blur-sm border-border animate-scale-in\">\r\n+            <Card className=\"bg-card/60 backdrop-blur-sm border-border animate-scale-in\">\r\n               <CardContent className=\"p-4\">\r\n                 <div className=\"flex items-center justify-center space-x-6 text-sm text-muted-foreground\">\r\n                   <div className=\"flex items-center\">\r\n                     <Lock className=\"h-4 w-4 mr-1 text-green-500\" />\r\n@@ -142,9 +142,9 @@\n                     <span>Safe Checkout</span>\r\n                   </div>\r\n                 </div>\r\n               </CardContent>\r\n-            </Card> */}\r\n+            </Card>\r\n           </div>\r\n \r\n           {/* Right Side - Order Summary & Details */}\r\n           <div className=\"space-y-6\">\r\n"
                 }
             ],
             "date": 1754046393966,

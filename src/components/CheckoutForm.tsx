@@ -130,7 +130,7 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
             </Card>
 
             {/* Security Badges */}
-            {/* <Card className="bg-card/60 backdrop-blur-sm border-border animate-scale-in">
+            <Card className="bg-card/60 backdrop-blur-sm border-border animate-scale-in">
               <CardContent className="p-4">
                 <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
                   <div className="flex items-center">
@@ -143,7 +143,7 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
                   </div>
                 </div>
               </CardContent>
-            </Card> */}
+            </Card>
           </div>
 
           {/* Right Side - Order Summary & Details */}
