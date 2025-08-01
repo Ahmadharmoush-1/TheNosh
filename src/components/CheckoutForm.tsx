@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { MessageCircle, User, Phone, MapPin, CheckCircle, ArrowLeft, Sparkles, Lock, Shield, Clock, Edit3, Truck } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { MessageCircle, User, Phone, MapPin, CheckCircle, Edit3, Clock, Sparkles, Lock, Shield } from "lucide-react";
 
 interface CheckoutFormProps {
   total: number;
@@ -30,7 +29,6 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
     e.preventDefault();
     if (name && phone && location) {
       setIsSubmitting(true);
-      // Add a small delay for better UX
       setTimeout(() => {
         onSubmit({ name, phone, location });
         setIsSubmitting(false);
@@ -39,12 +37,11 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/10 py-8 animate-fade-in">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/10 py-8 animate-fade-in overflow-y-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8 animate-scale-in">
           <div className="flex items-center justify-center mb-4">
-            {/* <Sparkles className="h-8 w-8 text-primary mr-2 animate-pulse" /> */}
             <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               {isChefOnlyOrder ? 'Book Your Chef' : 'Complete Your Order'}
             </h1>
@@ -151,7 +148,6 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
 
           {/* Right Side - Order Summary & Details */}
           <div className="space-y-6">
-            {/* Order Summary */}
             <Card className="bg-card/80 backdrop-blur-sm border-border shadow-2xl animate-scale-in">
               <CardHeader>
                 <CardTitle className="flex items-center text-card-foreground">
@@ -185,7 +181,7 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
                   onClick={onBack}
                   variant="outline"
                   size="sm"
-                  className="w-full border-border text-card-foreground hover:bg-accent"
+                  className="w-full border-border text-card-foreground hover:bg-accent mt-2"
                 >
                   <Edit3 className="h-4 w-4 mr-2" />
                   Edit Order
@@ -193,7 +189,6 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
               </CardContent>
             </Card>
 
-            {/* Delivery Time */}
             {!isChefOnlyOrder && (
               <Card className="bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20 animate-scale-in">
                 <CardContent className="p-4">
@@ -208,7 +203,6 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
               </Card>
             )}
 
-            {/* Chef Service Info */}
             {isChefOnlyOrder && (
               <Card className="bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20 animate-scale-in">
                 <CardContent className="p-4">
@@ -225,8 +219,8 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
           </div>
         </div>
 
-        {/* Back to Cart Button */}
-        <div className="text-center mt-8">
+        {/* Sticky Back to Cart Button */}
+        <div className="text-center mt-8 sticky bottom-0 bg-background/80 backdrop-blur-md py-4 z-50">
           <Button
             onClick={onBack}
             variant="ghost"
