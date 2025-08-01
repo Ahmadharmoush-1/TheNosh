@@ -44,7 +44,7 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
         {/* Header */}
         <div className="text-center mb-8 animate-scale-in">
           <div className="flex items-center justify-center mb-4">
-            <Sparkles className="h-8 w-8 text-primary mr-2 animate-pulse" />
+            {/* <Sparkles className="h-8 w-8 text-primary mr-2 animate-pulse" /> */}
             <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               {isChefOnlyOrder ? 'Book Your Chef' : 'Complete Your Order'}
             </h1>
@@ -202,7 +202,7 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
                     <h3 className="font-semibold text-card-foreground">Delivery Time Estimate</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Your delicious meal will be at your door in around 30–40 minutes! 🛵💨
+                    Your delicious meal will be at your door in around 20-25 minutes! 🛵💨
                   </p>
                 </CardContent>
               </Card>
