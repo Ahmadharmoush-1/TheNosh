@@ -46,7 +46,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   id: "sw1",
   name: "The Chicken Plate",
   description: "Tender Grilled Chicken Sided with Baby Potatoes , Topped with Parmesan and Garlic ",
-  ingredients: ["Grilled chicken", "Baby Potatoes", "Parmesan", "Garlic","Protein","Smoeky Cheese Sauce"],
+  ingredients: ["Grilled chicken", "Baby Potatoes", "Parmesan", "Garlic","Protein","Smokey Cheese Sauce"],
   price: 12,
   image: "/photos/thechickenplate.jpg",
   category: "plates"
