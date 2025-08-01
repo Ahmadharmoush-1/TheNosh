@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1753874959633,
@@ -96,6 +96,10 @@
                 {
                     "date": 1753877161512,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { Download, MessageCircle } from \"lucide-react\";\r\n \r\n export const CateringMenu = () => {\r\n   const specialItems = [\r\n-    { name: \"Smocked Halloumi\", price: 0.6, unit: \"piece\" },\r\n+    { name: \"Smoked Halloumi\", price: 0.6, unit: \"piece\" },\r\n     { name: \"Feta + Mango\", price: 0.55, unit: \"piece\" },\r\n     { name: \"Prosciutto\", price: 0.8, unit: \"piece\" },\r\n     { name: \"Bresaola & Brie.\", price: 0.8, unit: \"piece\" },\r\n     { name: \"Brie - walnuts\", price: 0.6, unit: \"piece\" },\r\n"
+                },
+                {
+                    "date": 1754074830867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,11 @@\n     { name: \"Feta + Mango\", price: 0.55, unit: \"piece\" },\r\n     { name: \"Prosciutto\", price: 0.8, unit: \"piece\" },\r\n     { name: \"Bresaola & Brie.\", price: 0.8, unit: \"piece\" },\r\n     { name: \"Brie - walnuts\", price: 0.6, unit: \"piece\" },\r\n-    { name: \"Vegie Asain Mix\", price: 0.6, unit: \"piece\" },\r\n+    { name: \"Vegie Asian Mix\", price: 0.6, unit: \"piece\" },\r\n     { name: \"Mushroom Mix\", price: 0.7, unit: \"piece\" },\r\n-    { name: \"Spicy Canape (Optional\", price: 0, unit: \"piece\" },\r\n+    { name: \"Spicy Canape (Optional)\", price: 0, unit: \"piece\" },\r\n     \r\n   ];\r\n \r\n   const sandwichItems = [\r\n"
                 }
             ],
             "date": 1753874959633,

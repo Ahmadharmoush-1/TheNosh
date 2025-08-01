@@ -9,7 +9,7 @@ export const CateringMenu = () => {
     { name: "Prosciutto", price: 0.8, unit: "piece" },
     { name: "Bresaola & Brie.", price: 0.8, unit: "piece" },
     { name: "Brie - walnuts", price: 0.6, unit: "piece" },
-    { name: "Vegie Asain Mix", price: 0.6, unit: "piece" },
+    { name: "Vegie Asian Mix", price: 0.6, unit: "piece" },
     { name: "Mushroom Mix", price: 0.7, unit: "piece" },
     { name: "Spicy Canape (Optional)", price: 0, unit: "piece" },
     
