@@ -56,10 +56,13 @@ export const Footer = () => {
                 <Phone className="h-4 w-4 text-white" />
                 <span>+961 76 054 688</span>
               </div>
-              <div className="flex items-center gap-3 text-white/80">
-                <Clock className="h-4 w-4 text-white" />
-                <span>Daily: 2:00 PM - 11:30 PM</span>
-              </div>
+             <div className="flex flex-col text-white/80 gap-1">
+  <div className="flex items-center gap-3">
+    <Clock className="h-4 w-4 text-white" />
+    <span>Daily: 2:00 PM - 11:30 PM</span>
+  </div>
+  <span className="ml-7">Closed on Mondays</span>
+</div>
             </div>
           </div>
 
@@ -94,7 +97,7 @@ export const Footer = () => {
         {/* Bottom Copyright */}
         <div className="border-t border-accent mt-8 pt-8 text-center">
           <p className="text-white/80">
-            © 2024 The Nosh Restaurant. All rights reserved. | Crafted with passion for exceptional dining.
+            © 2025 The Nosh Restaurant. All rights reserved. | Crafted with passion for exceptional dining.
           </p>
         </div>
       </div>
