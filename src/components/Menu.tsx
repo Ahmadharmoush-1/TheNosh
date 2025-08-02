@@ -497,14 +497,14 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   return (
     <section id="menu" className="py-20 bg-background min-h-screen">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-primary">
-            {categoryTitle}
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            Choose from our delicious {categoryTitle.toLowerCase()} selection
-          </p>
-        </div>
+       <div className="text-center mb-12">
+  <h2 className="text-3xl font-bold mb-3 text-primary">
+    {categoryTitle}
+  </h2>
+  <p className="text-muted-foreground text-base">
+    Choose from our delicious {categoryTitle.toLowerCase()} selection
+  </p>
+</div>
 
         {filteredItems.length === 0 ? (
           <div className="text-center py-20">
