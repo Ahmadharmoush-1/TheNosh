@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/pages/Index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1754125256047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754125263470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,60 @@\n+import { useState } from \"react\";\r\n+import { VideoHero } from \"@/components/VideoHero\";\r\n+import { Header } from \"@/components/Header\";\r\n+import { CategoryButtons } from \"@/components/CategoryButtons\";\r\n+import { FeaturesSection } from \"@/components/FeatureSection\";\r\n+import { Menu } from \"@/components/Menu\";\r\n+import { Cart } from \"@/components/Cart\";\r\n+import { Footer } from \"@/components/Footer\";\r\n+\r\n+const Index = () => {\r\n+  const [showCart, setShowCart] = useState(false);\r\n+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);\r\n+\r\n+  const handleCategoryClick = (category: string) => {\r\n+    setSelectedCategory(category);\r\n+  };\r\n+\r\n+  const handleBackToHome = () => {\r\n+    setSelectedCategory(null);\r\n+    // Scroll to categories section after state update\r\n+    setTimeout(() => {\r\n+      document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' });\r\n+    }, 100);\r\n+  };\r\n+\r\n+  const handleCartClick = () => {\r\n+    setShowCart(true);\r\n+  };\r\n+\r\n+  const handleCloseCart = () => {\r\n+    setShowCart(false);\r\n+  };\r\n+\r\n+  return (\r\n+    <div className=\"min-h-screen bg-white text-black\">\r\n+      <Header \r\n+        onCartClick={handleCartClick} \r\n+        onBackClick={selectedCategory ? handleBackToHome : undefined} \r\n+      />\r\n+      \r\n+      {!selectedCategory && <VideoHero />}\r\n+      \r\n+      {selectedCategory ? (\r\n+        <Menu selectedCategory={selectedCategory} />\r\n+      ) : (\r\n+        <>\r\n+          <div id=\"categories\">\r\n+            <CategoryButtons onCategoryClick={handleCategoryClick} />\r\n+          </div>\r\n+          <FeaturesSection />\r\n+        </>\r\n+      )}\r\n+      \r\n+      <Footer />\r\n+      <Cart isOpen={showCart} onClose={handleCloseCart} />\r\n+    </div>\r\n+  );\r\n+};\r\n+\r\n+export default Index;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1754125256047,
+            "name": "Commit-0",
+            "content": "import { useState } from \"react\";\r\nimport { VideoHero } from \"@/components/VideoHero\";\r\nimport { Header } from \"@/components/Header\";\r\nimport { CategoryButtons } from \"@/components/CategoryButtons\";\r\nimport { FeaturesSection } from \"@/components/FeaturesSection\";\r\nimport { Menu } from \"@/components/Menu\";\r\nimport { Cart } from \"@/components/Cart\";\r\nimport { Footer } from \"@/components/Footer\";\r\n\r\nconst Index = () => {\r\n  const [showCart, setShowCart] = useState(false);\r\n  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);\r\n\r\n  const handleCategoryClick = (category: string) => {\r\n    setSelectedCategory(category);\r\n  };\r\n\r\n  const handleBackToHome = () => {\r\n    setSelectedCategory(null);\r\n    // Scroll to categories section after state update\r\n    setTimeout(() => {\r\n      document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' });\r\n    }, 100);\r\n  };\r\n\r\n  const handleCartClick = () => {\r\n    setShowCart(true);\r\n  };\r\n\r\n  const handleCloseCart = () => {\r\n    setShowCart(false);\r\n  };\r\n\r\n  return (\r\n    <div className=\"min-h-screen bg-white text-black\">\r\n      <Header \r\n        onCartClick={handleCartClick} \r\n        onBackClick={selectedCategory ? handleBackToHome : undefined} \r\n      />\r\n      \r\n      {!selectedCategory && <VideoHero />}\r\n      \r\n      {selectedCategory ? (\r\n        <Menu selectedCategory={selectedCategory} />\r\n      ) : (\r\n        <>\r\n          <div id=\"categories\">\r\n            <CategoryButtons onCategoryClick={handleCategoryClick} />\r\n          </div>\r\n          <FeaturesSection />\r\n        </>\r\n      )}\r\n      \r\n      <Footer />\r\n      <Cart isOpen={showCart} onClose={handleCloseCart} />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Index;"
+        }
+    ]
+}

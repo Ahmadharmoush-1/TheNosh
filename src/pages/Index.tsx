@@ -6,7 +6,6 @@ import { FeaturesSection } from "@/components/FeatureSection";
 import { Menu } from "@/components/Menu";
 import { Cart } from "@/components/Cart";
 import { Footer } from "@/components/Footer";
-import { CartProvider } from "@/context/CartContext";
 
 const Index = () => {
   const [showCart, setShowCart] = useState(false);
@@ -18,6 +17,10 @@ const Index = () => {
 
   const handleBackToHome = () => {
     setSelectedCategory(null);
+    // Scroll to categories section after state update
+    setTimeout(() => {
+      document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   };
 
   const handleCartClick = () => {
@@ -29,30 +32,28 @@ const Index = () => {
   };
 
   return (
-    <CartProvider>
-      <div className="min-h-screen bg-white text-black">
-        <Header 
-          onCartClick={handleCartClick} 
-          onBackClick={selectedCategory ? handleBackToHome : undefined} 
-        />
-        
-        {!selectedCategory && <VideoHero />}
-        
-        {selectedCategory ? (
-          <Menu selectedCategory={selectedCategory} />
-        ) : (
-          <>
-            <div id="categories">
-              <CategoryButtons onCategoryClick={handleCategoryClick} />
-            </div>
-            <FeaturesSection />
-          </>
-        )}
-        
-        <Footer />
-        <Cart isOpen={showCart} onClose={handleCloseCart} />
-      </div>
-    </CartProvider>
+    <div className="min-h-screen bg-white text-black">
+      <Header 
+        onCartClick={handleCartClick} 
+        onBackClick={selectedCategory ? handleBackToHome : undefined} 
+      />
+      
+      {!selectedCategory && <VideoHero />}
+      
+      {selectedCategory ? (
+        <Menu selectedCategory={selectedCategory} />
+      ) : (
+        <>
+          <div id="categories">
+            <CategoryButtons onCategoryClick={handleCategoryClick} />
+          </div>
+          <FeaturesSection />
+        </>
+      )}
+      
+      <Footer />
+      <Cart isOpen={showCart} onClose={handleCloseCart} />
+    </div>
   );
 };
 
