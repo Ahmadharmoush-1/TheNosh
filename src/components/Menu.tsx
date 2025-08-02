@@ -81,9 +81,9 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 // sandos
   {
   id: "w1",
-  name: "Buro Beef",
-  description: "Filet Mignon Beef Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
-  ingredients: ["Mignon Beef", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
+  name: "Burro Beef",
+  description: "Filet Mignon Beef Resting on a  Hot Focaccia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Caramelized Onions.",
+  ingredients: ["Mignon Beef", "Mixed Greens","Tartar", "Pane", "Onions", "Mushrooms", "Pickles"],
   price: 10,
   image: "/photos/burrobeef.jpg",
   category: "sandos"
@@ -100,8 +100,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "w3",
   name: "Gambaretto",
-  description: "Tiger Shrimps Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
-  ingredients: ["Tiger Shrimps", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
+  description: "Tiger Shrimps Resting on a  Hot Focaccia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Caramelized Onions.",
+  ingredients: ["Tiger Shrimps", "Mixed Greens","Tartar", "Pane", "Onions", "Mushrooms", "Pickles"],
   price: 15,
   image: "",
   category: "sandos"
@@ -109,8 +109,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "w4",
   name: "Verdura Filling",
-  description: "Asian Mix Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
-  ingredients: ["Asian Mix", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
+  description: "Asian Mix Resting on a  Hot Focaccia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Caramelized Onions.",
+  ingredients: ["Asian Mix", "Mixed Greens","Tartar", "Pane", "Onions", "Mushrooms", "Pickles"],
   price: 6.5,
   image: "",
   category: "sandos"
@@ -118,8 +118,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "w5",
   name: "Smoked Pollo",
-  description: "Filet Mignon Beef Resting on a  Hot Foccacia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Carmalized Onions.",
-  ingredients: ["Mignon Beef", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
+  description: "Filet Mignon Beef Resting on a  Hot Focaccia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Caramelized Onions.",
+  ingredients: ["Mignon Beef", "Mixed Greens","Tartar", "Pane", "Onions", "Mushrooms", "Pickles"],
   price: 8,
   image: "/photos/smockedpollo.jpg",
   category: "sandos"
@@ -127,8 +127,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "w6",
   name: "Salmon Sumo",
-  description: "A Fresh Salmon Steak Resting on a Hot Foccacia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , Carmelized Onions , Pickles and Tapped With Smokey Cheese.",
-  ingredients: ["Salmon", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Carmalized Onions", "Pickles", "Smokey Cheese"],
+  description: "A Fresh Salmon Steak Resting on a Hot Focaccia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , CaramelizedOnions , Pickles and Tapped With Smokey Cheese.",
+  ingredients: ["Salmon", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Caramelized Onions", "Pickles", "Smokey Cheese"],
   price: 15,
   image: "/photos/salmonsumo.png",
   category: "sandos"
@@ -136,8 +136,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "w7",
   name: "Quack au Pain",
-  description: "A  Fresh Duck  Breast Resting on a Hot Foccacia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , Carmelized Onions , Pickles and Tapped With Smokey Cheese.",
-  ingredients: ["Duck", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Carmalized Onions", "Pickles", "Smokey Cheese"],
+  description: "A  Fresh Duck  Breast Resting on a Hot Focaccia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , Caramelized Onions , Pickles and Tapped With Smokey Cheese.",
+  ingredients: ["Duck", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Caramelized Onions", "Pickles", "Smokey Cheese"],
   price: 15,
   image: "/photos/Gambaretto.jpg",
   category: "sandos"
@@ -156,7 +156,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "b2",
   name: "Japanese Egg Sando",
-  description: "Fluffy, creamy egg salad made with jammy boiled eggs, Japanese mayo, and a touch of seasoning — all tucked between two slices of soft, crustless milk bread.",
+  description: "Fluffy, creamy egg salad made with jammy boiled eggs, Japanese mayo, and a touch of seasoning — all tucked between two slices of soft, and milk bread.",
   ingredients: ["Soft-boiled eggs", "Japanese mayonnaise", "Salt & pepper", "Bacon"],
   price: 12,
   image: "/photos/japaneseeggsando.jpg",
@@ -165,8 +165,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "b3",
   name: "The Breakfast Board for Four",
-  description: "A hearty morning spread featuring farm-fresh eggs, creamy cheese, savory panea, crispy bacon, flaky croissants, golden potatoes, and a medley of fresh veggies — perfect for a satisfying start to your day.",
-  ingredients: ["Eggs", "Cheese", "Panea", "Bacon","Croisssant","Potatoes","Veggies"],
+  description: "A hearty morning spread featuring farm-fresh eggs, creamy cheese, savory pane, crispy bacon, flaky croissants, golden potatoes, and a medley of fresh veggies — perfect for a satisfying start to your day.",
+  ingredients: ["Eggs", "Cheese", "Pane", "Bacon","Croissant","Potatoes","Veggies"],
   price: 12,
   image: "/photos/thebreakfastboard.jpg",
   category: "breakfast"
@@ -221,8 +221,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   }, {
     id: "a3",
     name: "Baby Potato",
-    description: "Mini  Potatos Sauted with Butter or Duck Fat , Topped with Parmesan and Butter",
-    ingredients: ["Mini Potatos", "Butter - Duck Fat", "Parmesan", "Butter"],
+    description: "Mini  Potatoes Sauted with Butter or Duck Fat , Topped with Parmesan and Butter",
+    ingredients: ["Mini Potatoes", "Butter - Duck Fat", "Parmesan", "Butter"],
     price: 6,
     image: "/photos/babypotatoes.jpg",
     category: "appetizers"
