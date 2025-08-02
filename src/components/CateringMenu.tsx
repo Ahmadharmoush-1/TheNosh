@@ -16,7 +16,7 @@ export const CateringMenu = () => {
   ];
 
   const sandwichItems = [
-    {name: "Selection of Cheese Sandwich",price: 1.5,unit: "piece",},
+    {name: "Selection of Cheese Sandos",price: 1.5,unit: "piece",},
     { name: "Smoked Salmon ", price: 2, unit: "piece" },
     { name: "Smoked Crab ", price: 2, unit: "piece" },
     { name: "Turkey And Cheese", price: 2, unit: "piece" },
