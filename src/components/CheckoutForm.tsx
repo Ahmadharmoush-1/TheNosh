@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { MessageCircle, User, Phone, MapPin, CheckCircle, Edit3, Clock, Sparkles, Lock, Shield } from "lucide-react";
+import { MessageCircle, User, Phone, MapPin, CheckCircle, Edit3, Clock, Sparkles, Lock, Shield, Truck } from "lucide-react";
 
 interface CheckoutFormProps {
   total: number;
@@ -133,14 +133,19 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
             <Card className="bg-card/60 backdrop-blur-sm border-border animate-scale-in">
               <CardContent className="p-4">
                 <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
-                  <div className="flex items-center">
-                    <Lock className="h-4 w-4 mr-1 text-green-500" />
-                    <span>SSL Secured</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Shield className="h-4 w-4 mr-1 text-blue-500" />
-                    <span>Safe Checkout</span>
-                  </div>
+                <div className="flex items-center">
+  <Lock className="h-4 w-4 mr-1 text-green-500" />
+  <span>SSL Secured</span>
+</div>
+<div className="flex items-center">
+  <Shield className="h-4 w-4 mr-1 text-blue-500" />
+  <span>Safe Checkout</span>
+</div>
+<div className="flex items-center">
+  <Truck className="h-4 w-4 mr-1 text-yellow-500" />
+  <span>Cash on Delivery</span>
+</div>
+
                 </div>
               </CardContent>
             </Card>
