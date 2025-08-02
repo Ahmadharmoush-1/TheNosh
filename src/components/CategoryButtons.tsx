@@ -7,7 +7,7 @@ interface CategoryButtonsProps {
 export const CategoryButtons = ({ onCategoryClick }: CategoryButtonsProps) => {
   const categories = [
     { name: "Plates", emoji: "🍽️", id: "plates" },
-    { name: "Sandos", emoji: "🥪", id: "wraps" },
+    { name: "Sandos", emoji: "🥪", id: "sandos" },
     { name: "Breakfast", emoji: "🍳", id: "breakfast" },
     { name: "Salads", emoji: "🥗", id: "salads" },
     { name: "Appetizers", emoji: "🍢", id: "appetizers" },

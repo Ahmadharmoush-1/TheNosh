@@ -147,7 +147,7 @@ interface MenuItem {
     description: "Grilled chicken with Caesar dressing in a tortilla",
     price: 14,
     image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=500&q=80",
-    category: "Wraps"
+    category: "Sandos"
   },
   {
     id: "w2",
@@ -155,7 +155,7 @@ interface MenuItem {
     description: "Spicy buffalo chicken with ranch and vegetables",
     price: 15,
     image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
-    category: "Wraps"
+    category: "Sandos"
   },
   {
     id: "bp1",
@@ -327,7 +327,7 @@ interface MenuItem {
   }
  ];
 
-const categories = ["All", "Burgers", "Pizza", "Fries", "Drinks", "Hotdogs", "Wraps", "Baked Potato", "Salads", "Appetizers", "Sweets", "Soft Drinks", "Alcohol", "Hookah"];
+const categories = ["All", "Burgers", "Pizza", "Fries", "Drinks", "Hotdogs", "Sandos", "Baked Potato", "Salads", "Appetizers", "Sweets", "Soft Drinks", "Alcohol", "Hookah"];
 
 const Store = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");

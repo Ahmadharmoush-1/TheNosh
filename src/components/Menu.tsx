@@ -78,7 +78,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   image: "/photos/thesteakplate.jpg",
   category: "plates"
 },
-// Wraps
+// sandos
   {
   id: "w1",
   name: "Buro Beef",
@@ -86,7 +86,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   ingredients: ["Mignon Beef", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
   price: 10,
   image: "/photos/burrobeef.jpg",
-  category: "wraps"
+  category: "sandos"
  },
 // {
 //   id: "w2",
@@ -95,7 +95,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 //   ingredients: ["Mix Greens", "Tartar", "Panea", "Onions", "Mushrooms", "Pickles", "Smocked Cheese Sauce", "Smocked Pollo"],
 //   price: 15,
 //   image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
-//   category: "wraps"
+//   category: "sandos"
 // },
 {
   id: "w3",
@@ -104,7 +104,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   ingredients: ["Tiger Shrimps", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
   price: 15,
   image: "",
-  category: "wraps"
+  category: "sandos"
 },
 {
   id: "w4",
@@ -113,7 +113,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   ingredients: ["Asian Mix", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
   price: 6.5,
   image: "",
-  category: "wraps"
+  category: "sandos"
 },
 {
   id: "w5",
@@ -122,7 +122,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   ingredients: ["Mignon Beef", "Mixed Greens","Tartar", "Panea", "Onions", "Mushrooms", "Pickles"],
   price: 8,
   image: "/photos/smockedpollo.jpg",
-  category: "wraps"
+  category: "sandos"
 },
 {
   id: "w6",
@@ -131,7 +131,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   ingredients: ["Salmon", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Carmalized Onions", "Pickles", "Smokey Cheese"],
   price: 15,
   image: "/photos/salmonsumo.png",
-  category: "wraps"
+  category: "sandos"
 },
 {
   id: "w7",
@@ -140,7 +140,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   ingredients: ["Duck", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Carmalized Onions", "Pickles", "Smokey Cheese"],
   price: 15,
   image: "/photos/Gambaretto.jpg",
-  category: "wraps"
+  category: "sandos"
 },
 
   // Breakfast
