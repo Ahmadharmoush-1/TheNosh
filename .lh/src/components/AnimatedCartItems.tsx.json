@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/AnimatedCartItems.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1754124786525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1754124791705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \r\n   return (\r\n     <div className=\"fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none\">\r\n       <div className=\"animate-[fadeInScale_1s_ease-out] bg-white text-black px-4 py-2 rounded-lg shadow-lg border\">\r\n-        <span className=\"text-sm font-semibold\">✨ {itemName} added to cat!</span>\r\n+        <span className=\"text-sm font-semibold\">✨ {itemName} added to ct!</span>\r\n       </div>\r\n     </div>\r\n   );\r\n };\r\n"
+                },
+                {
+                    "date": 1754124796801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \r\n   return (\r\n     <div className=\"fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none\">\r\n       <div className=\"animate-[fadeInScale_1s_ease-out] bg-white text-black px-4 py-2 rounded-lg shadow-lg border\">\r\n-        <span className=\"text-sm font-semibold\">✨ {itemName} added to ct!</span>\r\n+        <span className=\"text-sm font-semibold\">✨ {itemName} added to cart!</span>\r\n       </div>\r\n     </div>\r\n   );\r\n };\r\n"
+                },
+                {
+                    "date": 1754124806713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \r\n   return (\r\n     <div className=\"fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none\">\r\n       <div className=\"animate-[fadeInScale_1s_ease-out] bg-white text-black px-4 py-2 rounded-lg shadow-lg border\">\r\n-        <span className=\"text-sm font-smibold\">✨ {itemName} added to cart!</span>\r\n+        <span className=\"text-sm font-semibold\">✨ {itemName} added to cart!</span>\r\n       </div>\r\n     </div>\r\n   );\r\n };\r\n"
+                }
+            ],
+            "date": 1754124786525,
+            "name": "Commit-0",
+            "content": "import { useState, useEffect } from \"react\";\r\n\r\ninterface AnimatedCartItemProps {\r\n  isVisible: boolean;\r\n  itemName: string;\r\n  onAnimationComplete: () => void;\r\n}\r\n\r\nexport const AnimatedCartItem = ({ isVisible, itemName, onAnimationComplete }: AnimatedCartItemProps) => {\r\n  const [showAnimation, setShowAnimation] = useState(false);\r\n\r\n  useEffect(() => {\r\n    if (isVisible) {\r\n      setShowAnimation(true);\r\n      const timer = setTimeout(() => {\r\n        setShowAnimation(false);\r\n        onAnimationComplete();\r\n      }, 1000);\r\n      return () => clearTimeout(timer);\r\n    }\r\n  }, [isVisible, onAnimationComplete]);\r\n\r\n  if (!showAnimation) return null;\r\n\r\n  return (\r\n    <div className=\"fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none\">\r\n      <div className=\"animate-[fadeInScale_1s_ease-out] bg-white text-black px-4 py-2 rounded-lg shadow-lg border\">\r\n        <span className=\"text-sm font-semibold\">✨ {itemName} added to cat!</span>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n"
+        }
+    ]
+}

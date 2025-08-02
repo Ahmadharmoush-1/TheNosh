@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1753876012181,
@@ -12,6 +12,10 @@
                 {
                     "date": 1754123318246,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \r\n export const CategoryButtons = ({ onCategoryClick }: CategoryButtonsProps) => {\r\n   const categories = [\r\n     { name: \"Plates\", emoji: \"🍽️\", id: \"plates\" },\r\n-    { name: \"Sandos\", emoji: \"🥪\", id: \"wraps\" },\r\n+    { name: \"Sandos\", emoji: \"🥪\", id: \"sandos\" },\r\n     { name: \"Breakfast\", emoji: \"🍳\", id: \"breakfast\" },\r\n     { name: \"Salads\", emoji: \"🥗\", id: \"salads\" },\r\n     { name: \"Appetizers\", emoji: \"🍢\", id: \"appetizers\" },\r\n     // { name: \"Burgers\", emoji: \"🍔\", id: \"burgers\" },\r\n"
+                },
+                {
+                    "date": 1754124811126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n                 onClick={() => handleCategoryClick(category)}\r\n                 className={`transition-all duration-300 hover:scale-105 hover:shadow-lg animate-scale-in ${\r\n                   category.isSpecial\r\n                     ? \"h-32 rounded-xl bg-gradient-to-r from-[#1E1A4B] via-[#2C2768] to-[#3B327D] text-white shadow-lg animate-pulse-glow border-0\"\r\n-                    : \"h-28 rounded-md bg-background hover:bg-secondary border-2 border-secondary text-primary hover:text-primary\"\r\n+                    : \"h-28 ounded-md bg-background hover:bg-secondary border-2 border-secondary text-primary hover:text-primary\"\r\n                 }`}\r\n                 variant={category.isSpecial ? \"default\" : \"outline\"}\r\n                 style={{ animationDelay: `${index * 0.1}s` }}\r\n               >\r\n"
                 }
             ],
             "date": 1753876012181,
