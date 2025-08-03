@@ -193,7 +193,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   },
   {
     id: "s2",
-    name: "Watermellon Holloumi Salad",
+    name: "Watermelon Halloumi Salad",
     description: "",
     ingredients: [],
     price: 13,
