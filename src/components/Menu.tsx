@@ -103,7 +103,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "Tiger Shrimps Resting on a  Hot Focaccia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Caramelized Onions.",
   ingredients: ["Tiger Shrimps", "Mixed Greens","Tartar", "Pane", "Onions", "Mushrooms", "Pickles"],
   price: 15,
-  image: "",
+  image: "/photos/gamberetto.jpg",
   category: "sandos"
 },
 {
@@ -139,7 +139,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   description: "A  Fresh Duck  Breast Resting on a Hot Focaccia , with Asian Mix Salad , Tartar , Mix Greens , Mushrooms , Caramelized Onions , Pickles and Tapped With Smokey Cheese.",
   ingredients: ["Duck", "Asian Salad", "Tartar", "Mixed Greens", "Mushrooms", "Caramelized Onions", "Pickles", "Smokey Cheese"],
   price: 15,
-  image: "/photos/Gambaretto.jpg",
+  image: "/photos/quackaupain.jpg",
   category: "sandos"
 },
 
@@ -197,7 +197,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     description: "",
     ingredients: [],
     price: 13,
-    image: "",
+    image: "/photos/watermellonhalloumisalad.jpg",
     category: "salads"
   },
    // Appetizers
@@ -234,7 +234,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     description: "The Freshest in Town a Perfectly Cut Salmon Steak with Sweet Savory Asian Sauce Sided With Wasabi and Tartar",
     ingredients: ["Salmon", "Asian Sauce", "Wasabi", "Tartar"],
     price: 15,
-    image: "",
+    image: "/photos/shashimiplate.jpg",
     category: "appetizers"
   },
 
