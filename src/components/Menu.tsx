@@ -181,16 +181,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   category: "breakfast"
 }
 ,
-  // Salads
-  {
-    id: "s1",
-    name: "TheNosh Salad",
-    description: "",
-    ingredients: [],
-    price: 12,
-    image: "",
-    category: "salads"
-  },
+  // Salads 
   {
     id: "s2",
     name: "Watermelon Halloumi Salad",
@@ -200,6 +191,16 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     image: "/photos/watermellonhalloumisalad.jpg",
     category: "salads"
   },
+  {
+    id: "s1",
+    name: "TheNosh Salad",
+    description: "",
+    ingredients: [],
+    price: 12,
+    image: "",
+    category: "salads"
+  },
+ 
    // Appetizers
   {
     id: "a1",
@@ -207,7 +208,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     description: "Pan Fried Shrimps , Sided with Avocados and Chefs Twist , Tapped with Smokey Cheese Sauce",
     ingredients: ["Shrimps", "Avocados", "Smokey Cheese"],
     price: 8,
-    image: "",
+    image: "/photos/shrimponastick.png",
     category: "appetizers"
   },
   {
@@ -216,7 +217,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     description: "An Appetizer for 2 or more , An Exclusive Chef Choice , You choose the mood , fish , heat or poultry",
     ingredients: [],
     price: 20,
-    image: "",
+    image: "/photos/questionmark.webp",
     category: "appetizers"
   }, {
     id: "a3",
