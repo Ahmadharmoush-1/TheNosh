@@ -47,7 +47,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   name: "The Chicken Plate",
   description: "Tender Grilled Chicken Sided with Baby Potatoes , Topped with Parmesan and Garlic ",
   ingredients: ["Grilled chicken", "Baby Potatoes", "Parmesan", "Garlic","Protein","Smokey Cheese Sauce"],
-  price: 12,
+  price: 15,
   image: "/photos/thechickenplate.jpg",
   category: "plates"
 },
@@ -56,7 +56,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   name: "The Duck Plate",
   description: "Tender Roasted Duck Sided with Golden Baby Potatoes, Drizzled in a Rich Smokey Cheese Sauce, Topped with Parmesan and Garlic, Savory finish.",
   ingredients: ["Roasted duck", "Baby potatoes","Smokey Cheese Sauce","Parmesan","Garlic"],
-  price: 20,
+  price: 22,
   image: "/photos/duckplate.jpg",
   category: "plates"
 },
@@ -88,21 +88,13 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   image: "/photos/burrobeef.jpg",
   category: "sandos"
  },
-// {
-//   id: "w2",
-//   name: "Special Burro Beef",
-//   description: "Loaded beef wrap with smoked pollo, pickles, mushrooms, and a tangy cheese sauce blend.",
-//   ingredients: ["Mix Greens", "Tartar", "Panea", "Onions", "Mushrooms", "Pickles", "Smocked Cheese Sauce", "Smocked Pollo"],
-//   price: 15,
-//   image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
-//   category: "sandos"
-// },
+
 {
   id: "w3",
   name: "Gambaretto",
   description: "Tiger Shrimps Resting on a  Hot Focaccia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Caramelized Onions.",
   ingredients: ["Tiger Shrimps", "Mixed Greens","Tartar", "Pane", "Onions", "Mushrooms", "Pickles"],
-  price: 15,
+  price: 12,
   image: "/photos/gamberetto.jpg",
   category: "sandos"
 },
@@ -111,8 +103,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   name: "Verdura Filling",
   description: "Asian Mix Resting on a  Hot Focaccia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Caramelized Onions.",
   ingredients: ["Asian Mix", "Mixed Greens","Tartar", "Pane", "Onions", "Mushrooms", "Pickles"],
-  price: 6.5,
-  image: "",
+  price: 6.50,
+  image: "/photos/missingpicture.png",
   category: "sandos"
 },
 {
@@ -196,8 +188,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     name: "TheNosh Salad",
     description: "",
     ingredients: [],
-    price: 12,
-    image: "",
+    price: 6.50,
+    image: "/photos/missingpicture.png",
     category: "salads"
   },
  
@@ -224,7 +216,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     name: "Baby Potato",
     description: "Mini  Potatoes Sauted with Butter or Duck Fat , Topped with Parmesan and Butter",
     ingredients: ["Mini Potatoes", "Butter - Duck Fat", "Parmesan", "Butter"],
-    price: 6,
+    price: 6.00,
     image: "/photos/babypotatoes.jpg",
     category: "appetizers"
   },
@@ -242,92 +234,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 
   
 
-  // Burgers
-  // {
-  //   id: "b1",
-  //   name: "Classic Beef Burger",
-  //   description: "Juicy beef patty with fresh vegetables",
-  //   ingredients: ["Beef patty", "Lettuce", "Tomato", "Onion", "Special sauce", "Brioche bun"],
-  //   price: 18,
-  //   image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
-  //   category: "burgers"
-  // },
-  // {
-  //   id: "b2",
-  //   name: "Chicken Deluxe Burger",
-  //   description: "Grilled chicken breast with premium toppings",
-  //   ingredients: ["Grilled chicken", "Avocado", "Bacon", "Ranch dressing", "Lettuce", "Tomato"],
-  //   price: 16,
-  //   image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=500&q=80",
-  //   category: "burgers"
-  // },
-  // {
-  //   id: "b3",
-  //   name: "Mushroom Swiss Burger",
-  //   description: "Beef patty with sautéed mushrooms and Swiss cheese",
-  //   ingredients: ["Beef patty", "Sautéed mushrooms", "Swiss cheese", "Caramelized onions", "Truffle mayo"],
-  //   price: 19,
-  //   image: "https://images.unsplash.com/photo-1553979459-d2229ba7433a?auto=format&fit=crop&w=500&q=80",
-  //   category: "burgers"
-  // },
-
-  // // Pizza
-  // {
-  //   id: "p1",
-  //   name: "Margherita Pizza",
-  //   description: "Classic Italian pizza with fresh ingredients",
-  //   ingredients: ["Fresh mozzarella", "Tomato sauce", "Fresh basil", "Olive oil", "Thin crust"],
-  //   price: 22,
-  //   image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=500&q=80",
-  //   category: "pizza"
-  // },
-  // {
-  //   id: "p2",
-  //   name: "Pepperoni Supreme",
-  //   description: "Classic pepperoni with extra cheese",
-  //   ingredients: ["Pepperoni", "Mozzarella", "Tomato sauce", "Italian herbs", "Parmesan"],
-  //   price: 25,
-  //   image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80",
-  //   category: "pizza"
-  // },
-  // {
-  //   id: "p3",
-  //   name: "Quattro Stagioni",
-  //   description: "Four seasons pizza with diverse toppings",
-  //   ingredients: ["Mushrooms", "Artichokes", "Ham", "Olives", "Mozzarella", "Tomato base"],
-  //   price: 28,
-  //   image: "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=500&q=80",
-  //   category: "pizza"
-  // },
-
-  // // Fries
-  // {
-  //   id: "f1",
-  //   name: "Classic French Fries",
-  //   description: "Crispy golden fries with sea salt",
-  //   ingredients: ["Fresh potatoes", "Sea salt", "Vegetable oil"],
-  //   price: 8,
-  //   image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=500&q=80",
-  //   category: "fries"
-  // },
-  // {
-  //   id: "f2",
-  //   name: "Truffle Parmesan Fries",
-  //   description: "Hand-cut fries with truffle oil and parmesan",
-  //   ingredients: ["Hand-cut potatoes", "Truffle oil", "Fresh parmesan", "Fresh herbs"],
-  //   price: 14,
-  //   image: "https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=500&q=80",
-  //   category: "fries"
-  // },
-  // {
-  //   id: "f3",
-  //   name: "Sweet Potato Fries",
-  //   description: "Crispy sweet potato fries with cinnamon sugar",
-  //   ingredients: ["Sweet potatoes", "Cinnamon", "Brown sugar", "Sea salt"],
-  //   price: 10,
-  //   image: "https://images.unsplash.com/photo-1553787444-0d12624df50f?auto=format&fit=crop&w=500&q=80",
-  //   category: "fries"
-  // },
+  
 
   // Drinks
   {
@@ -397,91 +304,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 
   
 
-  // // Baked Potato
-  // {
-  //   id: "bp1",
-  //   name: "Loaded Baked Potato",
-  //   description: "Fluffy baked potato with all the fixings",
-  //   ingredients: ["Large potato", "Butter", "Sour cream", "Cheddar cheese", "Bacon bits", "Chives"],
-  //   price: 11,
-  //   image: "https://images.unsplash.com/photo-1518013431117-eb1465fa5752?auto=format&fit=crop&w=500&q=80",
-  //   category: "baked-potato"
-  // },
-  // {
-  //   id: "bp2",
-  //   name: "Chili Cheese Potato",
-  //   description: "Baked potato topped with chili and cheese",
-  //   ingredients: ["Large potato", "Chili con carne", "Cheddar cheese", "Sour cream", "Green onions"],
-  //   price: 13,
-  //   image: "https://images.unsplash.com/photo-1553978297-833d09932d89?auto=format&fit=crop&w=500&q=80",
-  //   category: "baked-potato"
-  // },
-
   
- 
- 
- 
-  
-
-  // // Soft Drinks
-  // {
-  //   id: "sd1",
-  //   name: "Classic Coca Cola",
-  //   description: "Ice-cold Coca Cola served in a glass",
-  //   ingredients: ["Coca Cola", "Ice", "Lemon slice"],
-  //   price: 4,
-  //   image: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=500&q=80",
-  //   category: "soft-drinks"
-  // },
-  // {
-  //   id: "sd2",
-  //   name: "Fresh Orange Juice",
-  //   description: "Freshly squeezed orange juice",
-  //   ingredients: ["Fresh oranges", "Ice", "Mint garnish"],
-  //   price: 5,
-  //   image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80",
-  //   category: "soft-drinks"
-  // },
-
-  // // Alcohol
-  // {
-  //   id: "al1",
-  //   name: "Craft Beer",
-  //   description: "Local craft beer selection",
-  //   ingredients: ["Premium hops", "Malt", "Yeast", "Served chilled"],
-  //   price: 8,
-  //   image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=500&q=80",
-  //   category: "alcohol"
-  // },
-  // {
-  //   id: "al2",
-  //   name: "House Wine",
-  //   description: "Selected red or white wine",
-  //   ingredients: ["Premium grapes", "Aged to perfection", "Served in wine glass"],
-  //   price: 12,
-  //   image: "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=500&q=80",
-  //   category: "alcohol"
-  // },
-
-  // // Hookah
-  // {
-  //   id: "hk1",
-  //   name: "Apple Mint Hookah",
-  //   description: "Refreshing apple mint flavor hookah session",
-  //   ingredients: ["Apple mint tobacco", "Natural charcoal", "Fresh fruits", "Ice base"],
-  //   price: 25,
-  //   image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=500&q=80",
-  //   category: "hookah"
-  // },
-  // {
-  //   id: "hk2",
-  //   name: "Mixed Berry Hookah",
-  //   description: "Sweet mixed berry flavor for relaxation",
-  //   ingredients: ["Mixed berry tobacco", "Premium charcoal", "Berry garnish", "Filtered water"],
-  //   price: 28,
-  //   image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80",
-  //   category: "hookah"
-  // },
   
 ];
   const filteredItems = menuItems.filter(
