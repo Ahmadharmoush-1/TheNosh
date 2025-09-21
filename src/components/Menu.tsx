@@ -110,8 +110,8 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
 {
   id: "w5",
   name: "Smoked Pollo",
-  description: "Filet Mignon Beef Resting on a  Hot Focaccia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Caramelized Onions.",
-  ingredients: ["Mignon Beef", "Mixed Greens","Tartar", "Pane", "Onions", "Mushrooms", "Pickles"],
+  description: "A Chicken Breast Resting on a  Hot Focaccia with Tartar ,  Mix Greens , Mushrooms  with our in House Pickles and Caramelized Onions.",
+  ingredients: ["Chicken Breast", "Mixed Greens","Tartar", "Pane", "Onions", "Mushrooms", "Pickles"],
   price: 8,
   image: "/photos/smockedpollo.jpg",
   category: "sandos"

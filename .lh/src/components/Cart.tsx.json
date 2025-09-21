@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1754046325627,
@@ -16,6 +16,18 @@
                 {
                     "date": 1754046372586,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import { Textarea } from \"@/components/ui/textarea\";\r\n import { useCart } from \"@/context/CartContext\";\r\n import { CheckoutForm } from \"@/components/CheckoutForm\";\r\n import { EmptyCart } from \"@/components/EmptyCart\";\r\n-import { AnimatedCartItem } from \"@/components/AnimatedCartItemss\";\r\n+import { AnimatedCartItem } from \"@/components/AnimatedCartItems\";\r\n import { LazyImage } from \"@/components/LazyImage\";\r\n \r\n interface CartProps {\r\n   isOpen: boolean;\r\n"
+                },
+                {
+                    "date": 1758464611659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -371,9 +371,9 @@\n                      <span>${totalPrice.toFixed(2)}</span>\r\n                    </div>\r\n                    <div className=\"flex items-center justify-between text-muted-foreground text-sm sm:text-base\">\r\n                      <span>🚚 Delivery Fee:</span>\r\n-                     <span>$3.00</span>\r\n+                     <span></span>\r\n                    </div>\r\n                    <div className=\"flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border\">\r\n                      <span>💵 Total:</span>\r\n                      <span>${(totalPrice + 3).toFixed(2)}</span>\r\n"
+                },
+                {
+                    "date": 1758464620602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -371,9 +371,9 @@\n                      <span>${totalPrice.toFixed(2)}</span>\r\n                    </div>\r\n                    <div className=\"flex items-center justify-between text-muted-foreground text-sm sm:text-base\">\r\n                      <span>🚚 Delivery Fee:</span>\r\n-                     <span></span>\r\n+                     <span>Calculated on Door</span>\r\n                    </div>\r\n                    <div className=\"flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border\">\r\n                      <span>💵 Total:</span>\r\n                      <span>${(totalPrice + 3).toFixed(2)}</span>\r\n"
+                },
+                {
+                    "date": 1758464722002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -371,9 +371,9 @@\n                      <span>${totalPrice.toFixed(2)}</span>\r\n                    </div>\r\n                    <div className=\"flex items-center justify-between text-muted-foreground text-sm sm:text-base\">\r\n                      <span>🚚 Delivery Fee:</span>\r\n-                     <span>Calculated on Door</span>\r\n+                     <span>To be confirmed based on your location</span>\r\n                    </div>\r\n                    <div className=\"flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border\">\r\n                      <span>💵 Total:</span>\r\n                      <span>${(totalPrice + 3).toFixed(2)}</span>\r\n"
                 }
             ],
             "date": 1754046325627,

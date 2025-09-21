@@ -372,7 +372,7 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                    </div>
                    <div className="flex items-center justify-between text-muted-foreground text-sm sm:text-base">
                      <span>🚚 Delivery Fee:</span>
-                     <span>$3.00</span>
+                     <span>To be confirmed based on your location</span>
                    </div>
                    <div className="flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border">
                      <span>💵 Total:</span>
