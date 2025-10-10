@@ -99,10 +99,10 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
 }
 
     if (globalNotes) {
-      message += `📝 *Special Instructions:*\n${globalNotes}\n\n`;
+      message += ` *Special Instructions:*\n${globalNotes}\n\n`;
     }
     
-    message += "Thank you for your order! 🙏";
+    message += "Thank you for your order! ";
     
     return encodeURIComponent(message);
   };
@@ -251,7 +251,7 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between">
                             <h3 className="font-semibold text-card-foreground mb-1 flex items-center text-sm sm:text-base">
-                              🍽️ {item.name} <span className="text-xs text-muted-foreground ml-2">(Catering)</span>
+                               {item.name} <span className="text-xs text-muted-foreground ml-2">(Catering)</span>
                             </h3>
                             <Button
                               size="sm"
@@ -312,7 +312,7 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between">
                             <h3 className="font-semibold text-card-foreground mb-1 flex items-center text-sm sm:text-base">
-                              👨‍🍳 {chef.name} <span className="text-xs text-muted-foreground ml-2">(Chef)</span>
+                               {chef.name} <span className="text-xs text-muted-foreground ml-2">(Chef)</span>
                             </h3>
                             <Button
                               size="sm"
@@ -345,7 +345,7 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                 <Card className="bg-card border-border">
                   <CardContent className="p-3 sm:p-4">
                     <label className="block text-xs sm:text-sm font-medium text-card-foreground mb-2 flex items-center">
-                      📝 Order Notes
+                       Order Notes
                     </label>
                     <Textarea
                       placeholder="Any special instructions for your entire order..."
@@ -366,15 +366,15 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                {!isChefOnlyOrder && (
                  <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
                    <div className="flex items-center justify-between text-muted-foreground text-sm sm:text-base">
-                     <span>💰 Subtotal:</span>
+                     <span> Subtotal:</span>
                      <span>${totalPrice.toFixed(2)}</span>
                    </div>
                    <div className="flex items-center justify-between text-muted-foreground text-sm sm:text-base">
-                     <span>🚚 Delivery Fee:</span>
+                     <span> Delivery Fee:</span>
                      <span>To be confirmed based on your location</span>
                    </div>
                    <div className="flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border">
-                    <span>💵 Total (excluding delivery):</span>
+                    <span> Total (excluding delivery):</span>
                     <span>${totalPrice.toFixed(2)}</span>
                   </div>
 
