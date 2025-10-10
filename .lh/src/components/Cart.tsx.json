@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1754046325627,
@@ -32,6 +32,14 @@
                 {
                     "date": 1760116214013,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -375,9 +375,9 @@\n                      <span>To be confirmed based on your location</span>\r\n                    </div>\r\n                    <div className=\"flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border\">\r\n                      <span>💵 Total:</span>\r\n-                     <span>${(totalPrice + 3).toFixed(2)}</span>\r\n+                     <span>${(totalPrice ).toFixed(2)}</span>\r\n                    </div>\r\n                  </div>\r\n                )}\r\n                <Button\r\n"
+                },
+                {
+                    "date": 1760116918651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     name: string;\r\n     phone: string;\r\n     location: string;\r\n   }) => {\r\n-    const phoneNumber = \"96176534652\";\r\n+    const phoneNumber = \"961765\";\r\n     const message = formatOrderForWhatsApp(customerInfo);\r\n     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;\r\n     window.open(whatsappUrl, '_blank');\r\n     clearCart();\r\n"
+                },
+                {
+                    "date": 1760116924935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     name: string;\r\n     phone: string;\r\n     location: string;\r\n   }) => {\r\n-    const phoneNumber = \"961765\";\r\n+    const phoneNumber = \"961765054688\";\r\n     const message = formatOrderForWhatsApp(customerInfo);\r\n     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;\r\n     window.open(whatsappUrl, '_blank');\r\n     clearCart();\r\n"
                 }
             ],
             "date": 1754046325627,
