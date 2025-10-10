@@ -168,6 +168,12 @@ All colors MUST be HSL.
 .animate-fade-in {
   animation: fade-in 0.8s ease-out;
 }
+.emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif !important;
+  font-size: 1em;
+  line-height: 1;
+}
+
 
 .animate-scale-in {
   animation: scale-in 0.6s ease-out;
@@ -236,6 +242,8 @@ html {
 .animate-pulse-gentle {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+
 
 @keyframes pulse {
   0%, 100% {
