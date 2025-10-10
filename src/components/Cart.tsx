@@ -376,7 +376,7 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                    </div>
                    <div className="flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border">
                      <span>💵 Total:</span>
-                     <span>${(totalPrice + 3).toFixed(2)}</span>
+                     <span>${(totalPrice ).toFixed(2)}</span>
                    </div>
                  </div>
                )}

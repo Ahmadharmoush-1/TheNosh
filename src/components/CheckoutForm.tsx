@@ -172,14 +172,14 @@ export const CheckoutForm = ({ total, isChefOnlyOrder = false, onSubmit, onBack 
                     </div>
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">Delivery Fee:</span>
-                      <span className="font-medium">${deliveryFee.toFixed(2)}</span>
+                      <span className="font-medium">N/A</span>
                     </div>
                     <div className="border-t border-border pt-2">
                       <div className="flex items-center justify-between text-lg font-bold text-primary">
                         <span>Total:</span>
-                        <span>${totalWithDelivery.toFixed(2)}</span>
+                        <span>${total.toFixed(2)}</span>
                       </div>
-                    </div>
+                    </div>  
                   </div>
                 )}
                 <Button

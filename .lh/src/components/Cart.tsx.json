@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1754046325627,
@@ -28,6 +28,10 @@
                 {
                     "date": 1758464722002,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -371,9 +371,9 @@\n                      <span>${totalPrice.toFixed(2)}</span>\r\n                    </div>\r\n                    <div className=\"flex items-center justify-between text-muted-foreground text-sm sm:text-base\">\r\n                      <span>🚚 Delivery Fee:</span>\r\n-                     <span>Calculated on Door</span>\r\n+                     <span>To be confirmed based on your location</span>\r\n                    </div>\r\n                    <div className=\"flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border\">\r\n                      <span>💵 Total:</span>\r\n                      <span>${(totalPrice + 3).toFixed(2)}</span>\r\n"
+                },
+                {
+                    "date": 1760116214013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -375,9 +375,9 @@\n                      <span>To be confirmed based on your location</span>\r\n                    </div>\r\n                    <div className=\"flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border\">\r\n                      <span>💵 Total:</span>\r\n-                     <span>${(totalPrice + 3).toFixed(2)}</span>\r\n+                     <span>${(totalPrice ).toFixed(2)}</span>\r\n                    </div>\r\n                  </div>\r\n                )}\r\n                <Button\r\n"
                 }
             ],
             "date": 1754046325627,
