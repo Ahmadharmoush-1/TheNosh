@@ -150,7 +150,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   name: "Japanese Egg Sando",
   description: "Fluffy, creamy egg salad made with jammy boiled eggs, Japanese mayo, and a touch of seasoning — all tucked between two slices of soft, and milk bread.",
   ingredients: ["Soft-boiled eggs", "Japanese mayonnaise", "Salt & pepper", "Bacon"],
-  price: 12,
+  price: 6.5,
   image: "/photos/japaneseeggsando.jpg",
   category: "breakfast"
 },
@@ -159,7 +159,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
   name: "The Breakfast Board for Four",
   description: "A hearty morning spread featuring farm-fresh eggs, creamy cheese, savory pane, crispy bacon, flaky croissants, golden potatoes, and a medley of fresh veggies — perfect for a satisfying start to your day.",
   ingredients: ["Eggs", "Cheese", "Pane", "Bacon","Croissant","Potatoes","Veggies"],
-  price: 12,
+  price: 25,
   image: "/photos/thebreakfastboard.jpg",
   category: "breakfast"
 },
@@ -179,7 +179,7 @@ export const Menu = ({ selectedCategory }: MenuProps) => {
     name: "Watermelon Halloumi Salad",
     description: "",
     ingredients: [],
-    price: 13,
+    price: 6,
     image: "/photos/watermellonhalloumisalad.jpg",
     category: "salads"
   },
