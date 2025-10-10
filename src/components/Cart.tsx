@@ -35,16 +35,6 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
   const [showCheckout, setShowCheckout] = useState(false);
   const [animatedItem, setAnimatedItem] = useState<string | null>(null);
 
-  // ✅ FIXED EMOJI METHOD USING UNICODE ESCAPES
-  const getItemEmoji = (itemName: string): string => {
-    const lower = itemName.toLowerCase();
-    if (lower.includes('burger')) return '\u{1F354}'; // 🍔
-    if (lower.includes('pizza')) return '\u{1F355}'; // 🍕
-    if (lower.includes('fries')) return '\u{1F35F}'; // 🍟
-    if (lower.includes('drink') || lower.includes('cola')) return '\u{1F964}'; // 🥤
-    return '\u{1F37D}'; // 🍽️
-  };
-
   const formatOrderForWhatsApp = (customerInfo: {
     name: string;
     phone: string;
@@ -102,20 +92,30 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
     }
     
    if (!isChefOnlyOrder) {
-      message += ` *Order Summary:*\n`;
-      message += ` Subtotal: $${totalPrice.toFixed(2)}\n`;
-      message += ` Delivery Fee: To be confirmed based on your location\n`;
-      message += ` *Total (excluding delivery): $${totalPrice.toFixed(2)}*\n\n`;
-    }
+  message += ` *Order Summary:*\n`;
+  message += `  Subtotal: $${totalPrice.toFixed(2)}\n`;
+  message += `  Delivery Fee: To be confirmed based on your location\n`;
+  message += ` *Total (excluding delivery): $${totalPrice.toFixed(2)}*\n\n`;
+}
 
     if (globalNotes) {
-      message += ` *Special Instructions:*\n${globalNotes}\n\n`;
+      message += `📝 *Special Instructions:*\n${globalNotes}\n\n`;
     }
     
-    message += "Thank you for your order! ";
+    message += "Thank you for your order! 🙏";
     
     return encodeURIComponent(message);
   };
+
+  const getItemEmoji = (itemName: string): string => {
+  const lower = itemName.toLowerCase();
+  if (lower.includes('burger')) return '\u{1F354}'; // 🍔
+  if (lower.includes('pizza')) return '\u{1F355}'; // 🍕
+  if (lower.includes('fries')) return '\u{1F35F}'; // 🍟
+  if (lower.includes('drink') || lower.includes('cola')) return '\u{1F964}'; // 🥤
+  return '\u{1F37D}'; // 🍽️
+};
+
 
   const handleCheckoutSubmit = (customerInfo: {
     name: string;
@@ -189,9 +189,8 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between">
-                            {/* ✅ WRAPPED EMOJI */}
                             <h3 className="font-semibold text-card-foreground mb-1 flex items-center text-sm sm:text-base">
-                              <span className="emoji mr-1">{getItemEmoji(item.name)}</span> {item.name}
+                              {getItemEmoji(item.name)} {item.name}
                             </h3>
                             <Button
                               size="sm"
@@ -202,9 +201,7 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                               <X className="h-3 w-3 sm:h-4 sm:w-4" />
                             </Button>
                           </div>
-                          <p className="text-foreground font-bold mb-2 sm:mb-3 text-sm sm:text-base">
-                            ${(item.price * item.quantity).toFixed(2)}
-                          </p>
+                          <p className="text-foreground font-bold mb-2 sm:mb-3 text-sm sm:text-base">${(item.price * item.quantity).toFixed(2)}</p>
                           
                           <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
                             <Button
@@ -239,12 +236,168 @@ export const Cart = ({ isOpen, onClose }: CartProps) => {
                   </Card>
                 ))}
 
-                {/* ... keep rest of your code unchanged ... */}
+                {/* Catering Items */}
+                {cateringItems.map((item) => (
+                  <Card key={`catering-${item.id}`} className="bg-card border-border hover:shadow-md transition-shadow">
+                    <CardContent className="p-3 sm:p-4">
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="relative group flex-shrink-0">
+                          <LazyImage
+                            src={item.image}
+                            alt={item.name}
+                            className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg transition-transform group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-start justify-between">
+                            <h3 className="font-semibold text-card-foreground mb-1 flex items-center text-sm sm:text-base">
+                              🍽️ {item.name} <span className="text-xs text-muted-foreground ml-2">(Catering)</span>
+                            </h3>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => removeCateringItem(item.id)}
+                              className="text-destructive hover:text-destructive/80 hover:bg-destructive/10 -mt-1 p-1"
+                            >
+                              <X className="h-3 w-3 sm:h-4 sm:w-4" />
+                            </Button>
+                          </div>
+                          <p className="text-foreground font-bold mb-2 sm:mb-3 text-sm sm:text-base">${item.totalPrice.toFixed(2)} ({item.quantity} pieces)</p>
+                          
+                          <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => updateCateringQuantity(item.id, item.quantity - 1)}
+                              className="h-6 w-6 sm:h-8 sm:w-8 p-0 border-border hover:bg-accent"
+                            >
+                              <Minus className="h-2 w-2 sm:h-3 sm:w-3" />
+                            </Button>
+                            <span className="mx-1 sm:mx-2 font-semibold min-w-[16px] sm:min-w-[20px] text-center text-sm sm:text-base">{item.quantity}</span>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => updateCateringQuantity(item.id, item.quantity + 1)}
+                              className="h-6 w-6 sm:h-8 sm:w-8 p-0 border-border hover:bg-accent"
+                            >
+                              <Plus className="h-2 w-2 sm:h-3 sm:w-3" />
+                            </Button>
+                          </div>
+
+                          <Textarea
+                            placeholder="Special notes"
+                            value={item.notes || ""}
+                            onChange={(e) => updateCateringNotes(item.id, e.target.value)}
+                            className="bg-background border-border text-xs sm:text-sm resize-none"
+                            rows={2}
+                          />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+
+                {/* Chef Bookings */}
+                {chefBookings.map((chef) => (
+                  <Card key={`chef-${chef.id}`} className="bg-card border-border hover:shadow-md transition-shadow">
+                    <CardContent className="p-3 sm:p-4">
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="relative group flex-shrink-0">
+                          <LazyImage
+                            src={chef.image}
+                            alt={chef.name}
+                            className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg transition-transform group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-start justify-between">
+                            <h3 className="font-semibold text-card-foreground mb-1 flex items-center text-sm sm:text-base">
+                              👨‍🍳 {chef.name} <span className="text-xs text-muted-foreground ml-2">(Chef)</span>
+                            </h3>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => removeChefBooking(chef.id)}
+                              className="text-destructive hover:text-destructive/80 hover:bg-destructive/10 -mt-1 p-1"
+                            >
+                              <X className="h-3 w-3 sm:h-4 sm:w-4" />
+                            </Button>
+                          </div>
+                           <p className="text-muted-foreground text-xs mb-1">{chef.experience}</p>
+                           {!isChefOnlyOrder && (
+                             <p className="text-foreground font-bold mb-2 sm:mb-3 text-sm sm:text-base">${chef.price.toFixed(2)}/session</p>
+                           )}
+
+                          <Textarea
+                            placeholder="Special requests for the chef"
+                            value={chef.notes || ""}
+                            onChange={(e) => updateChefNotes(chef.id, e.target.value)}
+                            className="bg-background border-border text-xs sm:text-sm resize-none"
+                            rows={2}
+                          />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+
+                {/* Global Notes */}
+                <Card className="bg-card border-border">
+                  <CardContent className="p-3 sm:p-4">
+                    <label className="block text-xs sm:text-sm font-medium text-card-foreground mb-2 flex items-center">
+                      📝 Order Notes
+                    </label>
+                    <Textarea
+                      placeholder="Any special instructions for your entire order..."
+                      value={globalNotes}
+                      onChange={(e) => setGlobalNotes(e.target.value)}
+                      className="bg-background border-border text-xs sm:text-sm"
+                      rows={3}
+                    />
+                  </CardContent>
+                </Card>
               </div>
             )}
           </div>
+
+          {/* Footer - Fixed at bottom */}
+           {hasItems && (
+             <div className="border-t border-border p-4 sm:p-6 bg-card flex-shrink-0">
+               {!isChefOnlyOrder && (
+                 <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
+                   <div className="flex items-center justify-between text-muted-foreground text-sm sm:text-base">
+                     <span>💰 Subtotal:</span>
+                     <span>${totalPrice.toFixed(2)}</span>
+                   </div>
+                   <div className="flex items-center justify-between text-muted-foreground text-sm sm:text-base">
+                     <span>🚚 Delivery Fee:</span>
+                     <span>To be confirmed based on your location</span>
+                   </div>
+                   <div className="flex items-center justify-between text-lg sm:text-xl font-bold text-foreground pt-2 border-t border-border">
+                    <span>💵 Total (excluding delivery):</span>
+                    <span>${totalPrice.toFixed(2)}</span>
+                  </div>
+
+                 </div>
+               )}
+               <Button
+                 onClick={() => setShowCheckout(true)}
+                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-2 sm:py-3 text-sm sm:text-base transition-all duration-300 hover:scale-[1.02]"
+               >
+                 <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
+                 {isChefOnlyOrder ? 'Book Chef' : 'Proceed to Checkout'}
+               </Button>
+             </div>
+           )}
         </div>
       </div>
+
+      {/* Animation Component */}
+      <AnimatedCartItem
+        isVisible={!!animatedItem}
+        itemName={animatedItem || ""}
+        onAnimationComplete={() => setAnimatedItem(null)}
+      />
     </>
   );
 };
